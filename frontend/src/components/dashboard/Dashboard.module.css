@@ -1,0 +1,403 @@
+/* Dashboard Layout */
+.dashboardFn {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.pageTitle {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .mainGrid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.historySection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Stats Component */
+.statsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .statsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.statsCard {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s;
+}
+
+.statsCard:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+}
+
+.cardValue {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.cardTrend {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* ScanHistory Component */
+.historyCard {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.historyHeader {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.historyTitle {
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.tableContainer {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    font-size: 0.875rem;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.thead {
+    background-color: rgba(26, 26, 26, 0.5);
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.th {
+    padding: 0.75rem 1.5rem;
+    font-weight: normal;
+}
+
+.tr {
+    border-bottom: 1px solid rgba(38, 38, 38, 0.5);
+    transition: background-color 0.2s;
+}
+
+.tr:hover {
+    background-color: rgba(38, 38, 38, 0.5);
+}
+
+.td {
+    padding: 1rem 1.5rem;
+}
+
+.snippet {
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20rem;
+}
+
+.badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.badgeSafe {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: var(--primary);
+}
+
+.badgeWarn {
+    background-color: rgba(255, 204, 0, 0.2);
+    color: var(--cyber-amber);
+}
+
+.badgeDanger {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: var(--destructive);
+}
+
+.sourceBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pill {
+    font-size: 0.75rem;
+    border: 1px solid;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.pillMobile {
+    color: var(--cyber-amber);
+    border-color: rgba(255, 204, 0, 0.3);
+}
+
+.pillWeb {
+    color: var(--primary);
+    border-color: rgba(0, 255, 0, 0.3);
+}
+
+.date {
+    color: var(--muted-foreground);
+}
+
+/* ApiManager */
+.apiCard {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.sectionTitle {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.sectionDesc {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-bottom: 1rem;
+}
+
+.apiKeyContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.apiKey {
+    flex: 1;
+    background-color: rgba(26, 26, 26, 0.5);
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.iconBtn {
+    padding: 0.75rem;
+    background-color: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+    color: var(--muted-foreground);
+}
+
+.iconBtn:hover {
+    background-color: rgba(26, 26, 26, 0.8);
+    color: var(--foreground);
+}
+
+.endpointBox {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(38, 38, 38, 0.2);
+    border-radius: 0.25rem;
+    border: 1px solid rgba(38, 38, 38, 0.5);
+}
+
+.endpointText {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-mono);
+}
+
+/* Settings */
+.settingsCard {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.settingsGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sliderHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.sliderLabel {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.sliderValue {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.rangeInput {
+    width: 100%;
+    height: 0.5rem;
+    background-color: var(--secondary);
+    border-radius: 0.5rem;
+    appearance: none;
+    cursor: pointer;
+}
+
+.rangeInput::-webkit-slider-thumb {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.settingDesc {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    margin-top: 0.5rem;
+}
+
+.toggleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggleSwitch {
+    position: relative;
+    display: inline-block;
+    width: 2.5rem;
+    height: 1.5rem;
+}
+
+.toggleInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggleSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondary);
+    transition: .4s;
+    border-radius: 1.5rem;
+}
+
+.toggleSlider:before {
+    position: absolute;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    left: 0.25rem;
+    bottom: 0.25rem;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggleInput:checked+.toggleSlider {
+    background-color: var(--primary);
+}
+
+.toggleInput:checked+.toggleSlider:before {
+    transform: translateX(1rem);
+}
+
+/* Utilities */
+.textPrimary {
+    color: var(--primary);
+}
+
+.textSuccess {
+    color: var(--primary);
+}
+
+.textDestructive {
+    color: var(--destructive);
+}
+
+.textAmber {
+    color: var(--cyber-amber);
+}
+
+.iconPrimary {
+    color: var(--primary);
+}
+
+.iconBeforeDestructive {
+    color: var(--destructive);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

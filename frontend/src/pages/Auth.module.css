@@ -1,0 +1,184 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.card {
+    width: 100%;
+    max-width: 28rem;
+    padding: 2rem;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.5s ease-out;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.icon {
+    color: var(--primary);
+}
+
+.iconAmber {
+    color: var(--cyber-amber);
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.inputWrapper {
+    position: relative;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 0.75rem;
+    top: 0.6rem;
+    color: var(--muted-foreground);
+}
+
+.input {
+    width: 100%;
+    background-color: var(--input);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border-radius: 0.25rem;
+    color: var(--foreground);
+    font-family: var(--font-mono);
+    transition: all 0.2s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary);
+}
+
+.inputAmber:focus {
+    border-color: var(--cyber-amber);
+    box-shadow: 0 0 0 1px var(--cyber-amber);
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    font-weight: bold;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitBtn:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.submitBtnAmber {
+    background-color: transparent;
+    border: 1px solid var(--cyber-amber);
+    color: var(--cyber-amber);
+    margin-top: 1.5rem;
+}
+
+.submitBtnAmber:hover {
+    background-color: rgba(255, 204, 0, 0.1);
+}
+
+.arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.submitBtn:hover .arrow {
+    transform: translateX(4px);
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.footerLink {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.footerLink a {
+    color: var(--muted-foreground);
+    transition: color 0.2s;
+}
+
+.footerLink a:hover {
+    color: var(--primary);
+}
+
+.linkAmber a:hover {
+    color: var(--cyber-amber);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}

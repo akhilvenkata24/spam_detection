@@ -1,0 +1,64 @@
+.container {
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.statusText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.scoreDisplay {
+    font-size: 3.75rem;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+}
+
+.meterContainer {
+    height: 1.5rem;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.5);
+    border-radius: 9999px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.meterFill {
+    height: 100%;
+    transition: width 1s ease-out;
+}
+
+.safe {
+    background-color: var(--primary);
+}
+
+.warning {
+    background-color: var(--cyber-amber);
+}
+
+.danger {
+    background-color: var(--destructive);
+}
+
+.tick {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: rgba(10, 10, 10, 0.2);
+}
+
+.label {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
