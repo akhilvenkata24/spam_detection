@@ -24,8 +24,8 @@ ENV HOME=/home/user \
 # Copy the rest of the backend files and set ownership
 COPY --chown=user . /app
 
-# Expose port (7860 is HF Spaces default)
+# Expose default port (7860 is HF Spaces default)
 EXPOSE 7860
 
-# Command to run the application using Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:7860", "--workers", "2", "--timeout", "120", "app:app"]
+# Command to run the application using Gunicorn (Dynamically binds to $PORT or fallback to 7860)
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-7860} --workers 2 --timeout 120 app:app"]
