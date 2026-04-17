@@ -167,6 +167,7 @@ Backend default: `http://127.0.0.1:5000`
 - `JWT_SECRET`
 - `MONGO_URI`
 - `API_KEY`
+- `CORS_ORIGINS`
 
 ### Frontend
 - `VITE_API_BASE_URL`
@@ -175,6 +176,16 @@ Example frontend env:
 ```env
 VITE_API_BASE_URL=http://127.0.0.1:5000
 ```
+
+Templates:
+- `backend/.env.example`
+- `frontend/.env.example`
+
+---
+
+## Deployment
+For full deployment steps (Render + MongoDB Atlas), see:
+- `DEPLOYMENT.md`
 
 ---
 
