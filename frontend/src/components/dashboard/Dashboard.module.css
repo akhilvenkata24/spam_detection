@@ -12,8 +12,8 @@
     width: 100vw;
     height: 100vh;
     background-image: 
-        linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(0, 255, 0, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.15) 1px, transparent 1px);
     background-size: 40px 40px;
     z-index: -1;
     pointer-events: none;

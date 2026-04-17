@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect, useContext, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext(null);
@@ -9,16 +9,48 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
-    // Check if token exists on load, restore user details (simplified check)
+    const logout = useCallback(() => {
+        setUser(null);
+        setToken(null);
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        navigate('/login');
+    }, [navigate]);
+
+    // Check if token exists on load, restore user details and set auto logout
     useEffect(() => {
+        let timeoutId;
+        
         if (token) {
             const savedUser = localStorage.getItem('user');
             if (savedUser) {
                 setUser(JSON.parse(savedUser));
             }
+            
+            try {
+                const tokenData = JSON.parse(atob(token.split('.')[1]));
+                if (tokenData && tokenData.exp) {
+                    const expiresIn = (tokenData.exp * 1000) - Date.now();
+                    if (expiresIn > 0) {
+                        timeoutId = setTimeout(() => {
+                            logout();
+                        }, expiresIn);
+                    } else {
+                        logout();
+                    }
+                }
+            } catch (e) {
+                // Ignore token decoding errors
+            }
         }
         setLoading(false);
-    }, [token]);
+        
+        return () => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+        };
+    }, [token, logout]);
 
     const login = async (username, password) => {
         try {
@@ -63,13 +95,7 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    const logout = () => {
-        setUser(null);
-        setToken(null);
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        navigate('/login');
-    };
+
 
     const updateAuthUser = (details) => {
         const newUser = { ...user, ...details };
