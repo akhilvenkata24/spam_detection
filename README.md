@@ -1,6 +1,6 @@
-# SPAM.DETECT — Advanced Threat Forensics & Spam Analysis
+# SPAM.DETECT — Advanced Threat & Spam Analysis
 
-A full-stack threat analysis platform that detects spam/phishing risk from message **content** using a hybrid engine:
+A full-stack threat analysis platform, along with android app support that detects spam/phishing risk from message **content** using a hybrid engine:
 - Rule-based heuristics
 - URL forensics
 - Machine learning probability scoring
