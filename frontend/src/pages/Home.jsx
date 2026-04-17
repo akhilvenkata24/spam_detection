@@ -22,7 +22,7 @@ export function Home() {
                 headers['Authorization'] = `Bearer ${token}`;
             }
 
-            const res = await fetch((import.meta.env.VITE_API_BASE_URL || \'http://127.0.0.1:5000\') + \'/analyze\', {
+            const res = await fetch((import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000') + '/analyze', {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify({

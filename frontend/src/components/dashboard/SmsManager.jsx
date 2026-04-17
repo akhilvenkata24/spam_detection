@@ -17,7 +17,7 @@ export function SmsManager() {
         e.stopPropagation();
         if (!confirm("Delete this message?")) return;
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || \'http://127.0.0.1:5000\'}/api/messages/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'}/api/messages/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
@@ -55,7 +55,7 @@ export function SmsManager() {
         if (selectedIds.size === 0) return;
         if (!confirm(`Delete ${selectedIds.size} messages?`)) return;
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || \'http://127.0.0.1:5000\'}/api/messages/bulk`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'}/api/messages/bulk`, {
                 method: 'DELETE',
                 headers: { 
                     'Authorization': `Bearer ${token}`,
@@ -79,7 +79,7 @@ export function SmsManager() {
         
         const pollMessages = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || \'http://127.0.0.1:5000\'}/api/messages?_t=${Date.now()}`, {
+                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'}/api/messages?_t=${Date.now()}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 const data = await res.json();

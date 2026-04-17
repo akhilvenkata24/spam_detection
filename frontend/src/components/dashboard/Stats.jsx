@@ -13,7 +13,7 @@ export function Stats() {
         
         const fetchStats = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || \'http://127.0.0.1:5000\'}/api/dashboard/stats?_t=${Date.now()}`, {
+                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'}/api/dashboard/stats?_t=${Date.now()}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 const data = await res.json();

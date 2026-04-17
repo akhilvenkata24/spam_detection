@@ -20,7 +20,7 @@ export function Settings() {
         const newSettings = { storage_threshold: parseInt(threshold), auto_flag: autoFlag };
         
         try {
-                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || \'http://127.0.0.1:5000\'}/api/dashboard/settings`, {
+                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'}/api/dashboard/settings`, {
                 method: 'PUT',
                 headers: { 
                     'Content-Type': 'application/json',
