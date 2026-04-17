@@ -8,6 +8,15 @@ export function ScanHistory() {
     const [scans, setScans] = useState([]);
     const [selectedIds, setSelectedIds] = useState(new Set());
     const [searchQuery, setSearchQuery] = useState("");
+    const [selectedScan, setSelectedScan] = useState(null);
+
+    const handleScanClick = (scan) => {
+        setSelectedScan(scan);
+    };
+
+    const closeModal = () => {
+        setSelectedScan(null);
+    };
 
     useEffect(() => {
         if (!token) return;
@@ -157,8 +166,14 @@ export function ScanHistory() {
                             <tr><td colSpan="6" style={{textAlign: "center", padding: "20px", color: "var(--muted)"}}>No scan history found.</td></tr>
                         )}
                         {filteredScans.map((scan) => (
-                            <tr key={scan._id} className={styles.tr}>
-                                <td className={styles.td}>
+                            <tr 
+                                key={scan._id} 
+                                className={styles.tr}
+                                onClick={() => handleScanClick(scan)}
+                                style={{ cursor: 'pointer' }}
+                                title="Click to view full analysis"
+                            >
+                                <td className={styles.td} onClick={e => e.stopPropagation()}>
                                     <input 
                                         type="checkbox" 
                                         checked={selectedIds.has(scan._id)}
@@ -204,6 +219,65 @@ export function ScanHistory() {
                     </tbody>
                 </table>
             </div>
+
+            {/* Analysis Modal */}
+            {selectedScan && (
+                <div style={{
+                    position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', 
+                    background: 'rgba(0,0,0,0.8)', display: 'flex', justifyContent: 'center', 
+                    alignItems: 'center', zIndex: 1000
+                }} onClick={closeModal}>
+                    <div 
+                        style={{
+                            background: 'var(--background)', border: '1px solid var(--border)',
+                            borderRadius: '8px', padding: '2rem', maxWidth: '500px', width: '90%',
+                            boxShadow: '0 10px 25px rgba(0,0,0,0.5)'
+                        }}
+                        onClick={e => e.stopPropagation()}
+                    >
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                            <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>Scan Details</h2>
+                            <button onClick={closeModal} style={{ background: 'none', border: 'none', color: 'var(--muted-foreground)', cursor: 'pointer', fontSize: '1.25rem' }}>&times;</button>
+                        </div>
+                        
+                        {selectedScan.sender && (
+                            <div style={{ marginBottom: '1.5rem' }}>
+                                <h4 style={{ color: 'var(--muted-foreground)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Sender</h4>
+                                <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{selectedScan.sender}</p>
+                            </div>
+                        )}
+
+                        <div style={{ marginBottom: '1.5rem', background: 'rgba(26,26,26,0.5)', padding: '1rem', borderRadius: '4px' }}>
+                            <h4 style={{ color: 'var(--muted-foreground)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Full Message</h4>
+                            <p style={{ lineHeight: '1.5', whiteSpace: 'pre-wrap' }}>
+                                {selectedScan.full_text || selectedScan.text_snippet}
+                            </p>
+                        </div>
+
+                        <div style={{ display: 'flex', gap: '2rem', marginBottom: '1.5rem' }}>
+                            <div>
+                                <h4 style={{ color: 'var(--muted-foreground)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Threat Verdict</h4>
+                                {selectedScan.risk_score > 60 
+                                    ? <span className={`${styles.badge} ${styles.badgeDanger}`} style={{ fontSize: '1rem', padding: '0.5rem 1rem' }}>High Risk</span> 
+                                    : selectedScan.risk_score > 20
+                                        ? <span className={`${styles.badge} ${styles.badgeWarn}`} style={{ fontSize: '1rem', padding: '0.5rem 1rem' }}>Suspicious</span>
+                                        : <span className={`${styles.badge} ${styles.badgeSafe}`} style={{ fontSize: '1rem', padding: '0.5rem 1rem' }}>Verified Safe</span>
+                                }
+                            </div>
+                            <div>
+                                <h4 style={{ color: 'var(--muted-foreground)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Risk Score</h4>
+                                <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: selectedScan.risk_score > 60 ? 'var(--destructive)' : selectedScan.risk_score > 20 ? 'var(--cyber-amber)' : 'var(--primary)' }}>
+                                    {selectedScan.risk_score}%
+                                </span>
+                            </div>
+                        </div>
+
+                        <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>
+                            Processed on: {new Date(selectedScan.timestamp).toLocaleString()}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

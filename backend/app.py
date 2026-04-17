@@ -96,10 +96,12 @@ def get_history():
             "_id": s["_id"],
             "user_id": s["user_id"],
             "text_snippet": s["body"][:100] + "..." if len(s["body"]) > 100 else s["body"],
+            "full_text": s["body"],
             "risk_score": s["risk_score"],
             "verdict": "high_risk" if s["is_spam"] else "safe",
             "source": "Mobile SMS Sync",
-            "timestamp": s["imported_at"]
+            "timestamp": s["imported_at"],
+            "sender": s.get("sender", "unknown")
         })
         
     # Sort combined history by timestamp descending

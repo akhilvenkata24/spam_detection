@@ -52,6 +52,7 @@ def save_scan_history(user_id, text, score, verdict, source, details):
     doc = {
         "user_id": ObjectId(user_id) if user_id else None,
         "text_snippet": text[:100] + "..." if len(text) > 100 else text,
+        "full_text": text,
         "risk_score": score,
         "verdict": verdict,
         "source": source,
