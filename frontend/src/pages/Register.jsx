@@ -1,19 +1,31 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Shield, Mail, Key, UserCheck } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 import styles from './Auth.module.css';
 
 export function Register() {
     const navigate = useNavigate();
+    const { register } = useAuth();
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
+        setError('');
         setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
+        
+        const result = await register(username, email, password);
+        if (result.success) {
             navigate('/login');
-        }, 1500);
+        } else {
+            setError(result.message);
+            setLoading(false);
+        }
     };
 
     return (
@@ -32,17 +44,23 @@ export function Register() {
                             <input
                                 type="text"
                                 className={`${styles.input} ${styles.inputAmber}`}
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
                             />
                         </div>
                     </div>
 
                     <div className={styles.inputGroup}>
-                        <label className={styles.label}>Email Frequency</label>
+                        <label className={styles.label}>Email Address</label>
                         <div className={styles.inputWrapper}>
                             <Mail className={styles.inputIcon} size={16} />
                             <input
                                 type="email"
                                 className={`${styles.input} ${styles.inputAmber}`}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
                             />
                         </div>
                     </div>
@@ -54,9 +72,14 @@ export function Register() {
                             <input
                                 type="password"
                                 className={`${styles.input} ${styles.inputAmber}`}
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
                             />
                         </div>
                     </div>
+                    
+                    {error && <div style={{color: 'red', marginTop: '10px', fontSize: '0.9rem'}}>{error}</div>}
 
                     <button
                         disabled={loading}

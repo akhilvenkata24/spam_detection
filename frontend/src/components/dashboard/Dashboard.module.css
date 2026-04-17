@@ -1,6 +1,28 @@
 /* Dashboard Layout */
 .dashboardFn {
     animation: fadeIn 0.5s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.cyberGrid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+        linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
+    animation: gridMove 25s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100vh; }
 }
 
 .pageTitle {

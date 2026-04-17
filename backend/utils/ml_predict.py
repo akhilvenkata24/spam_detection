@@ -1,75 +1,91 @@
 import os
 import joblib
 import re
+import numpy as np
 from pathlib import Path
+from sentence_transformers import SentenceTransformer
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
+from utils.heuristics import parse_heuristics
+from utils.url_utils import analyze_urls
 
 # Paths to the saved models
 MODELS_DIR = Path(__file__).parent.parent / 'models'
-VECTORIZER_PATH = MODELS_DIR / 'tfidf_vectorizer.pkl'
 MODEL_PATH = MODELS_DIR / 'spam_ensemble_model.pkl'
 
 # Global variables to hold models in memory
-vectorizer = None
 model = None
+embedder = None
+sentiment_analyzer = None
 
 def load_models():
-    """Load the TF-IDF vectorizer and the classification model."""
-    global vectorizer, model
+    """Load the BERT embedder, Sentiment Analyzer, and Classification model."""
+    global model, embedder, sentiment_analyzer
     
-    # In a real scenario, you train and save the models using joblib.
-    # Instruction to Train/Save Models:
-    # 1. Collect dataset (e.g. SMS Spam Collection, Fraudulent Emails).
-    # 2. Train a vectorizer:
-    #    from sklearn.feature_extraction.text import TfidfVectorizer
-    #    tfidf = TfidfVectorizer(stop_words='english', max_features=5000)
-    #    X_train_vectorized = tfidf.fit_transform(X_train)
-    #    joblib.dump(tfidf, 'models/tfidf_vectorizer.pkl')
-    # 3. Train a model:
-    #    from sklearn.ensemble import RandomForestClassifier
-    #    clf = RandomForestClassifier(n_estimators=100)
-    #    clf.fit(X_train_vectorized, y_train)
-    #    joblib.dump(clf, 'models/spam_ensemble_model.pkl')
-    
-    if VECTORIZER_PATH.exists() and MODEL_PATH.exists():
+    # Load SentenceTransformer and VADER
+    try:
+        print("Loading SentenceTransformer (BERT) array...")
+        embedder = SentenceTransformer('all-MiniLM-L6-v2')
+        sentiment_analyzer = SentimentIntensityAnalyzer()
+    except Exception as e:
+        print(f"Error loading NLP embedders: {e}")
+        
+    if MODEL_PATH.exists():
         try:
-            vectorizer = joblib.load(VECTORIZER_PATH)
             model = joblib.load(MODEL_PATH)
-            print("Models loaded successfully.")
+            print("Ensemble Model loaded successfully.")
         except Exception as e:
-            print(f"Error loading models: {e}")
+            print(f"Error loading classification model: {e}")
     else:
-        print("Warning: Model files not found. Using fallback prediction.")
+        print("Warning: Ensemble model file not found. Using fallback prediction.")
 
 def clean_text(text: str) -> str:
-    """Clean text before passing to the vectorizer."""
+    """Clean text (remove URLs) before passing to BERT. BERT handles punctuation fine."""
     text = text.lower()
-    # Remove URLs
+    # Remove URLs so the semantic understanding isn't confused by random strings
     text = re.sub(r'https?://[^\s]+|www\.[^\s]+', '', text)
-    # Remove punctuation and numbers
-    text = re.sub(r'[^a-z\s]', '', text)
-    # Stop words are optionally handled by the TF-IDF vectorizer or manually here.
     return text.strip()
 
-def predict_spam_probability(text: str) -> float:
+def predict_spam_probability(raw_text: str) -> float:
     """
-    Stage 3: ML Classifier
-    Returns the probability of the message being spam (0.0 to 1.0).
+    Stage 3: Advanced ML Classifier
+    Returns the probability of the message being spam/phishing (0.0 to 1.0)
+    using BERT Embeddings and Metadata Arrays.
     """
-    cleaned = clean_text(text)
-    
-    if vectorizer is not None and model is not None:
-        try:
-            # Transform text
-            tfidf = vectorizer.transform([cleaned])
-            # Predict probability (spam class probability is at index 1)
-            prob = model.predict_proba(tfidf)[0][1]
-            return float(prob)
-        except Exception as e:
-            print(f"Prediction error: {e}")
-            
-    # Fallback to a basic ML proxy logic if models are not present
-    # This prevents the API from completely failing during initial dev.
-    fallback_prob = 0.1
+    if model is None or embedder is None or sentiment_analyzer is None:
+        return 0.1 # Fallback
+        
+    cleaned = clean_text(raw_text)
     if len(cleaned) == 0:
         return 0.0
-    return min(1.0, fallback_prob)
+        
+    try:
+        # 1. Generate text embeddings (384 dimensions)
+        embeddings = embedder.encode([cleaned])
+        
+        # 2. Extract Metadata Features
+        # A. Sentiment/Urgency
+        sentiment = sentiment_analyzer.polarity_scores(raw_text)
+        neg_score = sentiment['neg']
+        
+        # B. Heuristics
+        heur_res = parse_heuristics(raw_text)
+        heur_score = heur_res['score'] / 100.0
+        
+        # C. URLs
+        url_res = analyze_urls(raw_text)
+        url_count = 1 if url_res['expanded_urls'] else 0
+        url_risk = url_res['score'] / 100.0
+        
+        meta_features = np.array([[neg_score, heur_score, url_count, url_risk]])
+        
+        # 3. Combine Features (384 + 4 = 388 dimensions)
+        X_test = np.hstack((embeddings, meta_features))
+        
+        # 4. Predict
+        prob = model.predict_proba(X_test)[0][1]
+        return float(prob)
+        
+    except Exception as e:
+        print(f"Prediction error in advanced pipeline: {e}")
+        return 0.1

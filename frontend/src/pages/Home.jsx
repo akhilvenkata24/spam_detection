@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { AnalysisResult } from '../components/AnalysisResult';
+import { useAuth } from '../context/AuthContext';
 import styles from './Home.module.css';
 
 export function Home() {
+    const { token } = useAuth();
     const [text, setText] = useState("");
     const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [result, setResult] = useState(null);
@@ -13,10 +15,20 @@ export function Home() {
 
         setIsAnalyzing(true);
         try {
-            const res = await fetch('http://localhost:5000/analyze', {
+            const headers = {
+                'Content-Type': 'application/json',
+            };
+            if (token) {
+                headers['Authorization'] = `Bearer ${token}`;
+            }
+
+            const res = await fetch((import.meta.env.VITE_API_BASE_URL || \'http://127.0.0.1:5000\') + \'/analyze\', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text, source: 'Web Scanner' })
+                headers: headers,
+                body: JSON.stringify({
+                    text: text,
+                    source: "Web"
+                })
             });
             const data = await res.json();
 

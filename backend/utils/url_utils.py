@@ -76,6 +76,45 @@ def check_domain_age(url: str) -> tuple[int, list]:
         # If WHOIS fails (e.g., rate limit, unsupported TLD), treat it with suspicion
         return 85, [f"Failed to check domain age for {domain}"]
 
+def check_domain_heuristics(url: str, domain: str) -> tuple[int, list]:
+    """
+    Check URLs for common phishing/scam heuristics independent of WHOIS.
+    Returns (risk_score, triggers)
+    """
+    score = 0
+    triggers = []
+    
+    # 1. IP Address instead of a domain name (highly suspicious for public links)
+    if re.match(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', domain):
+        score += 80
+        triggers.append(f"IP address used instead of domain name: {domain}")
+        
+    # 2. Suspicious cheap/free TLDs heavily abused by scammers
+    suspicious_tlds = ['.xyz', '.top', '.click', '.loan', '.buzz', '.info', '.club', '.stream', '.gq', '.ml', '.cf', '.tk', '.in']
+    if any(domain.endswith(tld) for tld in suspicious_tlds):
+        score += 40
+        triggers.append(f"Suspicious TLD used: {domain}")
+        
+    # 3. Phishing keywords in domain name
+    phishing_keywords = ['login', 'verify', 'update', 'secure', 'auth', 'account', 'banking', 'support', 'service', 'validation']
+    for kw in phishing_keywords:
+        if kw in domain.lower():
+            score += 30
+            triggers.append(f"Suspicious keyword '{kw}' found in domain: {domain}")
+            break
+            
+    # 4. Excessive hyphens (e.g. secure-login-amazon-update.com)
+    if domain.count('-') >= 2:
+        score += 20
+        triggers.append(f"Multiple hyphens in domain, common in phishing: {domain}")
+        
+    # 5. Shorteners (if it couldn't be expanded)
+    if any(shortener in domain.lower() for shortener in SHORTENERS):
+        score += 30
+        triggers.append(f"URL shortener used: {domain}")
+        
+    return min(100, score), triggers
+
 def analyze_urls(text: str) -> dict:
     """
     Stage 2: URL Forensics
@@ -100,12 +139,25 @@ def analyze_urls(text: str) -> dict:
         expanded = expand_url(url)
         final_urls.append(expanded)
         
-        risk, triggers = check_domain_age(expanded)
-        max_risk = max(max_risk, risk)
-        all_triggers.extend(triggers)
+        # Get domain for heuristic check
+        domain = urlparse(expanded if expanded.startswith(('http://', 'https://')) else 'http://' + expanded).netloc
+        if domain.startswith('www.'):
+            domain = domain[4:]
+            
+        # 1. Check WHOIS Age
+        whois_risk, whois_triggers = check_domain_age(expanded)
         
-        # Simple brand mismatch example context
-        # In a real system, you'd cross-reference with brands mentioned in the text.
+        # 2. Check Static Heuristics (IPs, TLDs, Hyphens, Keywords)
+        heur_risk, heur_triggers = check_domain_heuristics(expanded, domain)
+        
+        # Combine risks
+        combined_risk = max(whois_risk, heur_risk)
+        if whois_risk > 0 and heur_risk > 0: # If both flagged, push score higher
+            combined_risk = min(100, whois_risk + (heur_risk // 2))
+            
+        max_risk = max(max_risk, combined_risk)
+        all_triggers.extend(whois_triggers)
+        all_triggers.extend(heur_triggers)
         
     return {
         "score": max_risk,

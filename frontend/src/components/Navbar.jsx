@@ -1,8 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
-import { ShieldCheck, LayoutDashboard } from 'lucide-react';
+import { ShieldCheck, LayoutDashboard, LogOut } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 import styles from './Navbar.module.css';
 
 export function Navbar() {
+    const { user, logout } = useAuth();
     const location = useLocation();
     const isActive = (path) => location.pathname === path;
 
@@ -28,12 +30,25 @@ export function Navbar() {
                 </div>
 
                 <div className={styles.authButtons}>
-                    <Link to="/login">
-                        <button className={styles.loginBtn}>Login</button>
-                    </Link>
-                    <Link to="/register">
-                        <button className={styles.registerBtn}>Register</button>
-                    </Link>
+                    {user ? (
+                        <>
+                            <span style={{ color: "var(--amber)", fontSize: "0.9rem", marginRight: "1rem" }}>
+                                {user.username}
+                            </span>
+                            <button className={styles.loginBtn} onClick={logout} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                <LogOut size={14} /> Logout
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <Link to="/login">
+                                <button className={styles.loginBtn}>Login</button>
+                            </Link>
+                            <Link to="/register">
+                                <button className={styles.registerBtn}>Register</button>
+                            </Link>
+                        </>
+                    )}
                 </div>
             </div>
         </nav>

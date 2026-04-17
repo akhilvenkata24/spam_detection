@@ -182,3 +182,23 @@
         opacity: 0.5;
     }
 }
+
+.laser {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: 0 0 15px 3px var(--primary);
+    z-index: 99;
+    animation: scanPulse 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    pointer-events: none;
+}
+
+@keyframes scanPulse {
+    0% { top: -10px; opacity: 0; }
+    15% { opacity: 0.8; }
+    85% { opacity: 0.8; }
+    100% { top: 103%; opacity: 0; }
+}
