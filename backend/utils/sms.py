@@ -7,12 +7,26 @@ def save_user_sms(user_id, messages_list):
         return []
 
     docs = []
+    user_obj_id = ObjectId(user_id) if user_id else None
+    or_conditions = []
+    
     for msg in messages_list:
+        sender = msg.get("sender", "unknown")
+        body = msg.get("body", "")
+        msg_date = msg.get("date", datetime.utcnow().isoformat() + "Z")
+
+        # Condition to find previous occurrence
+        or_conditions.append({
+            "sender": sender,
+            "body": body,
+            "date": msg_date
+        })
+
         doc = {
-            "user_id": ObjectId(user_id) if user_id else None,
-            "sender": msg.get("sender", "unknown"),
-            "body": msg.get("body", ""),
-            "date": msg.get("date", datetime.utcnow().isoformat() + "Z"),
+            "user_id": user_obj_id,
+            "sender": sender,
+            "body": body,
+            "date": msg_date,
             "is_spam": msg.get("is_spam", False),
             "risk_score": msg.get("risk_score", 0),
             "imported_at": datetime.utcnow().isoformat() + "Z"
@@ -20,6 +34,15 @@ def save_user_sms(user_id, messages_list):
         docs.append(doc)
     
     if docs:
+        # Delete previous occurrences to prevent duplication
+        # Batching deletions up to 1000 items at a time to avoid BSON size limits
+        for i in range(0, len(or_conditions), 1000):
+            batch_conditions = or_conditions[i:i+1000]
+            sms_collection.delete_many({
+                "user_id": user_obj_id,
+                "$or": batch_conditions
+            })
+
         sms_collection.insert_many(docs)
     
     return docs
