@@ -426,3 +426,5 @@ def get_spam():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+#   T r i g g e r   H u g g i n g   F a c e   s y n c  
+ 
