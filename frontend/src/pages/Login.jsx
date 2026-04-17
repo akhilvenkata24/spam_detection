@@ -37,7 +37,7 @@ export function Login() {
 
                 <form onSubmit={handleLogin} className={styles.form}>
                     <div className={styles.inputGroup}>
-                        <label className={styles.label}>Operator ID</label>
+                        <label className={styles.label}>User ID</label>
                         <div className={styles.inputWrapper}>
                             <User className={styles.inputIcon} size={20} />
                             <input

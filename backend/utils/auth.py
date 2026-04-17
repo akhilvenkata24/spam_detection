@@ -1,14 +1,20 @@
 from datetime import datetime
 from bson import ObjectId
 import secrets
-from flask_bcrypt import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash as werkzeug_check
+try:
+    from flask_bcrypt import check_password_hash as bcrypt_check
+except ImportError:
+    # Fallback if flask-bcrypt is not available
+    bcrypt_check = None
 from utils.db import users_collection, history_collection
 
 def create_user(username, email, password):
     if users_collection.find_one({'$or': [{'username': username}, {'email': email}]}):
         return None, "User already exists"
 
-    pw_hash = generate_password_hash(password).decode('utf-8')
+    # Use fast pbkdf2 provided by werkzeug
+    pw_hash = generate_password_hash(password)
     api_key = f"sk_live_{secrets.token_hex(16)}"
     
     new_user = {
@@ -31,9 +37,28 @@ def verify_user(username_or_email, password):
     user = users_collection.find_one({
         '$or': [{'username': username_or_email}, {'email': username_or_email}]
     })
-    if user and check_password_hash(user['password_hash'], password):
-        user['_id'] = str(user['_id'])
-        return user
+    
+    if user:
+        pwd_hash = user['password_hash']
+        is_valid = False
+        
+        # Check if the hash is an old bcrypt hash
+        if pwd_hash.startswith('$2b$') and bcrypt_check:
+            is_valid = bcrypt_check(pwd_hash, password)
+            if is_valid:
+                # Upgrade hash dynamically for future fast logins
+                new_hash = generate_password_hash(password)
+                users_collection.update_one(
+                    {"_id": user['_id']},
+                    {"$set": {"password_hash": new_hash}}
+                )
+        else:
+            is_valid = werkzeug_check(pwd_hash, password)
+            
+        if is_valid:
+            user['_id'] = str(user['_id'])
+            return user
+            
     return None
 
 def get_user_by_id(user_id):
