@@ -1,0 +1,30 @@
+name: Sync Backend to Hugging Face Space
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Push to Hugging Face Hub
+        uses: nateraw/huggingface-sync-action@v0.0.5
+        with:
+          github_repo_id: ${{ github.repository }}
+          huggingface_repo_id: akhilvenkata24/spam-detection-api
+          repo_type: space
+          space_sdk: docker # or gradio / streamlit depending on your space setup
+          hf_token: ${{ secrets.HF_TOKEN }}
+          subdirectory: backend
