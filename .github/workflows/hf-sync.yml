@@ -22,12 +22,9 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Push to Hugging Face Hub
-        uses: nateraw/huggingface-sync-action@v0.0.5
-        with:
-          github_repo_id: ${{ github.repository }}
-          huggingface_repo_id: akhilvenkata24/spam-detection-api
-          repo_type: space
-          space_sdk: docker # or gradio / streamlit depending on your space setup
-          hf_token: ${{ secrets.HF_TOKEN }}
-          subdirectory: backend
+      - name: Push to Hugging Face Hub using CLI
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          pip install -U huggingface_hub
+          huggingface-cli upload akhilvenkata24/spam-detection-api ./backend . --repo-type space --commit-message "Sync backend from GitHub"
