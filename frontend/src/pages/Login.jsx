@@ -1,25 +1,35 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Lock, User, Terminal } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import styles from './Auth.module.css';
 
 export function Login() {
-    const navigate = useNavigate();
-    const { login } = useAuth();
+    const { login, token } = useAuth();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    useEffect(() => {
+        if (token) {
+            window.location.replace('/dashboard?auth=1');
+        }
+    }, [token]);
+
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
         setLoading(true);
-        
-        const result = await login(username, password);
-        if (!result.success) {
-            setError(result.message);
+
+        try {
+            const result = await login(username, password);
+            if (!result.success) {
+                setError(result.message);
+            } else {
+                window.location.replace('/dashboard?auth=1');
+            }
+        } finally {
             setLoading(false);
         }
     };

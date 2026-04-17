@@ -4,9 +4,11 @@ import { useAuth } from '../context/AuthContext';
 import styles from './Navbar.module.css';
 
 export function Navbar() {
-    const { user, logout } = useAuth();
+    const { user, token, logout } = useAuth();
     const location = useLocation();
     const isActive = (path) => location.pathname === path;
+    const displayName = user?.username || 'USER';
+    const hasSession = Boolean(token || user);
 
     return (
         <nav className={styles.navbar}>
@@ -30,10 +32,10 @@ export function Navbar() {
                 </div>
 
                 <div className={styles.authButtons}>
-                    {user ? (
+                    {hasSession ? (
                         <>
                             <span style={{ color: "var(--amber)", fontSize: "0.9rem", marginRight: "1rem" }}>
-                                {user.username}
+                                {displayName}
                             </span>
                             <button className={styles.loginBtn} onClick={logout} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                 <LogOut size={14} /> Logout

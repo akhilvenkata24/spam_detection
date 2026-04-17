@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BadgeCheck, Smartphone, Globe, Trash2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { apiUrl } from '../../lib/api';
 import styles from './Dashboard.module.css';
 
 export function ScanHistory() {
@@ -24,7 +25,7 @@ export function ScanHistory() {
 
         const pollHistory = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'}/api/dashboard/history?_t=${Date.now()}`, {
+                const res = await fetch(`${apiUrl('/api/dashboard/history')}?_t=${Date.now()}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 const data = await res.json();
@@ -49,7 +50,7 @@ export function ScanHistory() {
         e.stopPropagation();
         if (!confirm("Delete this scan record?")) return;
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'}/api/dashboard/history/${id}`, {
+            const res = await fetch(apiUrl(`/api/dashboard/history/${id}`), {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
@@ -86,7 +87,7 @@ export function ScanHistory() {
         if (selectedIds.size === 0) return;
         if (!confirm(`Delete ${selectedIds.size} records?`)) return;
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'}/api/dashboard/history/bulk`, {
+            const res = await fetch(apiUrl('/api/dashboard/history/bulk'), {
                 method: 'DELETE',
                 headers: { 
                     'Authorization': `Bearer ${token}`,

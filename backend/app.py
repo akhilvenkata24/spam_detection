@@ -11,6 +11,7 @@ from utils.ml_predict import load_models, predict_spam_probability
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity, verify_jwt_in_request
 from utils.auth import create_user, verify_user, get_user_by_id, get_user_by_api_key, save_scan_history, get_user_history, update_user_settings
 from utils.sms import save_user_sms, get_user_sms, get_spam_sms
+from utils.db import users_collection
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
@@ -21,8 +22,23 @@ app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET", "super-secret-jwt-key-cha
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(days=30)
 jwt = JWTManager(app)
 
-# Enable CORS for React frontend and anything else securely
-CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "https://your-frontend-domain.com", "*"]}})
+# Enable CORS for configured frontend origins.
+# Set CORS_ORIGINS as comma-separated values in production.
+cors_origins_env = os.getenv("CORS_ORIGINS", "")
+if cors_origins_env.strip():
+    cors_origins = [origin.strip() for origin in cors_origins_env.split(",") if origin.strip()]
+else:
+    cors_origins = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173"
+    ]
+
+CORS(
+    app,
+    resources={r"/*": {"origins": cors_origins}},
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization", "X-API-Key"]
+)
 
 # Rate Limiter
 limiter = Limiter(
@@ -37,6 +53,24 @@ API_KEY = os.getenv("API_KEY", "your_secret_api_key_here")
 
 # Initialize models
 load_models()
+
+def seed_local_demo_user():
+    if os.getenv("SEED_DEMO_USER", "true").lower() not in {"1", "true", "yes"}:
+        return
+
+    if users_collection.count_documents({}) > 0:
+        return
+
+    demo_username = os.getenv("DEMO_USERNAME", "demo_user")
+    demo_email = os.getenv("DEMO_EMAIL", "demo_user@test.local")
+    demo_password = os.getenv("DEMO_PASSWORD", "Demo@123")
+
+    user, error = create_user(demo_username, demo_email, demo_password)
+    if user and not error:
+        logger.info("Seeded local demo user: %s", demo_username)
+
+
+seed_local_demo_user()
 
 @app.route('/health', methods=['GET'])
 @limiter.exempt
@@ -57,7 +91,7 @@ def register():
     return jsonify({"status": "success", "message": "User registered successfully"}), 201
 
 @app.route('/api/auth/login', methods=['POST'])
-@limiter.limit("10 per minute")
+@limiter.limit("30 per minute")
 def login():
     data = request.json
     if not data or not data.get('username') or not data.get('password'):
@@ -77,6 +111,13 @@ def login():
             "settings": user['settings']
         }
     }), 200
+
+@app.errorhandler(429)
+def ratelimit_handler(e):
+    return jsonify({
+        "status": "error",
+        "message": "Too many login attempts. Please wait a moment and try again."
+    }), 429
 
 @app.route('/api/dashboard/history', methods=['GET'])
 @jwt_required()
@@ -425,6 +466,6 @@ def get_spam():
     return jsonify({"status": "success", "spam_messages": spam_messages}), 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=True)
 # Trigger Hugging Face sync
 

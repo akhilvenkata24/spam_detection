@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { LayoutDashboard, ShieldAlert, BadgeCheck } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { apiUrl } from '../../lib/api';
 import styles from './Dashboard.module.css';
 
 export function Stats() {
@@ -13,7 +14,7 @@ export function Stats() {
         
         const fetchStats = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'}/api/dashboard/stats?_t=${Date.now()}`, {
+                const res = await fetch(`${apiUrl('/api/dashboard/stats')}?_t=${Date.now()}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 const data = await res.json();

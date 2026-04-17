@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { AnalysisResult } from '../components/AnalysisResult';
 import { useAuth } from '../context/AuthContext';
+import { apiUrl } from '../lib/api';
 import styles from './Home.module.css';
 
 export function Home() {
@@ -22,7 +23,7 @@ export function Home() {
                 headers['Authorization'] = `Bearer ${token}`;
             }
 
-            const res = await fetch((import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000') + '/analyze', {
+            const res = await fetch(apiUrl('/analyze'), {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify({
