@@ -19,7 +19,7 @@ export function Register() {
         setError('');
         setLoading(true);
         
-        const result = await register(username, email, password);
+        const result = await register(username.trim(), email.trim(), password);
         if (result.success) {
             navigate('/login');
         } else {

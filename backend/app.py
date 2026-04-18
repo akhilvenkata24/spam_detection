@@ -53,7 +53,11 @@ def seed_local_demo_user():
     if os.getenv("SEED_DEMO_USER", "true").lower() not in {"1", "true", "yes"}:
         return
 
-    if users_collection.count_documents({}) > 0:
+    try:
+        if users_collection.count_documents({}) > 0:
+            return
+    except Exception as exc:
+        logger.warning("Skipping demo user seeding because MongoDB is unavailable: %s", exc)
         return
 
     demo_username = os.getenv("DEMO_USERNAME", "demo_user")

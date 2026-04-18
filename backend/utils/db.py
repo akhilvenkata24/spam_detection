@@ -1,8 +1,9 @@
 import os
 from pymongo import MongoClient
 
-# Use MONGO_URL if available, otherwise MONGO_URI, fallback to localhost
-MONGO_URI = os.getenv("MONGO_URL", os.getenv("MONGO_URI", "mongodb://localhost:27017"))
+# Use MONGO_URL if available, otherwise MONGO_URI, fallback to localhost.
+# The explicit `or` fallback avoids treating an empty env var as a valid URI.
+MONGO_URI = os.getenv("MONGO_URL") or os.getenv("MONGO_URI") or "mongodb://localhost:27017"
 DB_NAME = "spam_detection_db"
 
 client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)

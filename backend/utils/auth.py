@@ -9,7 +9,15 @@ except ImportError:
     bcrypt_check = None
 from utils.db import users_collection, history_collection
 
+
+def normalize_credential(value):
+    return value.strip() if isinstance(value, str) else value
+
 def create_user(username, email, password):
+    username = normalize_credential(username)
+    email = normalize_credential(email)
+    password = normalize_credential(password)
+
     if users_collection.find_one({'$or': [{'username': username}, {'email': email}]}):
         return None, "User already exists"
 
@@ -34,6 +42,9 @@ def create_user(username, email, password):
     return new_user, None
 
 def verify_user(username_or_email, password):
+    username_or_email = normalize_credential(username_or_email)
+    password = normalize_credential(password)
+
     user = users_collection.find_one({
         '$or': [{'username': username_or_email}, {'email': username_or_email}]
     })
