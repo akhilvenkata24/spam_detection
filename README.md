@@ -1,3 +1,11 @@
+---
+title: Spam Detection Backend
+emoji: 🚀
+colorFrom: blue
+colorTo: red
+sdk: docker
+pinned: false
+---
 # SPAM.DETECT — Advanced Threat & Spam Analysis
 
 A full-stack threat analysis platform, along with android app support that detects spam/phishing risk from message **content** using a hybrid engine:
