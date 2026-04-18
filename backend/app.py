@@ -394,8 +394,14 @@ def analyze():
         return jsonify(response), 200
 
     except Exception as e:
+        import traceback
         logger.error(f"Error during analysis: {str(e)}")
-        return jsonify({"status": "error", "message": "Internal server error occurred."}), 200
+        logger.error(traceback.format_exc())
+        return jsonify({
+            "status": "error",
+            "message": "Internal server error occurred.",
+            "debug": str(e)
+        }), 200
 
     finally:
         # Privacy: wipe temporary variables holding raw user content
