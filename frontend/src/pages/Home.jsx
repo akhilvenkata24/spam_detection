@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { AnalysisResult } from '../components/AnalysisResult';
 import { useAuth } from '../context/AuthContext';
-import { apiUrl } from '../lib/api';
+import { apiUrl, fetchWithRetry } from '../lib/api';
 import styles from './Home.module.css';
 
 export function Home() {
@@ -23,17 +23,40 @@ export function Home() {
                 headers['Authorization'] = `Bearer ${token}`;
             }
 
-            const res = await fetch(apiUrl('/analyze'), {
-                method: 'POST',
-                headers: headers,
-                body: JSON.stringify({
-                    text: text,
-                    source: "Web"
-                })
+            const requestBody = JSON.stringify({
+                text: text,
+                source: "Web"
             });
-            const data = await res.json();
 
-            if (data.status === 'success') {
+            const parseBody = async (res) => {
+                const textBody = await res.text();
+                if (!textBody) return {};
+                try {
+                    return JSON.parse(textBody);
+                } catch {
+                    return { message: textBody };
+                }
+            };
+
+            const runAnalyze = async (requestHeaders) => {
+                const res = await fetchWithRetry(apiUrl('/analyze'), {
+                    method: 'POST',
+                    headers: requestHeaders,
+                    body: requestBody
+                }, 3, 1000);
+                const data = await parseBody(res);
+                return { res, data };
+            };
+
+            let { res, data } = await runAnalyze(headers);
+
+            // If auth token is stale or rejected for this request, retry once anonymously.
+            if ((res.status === 401 || res.status === 422) && headers.Authorization) {
+                const anonymousHeaders = { 'Content-Type': 'application/json' };
+                ({ res, data } = await runAnalyze(anonymousHeaders));
+            }
+
+            if (res.ok && data.status === 'success') {
                 setResult({
                     score: data.risk_score,
                     flags: data.details.found_triggers || [],
@@ -46,11 +69,12 @@ export function Home() {
                     ]
                 });
             } else {
-                alert("Error analyzing threat: " + data.message);
+                const message = data.message || `Analysis failed (${res.status})`;
+                alert("Error analyzing threat: " + message);
             }
         } catch (error) {
             console.error(error);
-            alert("Failed to connect to the analysis engine. Make sure the backend is running.");
+            alert(`Failed to connect to the analysis engine: ${error.message}`);
         } finally {
             setIsAnalyzing(false);
         }

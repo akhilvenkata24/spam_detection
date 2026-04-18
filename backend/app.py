@@ -113,9 +113,16 @@ def login():
 
 @app.errorhandler(429)
 def ratelimit_handler(e):
+    if request.path == '/analyze':
+        message = "Too many analysis requests. Please wait a few seconds and try again."
+    elif request.path == '/api/auth/login':
+        message = "Too many login attempts. Please wait a moment and try again."
+    else:
+        message = "Too many requests. Please wait a moment and try again."
+
     return jsonify({
         "status": "error",
-        "message": "Too many login attempts. Please wait a moment and try again."
+        "message": message
     }), 429
 
 @app.route('/api/dashboard/history', methods=['GET'])
