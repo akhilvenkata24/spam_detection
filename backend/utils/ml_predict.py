@@ -18,6 +18,31 @@ model = None
 embedder = None
 sentiment_analyzer = None
 
+
+def fallback_ml_probability(raw_text: str) -> float:
+    """Estimate risk when full ML inference is unavailable."""
+    heur_res = parse_heuristics(raw_text)
+    url_res = analyze_urls(raw_text)
+
+    heur_score = heur_res['score'] / 100.0
+    url_risk = url_res['score'] / 100.0
+
+    neg_score = 0.0
+    try:
+        if sentiment_analyzer is None:
+            # Light fallback without loading the heavy embedder path.
+            local_sentiment = SentimentIntensityAnalyzer()
+            neg_score = local_sentiment.polarity_scores(raw_text)['neg']
+        else:
+            neg_score = sentiment_analyzer.polarity_scores(raw_text)['neg']
+    except Exception:
+        neg_score = 0.0
+
+    # Weighted proxy that correlates with the same metadata used by the main model.
+    proxy = (0.55 * heur_score) + (0.30 * url_risk) + (0.15 * neg_score)
+    # Keep within a practical confidence range and avoid hard constant outputs.
+    return float(max(0.05, min(0.95, proxy)))
+
 def load_models():
     """Load the BERT embedder, Sentiment Analyzer, and Classification model."""
     global model, embedder, sentiment_analyzer
@@ -56,7 +81,7 @@ def predict_spam_probability(raw_text: str) -> float:
         load_models()
         if model is None or embedder is None or sentiment_analyzer is None:
             print("Fallback used as models failed to load (likely OOM).")
-            return 0.1 # Fallback
+            return fallback_ml_probability(raw_text)
         
     cleaned = clean_text(raw_text)
     if len(cleaned) == 0:
@@ -91,4 +116,4 @@ def predict_spam_probability(raw_text: str) -> float:
         
     except Exception as e:
         print(f"Prediction error in advanced pipeline: {e}")
-        return 0.1
+        return fallback_ml_probability(raw_text)
