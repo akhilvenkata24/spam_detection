@@ -1,7 +1,7 @@
 ## SPAM.DETECT — Advanced Threat & Spam Analysis
 
 **Download the Android APK (Release V1):**  
-[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/akhilvenkata24/spam_detection/releases/download/V1/app_debug.apk)
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/akhilvenkata24/spam_detection/releases/download/V1/app-debug.apk)
 
 > If the filename is different in your release assets, replace `spam_detect.apk` in the link above with the exact APK asset name.
 
