@@ -1,12 +1,7 @@
----
-title: Spam Detection Backend
-emoji: 🚀
-colorFrom: blue
-colorTo: red
-sdk: docker
-pinned: false
----
-# SPAM.DETECT — Advanced Threat & Spam Analysis
+## SPAM.DETECT — Advanced Threat & Spam Analysis
+
+**Download the Android APK (Release V1):**  
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/akhilvenkata24/spam_detection/releases/download/V1/app-debug.apk)
 
 A full-stack threat analysis platform, along with android app support that detects spam/phishing risk from message **content** using a hybrid engine:
 - Rule-based heuristics
@@ -103,6 +98,13 @@ spam_detection-main/
 When no URL exists:
 - Heuristics: 40%
 - ML: 60%
+
+---
+
+## Android App (APK) — Install Notes
+- Download using the button above (Release **V1**).
+- Install the APK (you may need to allow **Install unknown apps**).
+- The app may request SMS permissions (e.g., `READ_SMS`) to analyze message content for spam/phishing detection.
 
 ---
 
