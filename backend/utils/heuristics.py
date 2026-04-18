@@ -1,5 +1,68 @@
 import re
 
+
+CATEGORY_RULES = [
+    (
+        "urgency",
+        15,
+        "urgency/coercion language",
+        [
+            re.compile(r"\burgent\b"),
+            re.compile(r"\bimmediately\b"),
+            re.compile(r"\bact now\b"),
+            re.compile(r"\blimited time\b"),
+            re.compile(r"\bexpires soon\b"),
+            re.compile(r"\bwithin\s+\d+\s*(?:mins?|minutes?|hours?)\b"),
+            re.compile(r"\bfinal (?:warning|notice)\b"),
+        ],
+    ),
+    (
+        "account_threat",
+        25,
+        "account lock/suspension threat",
+        [
+            re.compile(r"\baccount\s+(?:has\s+been\s+)?(?:locked|blocked|restricted|suspended)\b"),
+            re.compile(r"\bunauthorized activity\b"),
+            re.compile(r"\bprevent suspension\b"),
+            re.compile(r"\bsecurity alert\b"),
+            re.compile(r"\bverify your account\b"),
+        ],
+    ),
+    (
+        "credential_harvest",
+        30,
+        "credential or banking detail request",
+        [
+            re.compile(r"\bverify\s+(?:your\s+)?(?:identity|details|information)\b"),
+            re.compile(r"\bprovide\s+(?:your\s+)?(?:bank|card|account|otp|cvv|pin|password|details?)\b"),
+            re.compile(r"\bbank details?\b"),
+            re.compile(r"\bkyc\s*(?:update|verification)?\b"),
+            re.compile(r"\blogin\s+to\s+verify\b"),
+        ],
+    ),
+    (
+        "financial_lure",
+        20,
+        "financial lure / reward bait",
+        [
+            re.compile(r"\bflat\s*\d{1,3}%\s*off\b"),
+            re.compile(r"\bexclusive\b"),
+            re.compile(r"\bdirect\s+credit\b"),
+            re.compile(r"\bcredit\s+of\s*(?:rs\.?|inr|₹)\s*\d+[\d,]*\b"),
+            re.compile(r"\b(?:won|prize|lottery|claim|cashback|bonus|inheritance)\b"),
+            re.compile(r"(?:rs\.?|inr|₹)\s*\d+[\d,]*"),
+        ],
+    ),
+    (
+        "short_link",
+        20,
+        "shortened or obfuscated link",
+        [
+            re.compile(r"\b(?:bit\.ly|tinyurl\.com|t\.ly|is\.gd|goo\.gl|ow\.ly|buff\.ly)\b"),
+        ],
+    ),
+]
+
 def parse_heuristics(text: str) -> dict:
     """
     Stage 1: Heuristic Analysis (fast regex + keyword rules)
@@ -21,70 +84,8 @@ def parse_heuristics(text: str) -> dict:
     }
 
     # Match at most once per category to avoid over-penalizing duplicates.
-    categories = [
-        (
-            "urgency",
-            15,
-            "urgency/coercion language",
-            [
-                r"\burgent\b",
-                r"\bimmediately\b",
-                r"\bact now\b",
-                r"\blimited time\b",
-                r"\bexpires soon\b",
-                r"\bwithin\s+\d+\s*(?:mins?|minutes?|hours?)\b",
-                r"\bfinal (?:warning|notice)\b",
-            ],
-        ),
-        (
-            "account_threat",
-            25,
-            "account lock/suspension threat",
-            [
-                r"\baccount\s+(?:has\s+been\s+)?(?:locked|blocked|restricted|suspended)\b",
-                r"\bunauthorized activity\b",
-                r"\bprevent suspension\b",
-                r"\bsecurity alert\b",
-                r"\bverify your account\b",
-            ],
-        ),
-        (
-            "credential_harvest",
-            30,
-            "credential or banking detail request",
-            [
-                r"\bverify\s+(?:your\s+)?(?:identity|details|information)\b",
-                r"\bprovide\s+(?:your\s+)?(?:bank|card|account|otp|cvv|pin|password|details?)\b",
-                r"\bbank details?\b",
-                r"\bkyc\s*(?:update|verification)?\b",
-                r"\blogin\s+to\s+verify\b",
-            ],
-        ),
-        (
-            "financial_lure",
-            20,
-            "financial lure / reward bait",
-            [
-                r"\bflat\s*\d{1,3}%\s*off\b",
-                r"\bexclusive\b",
-                r"\bdirect\s+credit\b",
-                r"\bcredit\s+of\s*(?:rs\.?|inr|₹)\s*\d+[\d,]*\b",
-                r"\b(?:won|prize|lottery|claim|cashback|bonus|inheritance)\b",
-                r"(?:rs\.?|inr|₹)\s*\d+[\d,]*",
-            ],
-        ),
-        (
-            "short_link",
-            20,
-            "shortened or obfuscated link",
-            [
-                r"\b(?:bit\.ly|tinyurl\.com|t\.ly|is\.gd|goo\.gl|ow\.ly|buff\.ly)\b",
-            ],
-        ),
-    ]
-
-    for category, weight, trigger_label, patterns in categories:
-        if any(re.search(pattern, text_lower) for pattern in patterns):
+    for category, weight, trigger_label, patterns in CATEGORY_RULES:
+        if any(pattern.search(text_lower) for pattern in patterns):
             category_matches[category] = True
             score += weight
             triggers.append(trigger_label)

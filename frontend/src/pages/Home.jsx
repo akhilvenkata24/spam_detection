@@ -15,6 +15,7 @@ export function Home() {
         if (!text.trim()) return;
 
         setIsAnalyzing(true);
+        setResult(null);
         try {
             const headers = {
                 'Content-Type': 'application/json',

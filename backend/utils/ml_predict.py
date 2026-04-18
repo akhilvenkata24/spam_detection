@@ -12,6 +12,7 @@ from utils.url_utils import analyze_urls
 # Paths to the saved models
 MODELS_DIR = Path(__file__).parent.parent / 'models'
 MODEL_PATH = MODELS_DIR / 'spam_ensemble_model.pkl'
+MIN_MODEL_SIZE_BYTES = 1024
 
 # Global variables to hold models in memory
 model = None
@@ -19,24 +20,27 @@ embedder = None
 sentiment_analyzer = None
 
 
-def fallback_ml_probability(raw_text: str) -> float:
+def fallback_ml_probability(raw_text: str, heur_res: dict | None = None, url_res: dict | None = None, neg_score: float | None = None) -> float:
     """Estimate risk when full ML inference is unavailable."""
-    heur_res = parse_heuristics(raw_text)
-    url_res = analyze_urls(raw_text)
+    if heur_res is None:
+        heur_res = parse_heuristics(raw_text)
+    if url_res is None:
+        url_res = analyze_urls(raw_text)
 
     heur_score = heur_res['score'] / 100.0
     url_risk = url_res['score'] / 100.0
 
-    neg_score = 0.0
-    try:
-        if sentiment_analyzer is None:
-            # Light fallback without loading the heavy embedder path.
-            local_sentiment = SentimentIntensityAnalyzer()
-            neg_score = local_sentiment.polarity_scores(raw_text)['neg']
-        else:
-            neg_score = sentiment_analyzer.polarity_scores(raw_text)['neg']
-    except Exception:
+    if neg_score is None:
         neg_score = 0.0
+        try:
+            if sentiment_analyzer is None:
+                # Light fallback without loading the heavy embedder path.
+                local_sentiment = SentimentIntensityAnalyzer()
+                neg_score = local_sentiment.polarity_scores(raw_text)['neg']
+            else:
+                neg_score = sentiment_analyzer.polarity_scores(raw_text)['neg']
+        except Exception:
+            neg_score = 0.0
 
     # Weighted proxy that correlates with the same metadata used by the main model.
     proxy = (0.55 * heur_score) + (0.30 * url_risk) + (0.15 * neg_score)
@@ -57,10 +61,17 @@ def load_models():
         
     if MODEL_PATH.exists():
         try:
+            if MODEL_PATH.stat().st_size < MIN_MODEL_SIZE_BYTES:
+                raise ValueError(
+                    f"Model artifact is too small ({MODEL_PATH.stat().st_size} bytes)."
+                )
             model = joblib.load(MODEL_PATH)
+            if not hasattr(model, 'predict_proba'):
+                raise TypeError("Loaded model does not support predict_proba")
             print("Ensemble Model loaded successfully.")
         except Exception as e:
             print(f"Error loading classification model: {e}")
+            model = None
     else:
         print("Warning: Ensemble model file not found. Using fallback prediction.")
 
@@ -71,7 +82,7 @@ def clean_text(text: str) -> str:
     text = re.sub(r'https?://[^\s]+|www\.[^\s]+', '', text)
     return text.strip()
 
-def predict_spam_probability(raw_text: str) -> float:
+def predict_spam_probability(raw_text: str, heur_res: dict | None = None, url_res: dict | None = None) -> float:
     """
     Stage 3: Advanced ML Classifier
     Returns the probability of the message being spam/phishing (0.0 to 1.0)
@@ -97,11 +108,13 @@ def predict_spam_probability(raw_text: str) -> float:
         neg_score = sentiment['neg']
         
         # B. Heuristics
-        heur_res = parse_heuristics(raw_text)
+        if heur_res is None:
+            heur_res = parse_heuristics(raw_text)
         heur_score = heur_res['score'] / 100.0
         
         # C. URLs
-        url_res = analyze_urls(raw_text)
+        if url_res is None:
+            url_res = analyze_urls(raw_text)
         url_count = 1 if url_res['expanded_urls'] else 0
         url_risk = url_res['score'] / 100.0
         
@@ -116,4 +129,4 @@ def predict_spam_probability(raw_text: str) -> float:
         
     except Exception as e:
         print(f"Prediction error in advanced pipeline: {e}")
-        return fallback_ml_probability(raw_text)
+        return fallback_ml_probability(raw_text, heur_res=heur_res, url_res=url_res)

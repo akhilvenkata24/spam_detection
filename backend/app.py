@@ -1,5 +1,7 @@
 import os
 import logging
+import json
+from pathlib import Path
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_limiter import Limiter
@@ -70,6 +72,41 @@ def seed_local_demo_user():
 
 
 seed_local_demo_user()
+
+
+DEFAULT_SCORE_THRESHOLDS = {
+    "safe_max": 40,
+    "suspicious_max": 70,
+    "high_risk_max": 85,
+}
+
+
+def load_score_thresholds() -> dict:
+    config_path = Path(__file__).resolve().parent / "models" / "score_thresholds.json"
+    if not config_path.exists():
+        return DEFAULT_SCORE_THRESHOLDS.copy()
+
+    try:
+        payload = json.loads(config_path.read_text(encoding="utf-8"))
+        safe_max = int(payload.get("safe_max", DEFAULT_SCORE_THRESHOLDS["safe_max"]))
+        suspicious_max = int(payload.get("suspicious_max", DEFAULT_SCORE_THRESHOLDS["suspicious_max"]))
+        high_risk_max = int(payload.get("high_risk_max", DEFAULT_SCORE_THRESHOLDS["high_risk_max"]))
+
+        if not (0 < safe_max < suspicious_max < high_risk_max <= 100):
+            logger.warning("Invalid calibrated thresholds in %s. Falling back to defaults.", config_path)
+            return DEFAULT_SCORE_THRESHOLDS.copy()
+
+        return {
+            "safe_max": safe_max,
+            "suspicious_max": suspicious_max,
+            "high_risk_max": high_risk_max,
+        }
+    except Exception as exc:
+        logger.warning("Failed to load score thresholds: %s", exc)
+        return DEFAULT_SCORE_THRESHOLDS.copy()
+
+
+SCORE_THRESHOLDS = load_score_thresholds()
 
 @app.route('/health', methods=['GET'])
 @limiter.exempt
@@ -294,7 +331,7 @@ def analyze():
         triggers.extend(url_results["triggers"])
         
         # --- Stage 3: ML Classifier ---
-        ml_probability = predict_spam_probability(raw_text)
+        ml_probability = predict_spam_probability(raw_text, heur_res=heuristic_results, url_res=url_results)
         ml_score_out_of_100 = ml_probability * 100
         
         # --- Risk Aggregator ---
@@ -348,6 +385,8 @@ def analyze():
         # A message that triggers core scam indicators should not remain in SAFE only
         # because the ML probability is low.
         if not extracted_urls:
+            if any("urgency" in t for t in trigger_set):
+                final_score = max(final_score, 30)
             if has_financial_lure:
                 final_score = max(final_score, 40)
             if has_credential_request:
@@ -360,13 +399,13 @@ def analyze():
         final_score_clamped = max(0, min(100, int(round(final_score))))
         
         # Assign Verdict based on new aggregated score
-        if final_score_clamped < 40:
+        if final_score_clamped < SCORE_THRESHOLDS["safe_max"]:
             verdict = "safe"
             reason = "Message looks normal. No obvious threat indicators."
-        elif final_score_clamped < 70:
+        elif final_score_clamped < SCORE_THRESHOLDS["suspicious_max"]:
             verdict = "suspicious"
             reason = "Contains some risk indicators. Proceed with caution."
-        elif final_score_clamped < 85:
+        elif final_score_clamped < SCORE_THRESHOLDS["high_risk_max"]:
             verdict = "high_risk"
             reason = "High likelihood of spam. Do not click links."
         else:
@@ -397,7 +436,7 @@ def analyze():
         import traceback
         logger.error(f"Error during analysis: {str(e)}")
         logger.error(traceback.format_exc())
-        return jsonify({"status": "error", "message": "Internal server error occurred."}), 200
+        return jsonify({"status": "error", "message": "Internal server error occurred."}), 500
 
     finally:
         # Privacy: wipe temporary variables holding raw user content

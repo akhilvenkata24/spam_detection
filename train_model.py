@@ -3,6 +3,7 @@ import numpy as np
 import joblib
 import os
 import sys
+from urllib.parse import urlparse
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import MultinomialNB, GaussianNB
 from sklearn.model_selection import train_test_split
@@ -14,7 +15,30 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'backend')))
 from utils.ml_predict import clean_text
 from utils.heuristics import parse_heuristics
-from utils.url_utils import analyze_urls
+from utils.url_utils import extract_urls
+
+
+def fast_training_url_features(text: str):
+    """Cheap URL features for offline training without WHOIS/network calls."""
+    urls = extract_urls(text)
+    if not urls:
+        return 0, 0.0
+
+    suspicious_score = 0
+    suspicious_tlds = ['.xyz', '.top', '.click', '.loan', '.buzz', '.info', '.tk', '.ml']
+    for url in urls:
+        parsed = urlparse(url if url.startswith(('http://', 'https://')) else f'http://{url}')
+        domain = parsed.netloc.lower()
+        if any(domain.endswith(tld) for tld in suspicious_tlds):
+            suspicious_score += 1
+        if domain.count('-') >= 2:
+            suspicious_score += 1
+        if any(k in domain for k in ['login', 'verify', 'update', 'secure', 'account', 'bank']):
+            suspicious_score += 1
+
+    url_count = 1
+    normalized_risk = min(1.0, suspicious_score / max(1, len(urls) * 3))
+    return url_count, normalized_risk
 
 def extract_metadata_features(text, sentiment_analyzer):
     # 1. Sentiment & Urgency
@@ -25,11 +49,8 @@ def extract_metadata_features(text, sentiment_analyzer):
     heur_res = parse_heuristics(text)
     heur_score = heur_res['score'] / 100.0 # Normalize 0-1
     
-    # 3. URL Count & Risk (Static only for speed during training)
-    # Using the exact same extractor the backend uses
-    url_res = analyze_urls(text)
-    url_count = 1 if url_res['expanded_urls'] else 0
-    url_risk = url_res['score'] / 100.0 # Normalize 0-1
+    # 3. URL Count & Risk (fast local-only extraction for training speed)
+    url_count, url_risk = fast_training_url_features(text)
     
     return [neg_score, heur_score, url_count, url_risk]
 
@@ -96,6 +117,8 @@ def train_and_save_advanced_model(dataset_path: str, models_dir: str):
             best_name = name
             
     print(f"\nBest Model: {best_name} ({best_acc:.4f})")
+    if best_model is None:
+        raise RuntimeError("No valid model was trained; aborting artifact save.")
     print(classification_report(y_test, best_model.predict(X_test), target_names=['Legit', 'Phishing']))
     
     # Save the winning model
