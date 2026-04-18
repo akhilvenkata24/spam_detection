@@ -338,6 +338,24 @@ def analyze():
         if user_settings.get("auto_flag", False) and url_risk > 0:
             final_score = 100
             triggers.append("SYSTEM OVERRIDE: Auto-Flagged Malicious Link")
+
+        # 5. Trigger-aware floor rules (especially for no-link social-engineering spam)
+        trigger_set = {str(t).lower() for t in triggers}
+        has_financial_lure = any("financial lure" in t for t in trigger_set)
+        has_credential_request = any("credential" in t or "banking detail" in t for t in trigger_set)
+        has_account_threat = any("account lock" in t or "account takeover" in t for t in trigger_set)
+
+        # A message that triggers core scam indicators should not remain in SAFE only
+        # because the ML probability is low.
+        if not extracted_urls:
+            if has_financial_lure:
+                final_score = max(final_score, 40)
+            if has_credential_request:
+                final_score = max(final_score, 65)
+            if has_account_threat and has_credential_request:
+                final_score = max(final_score, 80)
+            if len(trigger_set) >= 2:
+                final_score = max(final_score, 55)
             
         final_score_clamped = max(0, min(100, int(round(final_score))))
         
