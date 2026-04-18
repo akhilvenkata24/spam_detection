@@ -45,9 +45,10 @@ export const AuthProvider = ({ children }) => {
         navigate('/login');
     }, [navigate]);
 
-    // Check if token exists on load, restore user details and set auto logout
+    // Check if token exists on load, restore user details and keep expiry checks safe.
+    // A direct setTimeout with 30-day JWT lifetimes can overflow browser timer limits.
     useEffect(() => {
-        let timeoutId;
+        let intervalId;
         
         if (token) {
             const savedUser = localStorage.getItem('user') || sessionStorage.getItem('user');
@@ -63,11 +64,19 @@ export const AuthProvider = ({ children }) => {
             
             const tokenData = parseJwtPayload(token);
             if (tokenData && tokenData.exp) {
-                const expiresIn = (tokenData.exp * 1000) - Date.now();
-                if (expiresIn > 0) {
-                    timeoutId = setTimeout(() => {
+                const expiresAt = tokenData.exp * 1000;
+                const checkExpiry = () => {
+                    if (Date.now() >= expiresAt) {
                         logout();
-                    }, expiresIn);
+                        return true;
+                    }
+                    return false;
+                };
+
+                if (!checkExpiry()) {
+                    intervalId = setInterval(() => {
+                        checkExpiry();
+                    }, 60000);
                 } else {
                     logout();
                 }
@@ -78,8 +87,8 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
         
         return () => {
-            if (timeoutId) {
-                clearTimeout(timeoutId);
+            if (intervalId) {
+                clearInterval(intervalId);
             }
         };
     }, [token, user, logout]);
