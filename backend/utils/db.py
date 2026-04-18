@@ -1,7 +1,7 @@
 import os
 from pymongo import MongoClient
 
-# Use Railway's MONGO_URL if available, otherwise MONGO_URI, fallback to localhost
+# Use MONGO_URL if available, otherwise MONGO_URI, fallback to localhost
 MONGO_URI = os.getenv("MONGO_URL", os.getenv("MONGO_URI", "mongodb://localhost:27017"))
 DB_NAME = "spam_detection_db"
 

@@ -2,7 +2,7 @@
 
 This project is easiest to deploy with:
 - Frontend: Render Static Site
-- Backend: Render Web Service (Docker)
+- Backend: Hugging Face Spaces (Docker)
 - Database: MongoDB Atlas
 
 ## 1) MongoDB Atlas
@@ -11,18 +11,16 @@ This project is easiest to deploy with:
 3. In Network Access, allow your deployment platform IPs (or use temporary 0.0.0.0/0 for testing).
 4. Copy the `mongodb+srv://...` connection string.
 
-## 2) Deploy Backend on Render
-1. Create a new Web Service from this repository.
-2. Set Root Directory to `backend`.
-3. Choose Docker deploy (Render auto-detects `backend/Dockerfile`).
-4. Add environment variables:
+## 2) Deploy Backend on Hugging Face Spaces
+1. Create a new Space on [Hugging Face](https://huggingface.co/spaces).
+2. Choose **Docker** as the Space SDK.
+3. Select "Blank" template.
+4. Clone your repository into the Space or sync it via GitHub.
+5. In the Space settings, add your Secrets (Environment Variables):
    - `JWT_SECRET` (required)
    - `MONGO_URI` (required)
-   - `API_KEY` (optional)
-   - `CORS_ORIGINS` (required, set to your frontend URL)
-   - `SEED_DEMO_USER=false` (recommended for production)
-5. Deploy and verify:
-   - `GET https://<your-backend-domain>/health` should return `{ "status": "ok" }`.
+   - `CORS_ORIGINS` (required, set to `*` or your frontend URL)
+6. Once built, the backend will run at your Hugging Face Space URL.
 
 ## 3) Deploy Frontend on Render
 1. Create a new Static Site from this repository.
