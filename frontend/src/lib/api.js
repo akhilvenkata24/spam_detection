@@ -9,7 +9,11 @@ export function apiUrl(path) {
 export async function fetchWithRetry(url, options = {}, retries = 10, backoff = 2000) {
     for (let i = 0; i < retries; i++) {
         try {
-            const response = await fetch(url, options);
+            // Bust browser CORS preflight cache by appending a timestamp
+            const separator = url.includes('?') ? '&' : '?';
+            const cacheBustedUrl = `${url}${separator}cb=${Date.now()}_${i}`;
+            
+            const response = await fetch(cacheBustedUrl, options);
             return response;
         } catch (error) {
             console.warn(`Fetch attempt ${i + 1} failed:`, error.message);
