@@ -1,4 +1,4 @@
-﻿import os
+import os
 import logging
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -24,14 +24,13 @@ jwt = JWTManager(app)
 
 # Enable CORS for configured frontend origins.
 # Set CORS_ORIGINS as comma-separated values in production.
-cors_origins_env = os.getenv("CORS_ORIGINS", "")
-if cors_origins_env.strip():
+cors_origins_env = os.getenv("CORS_ORIGINS", "*")
+if cors_origins_env == "*":
+    cors_origins = "*"
+elif cors_origins_env.strip():
     cors_origins = [origin.strip() for origin in cors_origins_env.split(",") if origin.strip()]
 else:
-    cors_origins = [
-        "http://localhost:5173",
-        "http://127.0.0.1:5173"
-    ]
+    cors_origins = "*"
 
 CORS(
     app,
