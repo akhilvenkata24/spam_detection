@@ -105,8 +105,9 @@ export const AuthProvider = ({ children }) => {
                 return { success: false, message: data.message || `Login failed (${res.status})` };
             }
         } catch (err) {
+            console.error("Login caught error: ", err);
             const target = API_BASE_URL || window.location.origin;
-            return { success: false, message: `Server connection failed (${target})` };
+            return { success: false, message: `Server connection failed (${target}) - ${err.message}` };
         }
     };
 
