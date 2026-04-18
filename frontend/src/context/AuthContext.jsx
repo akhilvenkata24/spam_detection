@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { API_BASE_URL, apiUrl } from '../lib/api';
+import { API_BASE_URL, apiUrl, fetchWithRetry } from '../lib/api';
 
 const AuthContext = createContext(null);
 
@@ -86,7 +86,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (username, password) => {
         try {
-            const res = await fetch(apiUrl('/api/auth/login'), {
+            const res = await fetchWithRetry(apiUrl('/api/auth/login'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
@@ -112,7 +112,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (username, email, password) => {
         try {
-            const res = await fetch(apiUrl('/api/auth/register'), {
+            const res = await fetchWithRetry(apiUrl('/api/auth/register'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, email, password })
