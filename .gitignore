@@ -62,6 +62,8 @@ frontend/*.local
 frontend/.env
 frontend/.env.*
 !frontend/.env.example
+!frontend/src/lib/
+!frontend/src/lib/**
 
 # Large data files
 *.csv
