@@ -1,8 +1,17 @@
 const configuredApiBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim();
 
-// Use the Render-provided environment variable when available, with a safe fallback
-// to the deployed Hugging Face backend for local/testing setups.
-export const API_BASE_URL = (configuredApiBaseUrl || 'https://akhilvenkata24-spam-detect-backend.hf.space').replace(/\/$/, '');
+const localDevApiBaseUrl = 'http://127.0.0.1:5000';
+const hostedApiBaseUrl = 'https://akhilvenkata24-spam-detect-backend.hf.space';
+
+// Priority:
+// 1) Explicit VITE_API_BASE_URL
+// 2) Local backend when running on localhost
+// 3) Hosted backend fallback
+const defaultApiBaseUrl = window.location.hostname === 'localhost'
+    ? localDevApiBaseUrl
+    : hostedApiBaseUrl;
+
+export const API_BASE_URL = (configuredApiBaseUrl || defaultApiBaseUrl).replace(/\/$/, '');
 
 export function apiUrl(path) {
     const normalizedPath = path.startsWith('/') ? path : `/${path}`;
