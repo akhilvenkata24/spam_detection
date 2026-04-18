@@ -242,9 +242,9 @@ def analyze():
     #     return jsonify({"status": "error", "message": "Unauthorized API Key"}), 401
 
     try:
-        data = request.json
+        data = request.get_json(silent=True)
         if not data or 'text' not in data:
-            return jsonify({"status": "error", "message": "Missing 'text' field in request body"}), 400
+            return jsonify({"status": "error", "message": "Missing or invalid JSON body. Expected {'text': '...'}"}), 400
         
         # Extract text into temporary memory
         raw_text = str(data.get('text', ''))
@@ -397,11 +397,7 @@ def analyze():
         import traceback
         logger.error(f"Error during analysis: {str(e)}")
         logger.error(traceback.format_exc())
-        return jsonify({
-            "status": "error",
-            "message": "Internal server error occurred.",
-            "debug": str(e)
-        }), 200
+        return jsonify({"status": "error", "message": "Internal server error occurred."}), 200
 
     finally:
         # Privacy: wipe temporary variables holding raw user content
