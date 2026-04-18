@@ -1,6 +1,5 @@
 import os
 import logging
-import re
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_limiter import Limiter
@@ -23,31 +22,17 @@ app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET", "super-secret-jwt-key-cha
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(days=30)
 jwt = JWTManager(app)
 
-# Enable CORS for configured frontend origins.
-# Keep a permissive default for hosted web clients so a stale deployment
-# environment variable does not block browser login while mobile auth still works.
-cors_origins_env = os.getenv("CORS_ORIGINS", "*").strip()
-if cors_origins_env == "*" or not cors_origins_env:
-    cors_origins = "*"
-else:
-    cors_origins = [
-        origin.strip()
-        for origin in cors_origins_env.split(",")
-        if origin.strip()
-    ]
-    cors_origins.extend(
-        [
-            re.compile(r"^https://.*\.onrender\.com$"),
-            re.compile(r"^http://localhost(:\d+)?$"),
-            re.compile(r"^http://127\.0\.0\.1(:\d+)?$"),
-        ]
-    )
+# Enable CORS for browser clients.
+# The app uses JWTs in local/session storage rather than cookies, so the login
+# flow does not need a restricted origin list to stay secure.
+cors_origins = "*"
 
 CORS(
     app,
     resources={r"/*": {"origins": cors_origins}},
     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allow_headers=["Content-Type", "Authorization", "X-API-Key"]
+    allow_headers=["Content-Type", "Authorization", "X-API-Key"],
+    supports_credentials=False,
 )
 
 # Rate Limiter
