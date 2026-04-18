@@ -1,0 +1,3493 @@
+{
+  "summary": {
+    "records": 20469,
+    "positive": 11644,
+    "negative": 8825
+  },
+  "unigrams": [
+    {
+      "term": "keywords",
+      "score": 6.4565,
+      "pos_count": 6002,
+      "neg_count": 0
+    },
+    {
+      "term": "security",
+      "score": 5.9836,
+      "pos_count": 3740,
+      "neg_count": 0
+    },
+    {
+      "term": "verification",
+      "score": 5.3598,
+      "pos_count": 2004,
+      "neg_count": 0
+    },
+    {
+      "term": "fund",
+      "score": 5.2842,
+      "pos_count": 1858,
+      "neg_count": 0
+    },
+    {
+      "term": "provide",
+      "score": 5.2641,
+      "pos_count": 1821,
+      "neg_count": 0
+    },
+    {
+      "term": "assist",
+      "score": 5.2135,
+      "pos_count": 1731,
+      "neg_count": 0
+    },
+    {
+      "term": "confidential",
+      "score": 5.1159,
+      "pos_count": 1570,
+      "neg_count": 0
+    },
+    {
+      "term": "claim",
+      "score": 5.075,
+      "pos_count": 1507,
+      "neg_count": 0
+    },
+    {
+      "term": "united",
+      "score": 5.0549,
+      "pos_count": 1477,
+      "neg_count": 0
+    },
+    {
+      "term": "fax",
+      "score": 5.0106,
+      "pos_count": 1413,
+      "neg_count": 0
+    },
+    {
+      "term": "funds",
+      "score": 4.9464,
+      "pos_count": 1325,
+      "neg_count": 0
+    },
+    {
+      "term": "restore",
+      "score": 4.8985,
+      "pos_count": 1263,
+      "neg_count": 0
+    },
+    {
+      "term": "million",
+      "score": 4.8973,
+      "pos_count": 2524,
+      "neg_count": 1
+    },
+    {
+      "term": "investment",
+      "score": 4.8921,
+      "pos_count": 1255,
+      "neg_count": 0
+    },
+    {
+      "term": "government",
+      "score": 4.8728,
+      "pos_count": 1231,
+      "neg_count": 0
+    },
+    {
+      "term": "immediate",
+      "score": 4.8356,
+      "pos_count": 1186,
+      "neg_count": 0
+    },
+    {
+      "term": "thousand",
+      "score": 4.7467,
+      "pos_count": 1085,
+      "neg_count": 0
+    },
+    {
+      "term": "detected",
+      "score": 4.7439,
+      "pos_count": 1082,
+      "neg_count": 0
+    },
+    {
+      "term": "kin",
+      "score": 4.7412,
+      "pos_count": 1079,
+      "neg_count": 0
+    },
+    {
+      "term": "desk",
+      "score": 4.7182,
+      "pos_count": 2110,
+      "neg_count": 1
+    },
+    {
+      "term": "interruption",
+      "score": 4.685,
+      "pos_count": 1020,
+      "neg_count": 0
+    },
+    {
+      "term": "expenses",
+      "score": 4.6642,
+      "pos_count": 999,
+      "neg_count": 0
+    },
+    {
+      "term": "states",
+      "score": 4.6501,
+      "pos_count": 985,
+      "neg_count": 0
+    },
+    {
+      "term": "access",
+      "score": 4.6327,
+      "pos_count": 2906,
+      "neg_count": 2
+    },
+    {
+      "term": "compliance",
+      "score": 4.6192,
+      "pos_count": 955,
+      "neg_count": 0
+    },
+    {
+      "term": "enable",
+      "score": 4.6087,
+      "pos_count": 945,
+      "neg_count": 0
+    },
+    {
+      "term": "notification",
+      "score": 4.6013,
+      "pos_count": 938,
+      "neg_count": 0
+    },
+    {
+      "term": "expire",
+      "score": 4.5533,
+      "pos_count": 894,
+      "neg_count": 0
+    },
+    {
+      "term": "assistance",
+      "score": 4.4976,
+      "pos_count": 1692,
+      "neg_count": 1
+    },
+    {
+      "term": "username",
+      "score": 4.4863,
+      "pos_count": 836,
+      "neg_count": 0
+    },
+    {
+      "term": "president",
+      "score": 4.4145,
+      "pos_count": 778,
+      "neg_count": 0
+    },
+    {
+      "term": "foreigner",
+      "score": 4.4119,
+      "pos_count": 776,
+      "neg_count": 0
+    },
+    {
+      "term": "private",
+      "score": 4.4035,
+      "pos_count": 1540,
+      "neg_count": 1
+    },
+    {
+      "term": "therefore",
+      "score": 4.3884,
+      "pos_count": 758,
+      "neg_count": 0
+    },
+    {
+      "term": "provided",
+      "score": 4.3884,
+      "pos_count": 758,
+      "neg_count": 0
+    },
+    {
+      "term": "discovered",
+      "score": 4.3792,
+      "pos_count": 751,
+      "neg_count": 0
+    },
+    {
+      "term": "expires",
+      "score": 4.355,
+      "pos_count": 733,
+      "neg_count": 0
+    },
+    {
+      "term": "attention",
+      "score": 4.3529,
+      "pos_count": 1464,
+      "neg_count": 1
+    },
+    {
+      "term": "seek",
+      "score": 4.3495,
+      "pos_count": 729,
+      "neg_count": 0
+    },
+    {
+      "term": "charity",
+      "score": 4.3454,
+      "pos_count": 726,
+      "neg_count": 0
+    },
+    {
+      "term": "2fa",
+      "score": 4.3315,
+      "pos_count": 716,
+      "neg_count": 0
+    },
+    {
+      "term": "international",
+      "score": 4.3315,
+      "pos_count": 716,
+      "neg_count": 0
+    },
+    {
+      "term": "temporary",
+      "score": 4.3245,
+      "pos_count": 711,
+      "neg_count": 0
+    },
+    {
+      "term": "communication",
+      "score": 4.2975,
+      "pos_count": 692,
+      "neg_count": 0
+    },
+    {
+      "term": "sum",
+      "score": 4.2927,
+      "pos_count": 2068,
+      "neg_count": 2
+    },
+    {
+      "term": "risk",
+      "score": 4.2924,
+      "pos_count": 1378,
+      "neg_count": 1
+    },
+    {
+      "term": "business",
+      "score": 4.288,
+      "pos_count": 2745,
+      "neg_count": 3
+    },
+    {
+      "term": "confidentiality",
+      "score": 4.2785,
+      "pos_count": 679,
+      "neg_count": 0
+    },
+    {
+      "term": "verify",
+      "score": 4.2756,
+      "pos_count": 677,
+      "neg_count": 0
+    },
+    {
+      "term": "son",
+      "score": 4.2667,
+      "pos_count": 671,
+      "neg_count": 0
+    },
+    {
+      "term": "services",
+      "score": 4.2585,
+      "pos_count": 1332,
+      "neg_count": 1
+    },
+    {
+      "term": "reliable",
+      "score": 4.2517,
+      "pos_count": 661,
+      "neg_count": 0
+    },
+    {
+      "term": "payment",
+      "score": 4.2339,
+      "pos_count": 1950,
+      "neg_count": 2
+    },
+    {
+      "term": "jose",
+      "score": 4.2257,
+      "pos_count": 644,
+      "neg_count": 0
+    },
+    {
+      "term": "operation",
+      "score": 4.2226,
+      "pos_count": 642,
+      "neg_count": 0
+    },
+    {
+      "term": "transferred",
+      "score": 4.1974,
+      "pos_count": 626,
+      "neg_count": 0
+    },
+    {
+      "term": "org",
+      "score": 4.1974,
+      "pos_count": 626,
+      "neg_count": 0
+    },
+    {
+      "term": "telephone",
+      "score": 4.1974,
+      "pos_count": 1253,
+      "neg_count": 1
+    },
+    {
+      "term": "state",
+      "score": 4.1926,
+      "pos_count": 623,
+      "neg_count": 0
+    },
+    {
+      "term": "banking",
+      "score": 4.1829,
+      "pos_count": 617,
+      "neg_count": 0
+    },
+    {
+      "term": "manager",
+      "score": 4.1764,
+      "pos_count": 613,
+      "neg_count": 0
+    },
+    {
+      "term": "according",
+      "score": 4.1732,
+      "pos_count": 611,
+      "neg_count": 0
+    },
+    {
+      "term": "avoid",
+      "score": 4.171,
+      "pos_count": 1831,
+      "neg_count": 2
+    },
+    {
+      "term": "deceased",
+      "score": 4.1683,
+      "pos_count": 608,
+      "neg_count": 0
+    },
+    {
+      "term": "transfer",
+      "score": 4.1629,
+      "pos_count": 2422,
+      "neg_count": 3
+    },
+    {
+      "term": "generated",
+      "score": 4.1617,
+      "pos_count": 604,
+      "neg_count": 0
+    },
+    {
+      "term": "stolen",
+      "score": 4.1567,
+      "pos_count": 601,
+      "neg_count": 0
+    },
+    {
+      "term": "mrs",
+      "score": 4.1484,
+      "pos_count": 596,
+      "neg_count": 0
+    },
+    {
+      "term": "required",
+      "score": 4.1458,
+      "pos_count": 1190,
+      "neg_count": 1
+    },
+    {
+      "term": "instructions",
+      "score": 4.1442,
+      "pos_count": 1188,
+      "neg_count": 1
+    },
+    {
+      "term": "contacting",
+      "score": 4.1399,
+      "pos_count": 591,
+      "neg_count": 0
+    },
+    {
+      "term": "unexpected",
+      "score": 4.1349,
+      "pos_count": 588,
+      "neg_count": 0
+    },
+    {
+      "term": "install",
+      "score": 4.1315,
+      "pos_count": 586,
+      "neg_count": 0
+    },
+    {
+      "term": "attachment",
+      "score": 4.1126,
+      "pos_count": 575,
+      "neg_count": 0
+    },
+    {
+      "term": "referred",
+      "score": 4.1021,
+      "pos_count": 569,
+      "neg_count": 0
+    },
+    {
+      "term": "user",
+      "score": 4.1012,
+      "pos_count": 1138,
+      "neg_count": 1
+    },
+    {
+      "term": "failure",
+      "score": 4.0924,
+      "pos_count": 1128,
+      "neg_count": 1
+    },
+    {
+      "term": "act",
+      "score": 4.0862,
+      "pos_count": 1121,
+      "neg_count": 1
+    },
+    {
+      "term": "extend",
+      "score": 4.0844,
+      "pos_count": 559,
+      "neg_count": 0
+    },
+    {
+      "term": "africa",
+      "score": 4.0808,
+      "pos_count": 1115,
+      "neg_count": 1
+    },
+    {
+      "term": "malware",
+      "score": 4.0808,
+      "pos_count": 557,
+      "neg_count": 0
+    },
+    {
+      "term": "presently",
+      "score": 4.0754,
+      "pos_count": 554,
+      "neg_count": 0
+    },
+    {
+      "term": "faithfully",
+      "score": 4.0664,
+      "pos_count": 549,
+      "neg_count": 0
+    },
+    {
+      "term": "traveler",
+      "score": 4.0591,
+      "pos_count": 545,
+      "neg_count": 0
+    },
+    {
+      "term": "arrangement",
+      "score": 4.0572,
+      "pos_count": 544,
+      "neg_count": 0
+    },
+    {
+      "term": "deposited",
+      "score": 4.0434,
+      "pos_count": 1074,
+      "neg_count": 1
+    },
+    {
+      "term": "gala",
+      "score": 4.0406,
+      "pos_count": 535,
+      "neg_count": 0
+    },
+    {
+      "term": "scan",
+      "score": 4.0368,
+      "pos_count": 533,
+      "neg_count": 0
+    },
+    {
+      "term": "stranded",
+      "score": 4.0293,
+      "pos_count": 529,
+      "neg_count": 0
+    },
+    {
+      "term": "abroad",
+      "score": 4.0293,
+      "pos_count": 529,
+      "neg_count": 0
+    },
+    {
+      "term": "release",
+      "score": 4.0236,
+      "pos_count": 526,
+      "neg_count": 0
+    },
+    {
+      "term": "antivirus",
+      "score": 4.0236,
+      "pos_count": 526,
+      "neg_count": 0
+    },
+    {
+      "term": "operations",
+      "score": 4.0217,
+      "pos_count": 525,
+      "neg_count": 0
+    },
+    {
+      "term": "view",
+      "score": 4.0093,
+      "pos_count": 1038,
+      "neg_count": 1
+    },
+    {
+      "term": "secure",
+      "score": 4.0035,
+      "pos_count": 1032,
+      "neg_count": 1
+    },
+    {
+      "term": "holder",
+      "score": 4.0006,
+      "pos_count": 514,
+      "neg_count": 0
+    },
+    {
+      "term": "partner",
+      "score": 3.9869,
+      "pos_count": 1015,
+      "neg_count": 1
+    },
+    {
+      "term": "country",
+      "score": 3.9845,
+      "pos_count": 2026,
+      "neg_count": 3
+    },
+    {
+      "term": "unresolved",
+      "score": 3.981,
+      "pos_count": 504,
+      "neg_count": 0
+    },
+    {
+      "term": "information",
+      "score": 3.9754,
+      "pos_count": 2510,
+      "neg_count": 4
+    },
+    {
+      "term": "infection",
+      "score": 3.973,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "patch",
+      "score": 3.973,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "workstation",
+      "score": 3.973,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "mentioning",
+      "score": 3.973,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "usd",
+      "score": 3.969,
+      "pos_count": 498,
+      "neg_count": 0
+    },
+    {
+      "term": "documents",
+      "score": 3.9549,
+      "pos_count": 983,
+      "neg_count": 1
+    },
+    {
+      "term": "former",
+      "score": 3.9529,
+      "pos_count": 490,
+      "neg_count": 0
+    },
+    {
+      "term": "deposit",
+      "score": 3.9519,
+      "pos_count": 980,
+      "neg_count": 1
+    },
+    {
+      "term": "further",
+      "score": 3.9155,
+      "pos_count": 945,
+      "neg_count": 1
+    },
+    {
+      "term": "recover",
+      "score": 3.9134,
+      "pos_count": 471,
+      "neg_count": 0
+    },
+    {
+      "term": "alert",
+      "score": 3.9113,
+      "pos_count": 470,
+      "neg_count": 0
+    },
+    {
+      "term": "investigation",
+      "score": 3.8963,
+      "pos_count": 463,
+      "neg_count": 0
+    },
+    {
+      "term": "notice",
+      "score": 3.8924,
+      "pos_count": 2310,
+      "neg_count": 4
+    },
+    {
+      "term": "utmost",
+      "score": 3.8877,
+      "pos_count": 459,
+      "neg_count": 0
+    },
+    {
+      "term": "attorney",
+      "score": 3.8811,
+      "pos_count": 456,
+      "neg_count": 0
+    },
+    {
+      "term": "limited",
+      "score": 3.8657,
+      "pos_count": 899,
+      "neg_count": 1
+    },
+    {
+      "term": "purpose",
+      "score": 3.8432,
+      "pos_count": 439,
+      "neg_count": 0
+    },
+    {
+      "term": "national",
+      "score": 3.8387,
+      "pos_count": 437,
+      "neg_count": 0
+    },
+    {
+      "term": "aside",
+      "score": 3.8318,
+      "pos_count": 434,
+      "neg_count": 0
+    },
+    {
+      "term": "policy",
+      "score": 3.8318,
+      "pos_count": 434,
+      "neg_count": 0
+    },
+    {
+      "term": "benefit",
+      "score": 3.8295,
+      "pos_count": 433,
+      "neg_count": 0
+    },
+    {
+      "term": "owner",
+      "score": 3.8272,
+      "pos_count": 432,
+      "neg_count": 0
+    },
+    {
+      "term": "upon",
+      "score": 3.826,
+      "pos_count": 864,
+      "neg_count": 1
+    },
+    {
+      "term": "percentage",
+      "score": 3.8249,
+      "pos_count": 431,
+      "neg_count": 0
+    },
+    {
+      "term": "restricted",
+      "score": 3.8062,
+      "pos_count": 423,
+      "neg_count": 0
+    },
+    {
+      "term": "political",
+      "score": 3.7991,
+      "pos_count": 420,
+      "neg_count": 0
+    },
+    {
+      "term": "federal",
+      "score": 3.7967,
+      "pos_count": 419,
+      "neg_count": 0
+    },
+    {
+      "term": "attn",
+      "score": 3.7943,
+      "pos_count": 418,
+      "neg_count": 0
+    },
+    {
+      "term": "executed",
+      "score": 3.7726,
+      "pos_count": 409,
+      "neg_count": 0
+    },
+    {
+      "term": "response",
+      "score": 3.7677,
+      "pos_count": 1223,
+      "neg_count": 2
+    },
+    {
+      "term": "locked",
+      "score": 3.7677,
+      "pos_count": 407,
+      "neg_count": 0
+    },
+    {
+      "term": "account",
+      "score": 3.7671,
+      "pos_count": 6931,
+      "neg_count": 16
+    },
+    {
+      "term": "development",
+      "score": 3.7653,
+      "pos_count": 406,
+      "neg_count": 0
+    },
+    {
+      "term": "officials",
+      "score": 3.7628,
+      "pos_count": 405,
+      "neg_count": 0
+    },
+    {
+      "term": "firm",
+      "score": 3.7554,
+      "pos_count": 402,
+      "neg_count": 0
+    },
+    {
+      "term": "agreed",
+      "score": 3.7529,
+      "pos_count": 401,
+      "neg_count": 0
+    },
+    {
+      "term": "overseas",
+      "score": 3.7404,
+      "pos_count": 396,
+      "neg_count": 0
+    },
+    {
+      "term": "click",
+      "score": 3.7303,
+      "pos_count": 1178,
+      "neg_count": 2
+    },
+    {
+      "term": "official",
+      "score": 3.7303,
+      "pos_count": 785,
+      "neg_count": 1
+    },
+    {
+      "term": "war",
+      "score": 3.7303,
+      "pos_count": 392,
+      "neg_count": 0
+    },
+    {
+      "term": "profitable",
+      "score": 3.7277,
+      "pos_count": 391,
+      "neg_count": 0
+    },
+    {
+      "term": "total",
+      "score": 3.7252,
+      "pos_count": 1563,
+      "neg_count": 3
+    },
+    {
+      "term": "unclaimed",
+      "score": 3.7174,
+      "pos_count": 387,
+      "neg_count": 0
+    },
+    {
+      "term": "department",
+      "score": 3.714,
+      "pos_count": 1159,
+      "neg_count": 2
+    },
+    {
+      "term": "hundred",
+      "score": 3.7123,
+      "pos_count": 1157,
+      "neg_count": 2
+    },
+    {
+      "term": "recipient",
+      "score": 3.6992,
+      "pos_count": 380,
+      "neg_count": 0
+    },
+    {
+      "term": "treasury",
+      "score": 3.6966,
+      "pos_count": 379,
+      "neg_count": 0
+    },
+    {
+      "term": "contractor",
+      "score": 3.6913,
+      "pos_count": 377,
+      "neg_count": 0
+    },
+    {
+      "term": "parties",
+      "score": 3.6913,
+      "pos_count": 377,
+      "neg_count": 0
+    },
+    {
+      "term": "dollars",
+      "score": 3.6874,
+      "pos_count": 2258,
+      "neg_count": 5
+    },
+    {
+      "term": "mutual",
+      "score": 3.686,
+      "pos_count": 375,
+      "neg_count": 0
+    },
+    {
+      "term": "incurred",
+      "score": 3.6645,
+      "pos_count": 367,
+      "neg_count": 0
+    },
+    {
+      "term": "link",
+      "score": 3.6552,
+      "pos_count": 1822,
+      "neg_count": 4
+    },
+    {
+      "term": "above",
+      "score": 3.6467,
+      "pos_count": 722,
+      "neg_count": 1
+    },
+    {
+      "term": "reset",
+      "score": 3.6439,
+      "pos_count": 720,
+      "neg_count": 1
+    },
+    {
+      "term": "indicate",
+      "score": 3.6398,
+      "pos_count": 358,
+      "neg_count": 0
+    },
+    {
+      "term": "civil",
+      "score": 3.637,
+      "pos_count": 357,
+      "neg_count": 0
+    },
+    {
+      "term": "foreign",
+      "score": 3.6363,
+      "pos_count": 1430,
+      "neg_count": 3
+    },
+    {
+      "term": "contacted",
+      "score": 3.6314,
+      "pos_count": 355,
+      "neg_count": 0
+    },
+    {
+      "term": "activity",
+      "score": 3.6314,
+      "pos_count": 355,
+      "neg_count": 0
+    },
+    {
+      "term": "modalities",
+      "score": 3.6286,
+      "pos_count": 354,
+      "neg_count": 0
+    },
+    {
+      "term": "financial",
+      "score": 3.6272,
+      "pos_count": 708,
+      "neg_count": 1
+    },
+    {
+      "term": "transaction",
+      "score": 3.6229,
+      "pos_count": 2117,
+      "neg_count": 5
+    },
+    {
+      "term": "introduce",
+      "score": 3.6144,
+      "pos_count": 349,
+      "neg_count": 0
+    },
+    {
+      "term": "beneficiary",
+      "score": 3.6029,
+      "pos_count": 1037,
+      "neg_count": 2
+    },
+    {
+      "term": "members",
+      "score": 3.6,
+      "pos_count": 344,
+      "neg_count": 0
+    },
+    {
+      "term": "claims",
+      "score": 3.5913,
+      "pos_count": 341,
+      "neg_count": 0
+    },
+    {
+      "term": "highly",
+      "score": 3.5883,
+      "pos_count": 340,
+      "neg_count": 0
+    },
+    {
+      "term": "branch",
+      "score": 3.5854,
+      "pos_count": 339,
+      "neg_count": 0
+    },
+    {
+      "term": "assure",
+      "score": 3.5824,
+      "pos_count": 338,
+      "neg_count": 0
+    },
+    {
+      "term": "applies",
+      "score": 3.5736,
+      "pos_count": 335,
+      "neg_count": 0
+    },
+    {
+      "term": "assured",
+      "score": 3.5706,
+      "pos_count": 334,
+      "neg_count": 0
+    },
+    {
+      "term": "worked",
+      "score": 3.5676,
+      "pos_count": 333,
+      "neg_count": 0
+    },
+    {
+      "term": "immediately",
+      "score": 3.5616,
+      "pos_count": 1991,
+      "neg_count": 5
+    },
+    {
+      "term": "sensitive",
+      "score": 3.5495,
+      "pos_count": 983,
+      "neg_count": 2
+    },
+    {
+      "term": "writing",
+      "score": 3.5403,
+      "pos_count": 324,
+      "neg_count": 0
+    },
+    {
+      "term": "companies",
+      "score": 3.5341,
+      "pos_count": 322,
+      "neg_count": 0
+    },
+    {
+      "term": "trace",
+      "score": 3.531,
+      "pos_count": 321,
+      "neg_count": 0
+    },
+    {
+      "term": "cooperation",
+      "score": 3.5248,
+      "pos_count": 319,
+      "neg_count": 0
+    },
+    {
+      "term": "subsequent",
+      "score": 3.5248,
+      "pos_count": 319,
+      "neg_count": 0
+    },
+    {
+      "term": "web",
+      "score": 3.5248,
+      "pos_count": 319,
+      "neg_count": 0
+    },
+    {
+      "term": "solicit",
+      "score": 3.5122,
+      "pos_count": 315,
+      "neg_count": 0
+    },
+    {
+      "term": "director",
+      "score": 3.4994,
+      "pos_count": 623,
+      "neg_count": 1
+    },
+    {
+      "term": "suspended",
+      "score": 3.493,
+      "pos_count": 309,
+      "neg_count": 0
+    },
+    {
+      "term": "breach",
+      "score": 3.493,
+      "pos_count": 309,
+      "neg_count": 0
+    },
+    {
+      "term": "monkey",
+      "score": 3.4882,
+      "pos_count": 616,
+      "neg_count": 1
+    },
+    {
+      "term": "ensure",
+      "score": 3.48,
+      "pos_count": 305,
+      "neg_count": 0
+    },
+    {
+      "term": "cards",
+      "score": 3.48,
+      "pos_count": 611,
+      "neg_count": 1
+    },
+    {
+      "term": "interest",
+      "score": 3.4778,
+      "pos_count": 915,
+      "neg_count": 2
+    },
+    {
+      "term": "remittance",
+      "score": 3.4735,
+      "pos_count": 303,
+      "neg_count": 0
+    },
+    {
+      "term": "regard",
+      "score": 3.4735,
+      "pos_count": 303,
+      "neg_count": 0
+    },
+    {
+      "term": "winner",
+      "score": 3.4702,
+      "pos_count": 302,
+      "neg_count": 0
+    },
+    {
+      "term": "requires",
+      "score": 3.4685,
+      "pos_count": 604,
+      "neg_count": 1
+    },
+    {
+      "term": "prize",
+      "score": 3.4636,
+      "pos_count": 300,
+      "neg_count": 0
+    },
+    {
+      "term": "talked",
+      "score": 3.4636,
+      "pos_count": 601,
+      "neg_count": 1
+    },
+    {
+      "term": "regarding",
+      "score": 3.4544,
+      "pos_count": 1192,
+      "neg_count": 3
+    },
+    {
+      "term": "concerning",
+      "score": 3.4535,
+      "pos_count": 297,
+      "neg_count": 0
+    },
+    {
+      "term": "agreement",
+      "score": 3.4434,
+      "pos_count": 294,
+      "neg_count": 0
+    },
+    {
+      "term": "death",
+      "score": 3.4426,
+      "pos_count": 1178,
+      "neg_count": 3
+    },
+    {
+      "term": "validate",
+      "score": 3.4366,
+      "pos_count": 292,
+      "neg_count": 0
+    },
+    {
+      "term": "indicated",
+      "score": 3.4332,
+      "pos_count": 291,
+      "neg_count": 0
+    },
+    {
+      "term": "remaining",
+      "score": 3.4332,
+      "pos_count": 291,
+      "neg_count": 0
+    },
+    {
+      "term": "execution",
+      "score": 3.4263,
+      "pos_count": 289,
+      "neg_count": 0
+    },
+    {
+      "term": "discovery",
+      "score": 3.4194,
+      "pos_count": 287,
+      "neg_count": 0
+    },
+    {
+      "term": "investing",
+      "score": 3.4194,
+      "pos_count": 287,
+      "neg_count": 0
+    },
+    {
+      "term": "reward",
+      "score": 3.4194,
+      "pos_count": 287,
+      "neg_count": 0
+    },
+    {
+      "term": "reactivate",
+      "score": 3.4159,
+      "pos_count": 286,
+      "neg_count": 0
+    },
+    {
+      "term": "acceptance",
+      "score": 3.4124,
+      "pos_count": 285,
+      "neg_count": 0
+    },
+    {
+      "term": "five",
+      "score": 3.4107,
+      "pos_count": 1141,
+      "neg_count": 3
+    },
+    {
+      "term": "abidjan",
+      "score": 3.4089,
+      "pos_count": 284,
+      "neg_count": 0
+    },
+    {
+      "term": "emergency",
+      "score": 3.4037,
+      "pos_count": 566,
+      "neg_count": 1
+    },
+    {
+      "term": "thirty",
+      "score": 3.3983,
+      "pos_count": 281,
+      "neg_count": 0
+    },
+    {
+      "term": "strictly",
+      "score": 3.3948,
+      "pos_count": 280,
+      "neg_count": 0
+    },
+    {
+      "term": "upgrade",
+      "score": 3.3948,
+      "pos_count": 280,
+      "neg_count": 0
+    },
+    {
+      "term": "final",
+      "score": 3.3936,
+      "pos_count": 841,
+      "neg_count": 2
+    },
+    {
+      "term": "ownership",
+      "score": 3.3877,
+      "pos_count": 278,
+      "neg_count": 0
+    },
+    {
+      "term": "properties",
+      "score": 3.3877,
+      "pos_count": 278,
+      "neg_count": 0
+    },
+    {
+      "term": "respond",
+      "score": 3.3869,
+      "pos_count": 1393,
+      "neg_count": 4
+    },
+    {
+      "term": "lagos",
+      "score": 3.3841,
+      "pos_count": 277,
+      "neg_count": 0
+    },
+    {
+      "term": "involved",
+      "score": 3.3823,
+      "pos_count": 554,
+      "neg_count": 1
+    },
+    {
+      "term": "enter",
+      "score": 3.3805,
+      "pos_count": 1107,
+      "neg_count": 3
+    },
+    {
+      "term": "consignment",
+      "score": 3.3732,
+      "pos_count": 274,
+      "neg_count": 0
+    },
+    {
+      "term": "behalf",
+      "score": 3.3659,
+      "pos_count": 545,
+      "neg_count": 1
+    },
+    {
+      "term": "violations",
+      "score": 3.3622,
+      "pos_count": 271,
+      "neg_count": 0
+    },
+    {
+      "term": "necessary",
+      "score": 3.361,
+      "pos_count": 814,
+      "neg_count": 2
+    },
+    {
+      "term": "congratulations",
+      "score": 3.3586,
+      "pos_count": 541,
+      "neg_count": 1
+    },
+    {
+      "term": "nominated",
+      "score": 3.3549,
+      "pos_count": 269,
+      "neg_count": 0
+    },
+    {
+      "term": "mailbox",
+      "score": 3.3512,
+      "pos_count": 268,
+      "neg_count": 0
+    },
+    {
+      "term": "venture",
+      "score": 3.3512,
+      "pos_count": 268,
+      "neg_count": 0
+    },
+    {
+      "term": "approval",
+      "score": 3.3512,
+      "pos_count": 268,
+      "neg_count": 0
+    },
+    {
+      "term": "disbursement",
+      "score": 3.3474,
+      "pos_count": 267,
+      "neg_count": 0
+    },
+    {
+      "term": "invest",
+      "score": 3.3424,
+      "pos_count": 799,
+      "neg_count": 2
+    },
+    {
+      "term": "dormant",
+      "score": 3.3362,
+      "pos_count": 264,
+      "neg_count": 0
+    },
+    {
+      "term": "serve",
+      "score": 3.3286,
+      "pos_count": 262,
+      "neg_count": 0
+    },
+    {
+      "term": "continue",
+      "score": 3.3261,
+      "pos_count": 786,
+      "neg_count": 2
+    },
+    {
+      "term": "exchange",
+      "score": 3.3248,
+      "pos_count": 261,
+      "neg_count": 0
+    },
+    {
+      "term": "proceed",
+      "score": 3.3248,
+      "pos_count": 261,
+      "neg_count": 0
+    },
+    {
+      "term": "temporarily",
+      "score": 3.321,
+      "pos_count": 260,
+      "neg_count": 0
+    },
+    {
+      "term": "ministry",
+      "score": 3.3171,
+      "pos_count": 259,
+      "neg_count": 0
+    },
+    {
+      "term": "concerns",
+      "score": 3.3171,
+      "pos_count": 259,
+      "neg_count": 0
+    }
+  ],
+  "bigrams": [
+    {
+      "term": "restore access",
+      "score": 4.5721,
+      "pos_count": 1203,
+      "neg_count": 0
+    },
+    {
+      "term": "next kin",
+      "score": 4.4606,
+      "pos_count": 1076,
+      "neg_count": 0
+    },
+    {
+      "term": "follow instructions",
+      "score": 4.4247,
+      "pos_count": 1038,
+      "neg_count": 0
+    },
+    {
+      "term": "account access",
+      "score": 4.4179,
+      "pos_count": 1031,
+      "neg_count": 0
+    },
+    {
+      "term": "avoid interruption",
+      "score": 4.3964,
+      "pos_count": 1009,
+      "neg_count": 0
+    },
+    {
+      "term": "regarding account",
+      "score": 4.3964,
+      "pos_count": 1009,
+      "neg_count": 0
+    },
+    {
+      "term": "notice regarding",
+      "score": 4.3944,
+      "pos_count": 1007,
+      "neg_count": 0
+    },
+    {
+      "term": "failure respond",
+      "score": 4.3904,
+      "pos_count": 1003,
+      "neg_count": 0
+    },
+    {
+      "term": "payment verification",
+      "score": 4.3904,
+      "pos_count": 1003,
+      "neg_count": 0
+    },
+    {
+      "term": "united states",
+      "score": 4.3224,
+      "pos_count": 937,
+      "neg_count": 0
+    },
+    {
+      "term": "hundred thousand",
+      "score": 4.3149,
+      "pos_count": 930,
+      "neg_count": 0
+    },
+    {
+      "term": "support desk",
+      "score": 4.2426,
+      "pos_count": 865,
+      "neg_count": 0
+    },
+    {
+      "term": "states dollars",
+      "score": 4.2121,
+      "pos_count": 839,
+      "neg_count": 0
+    },
+    {
+      "term": "time sensitive",
+      "score": 4.1904,
+      "pos_count": 821,
+      "neg_count": 0
+    },
+    {
+      "term": "account services",
+      "score": 4.157,
+      "pos_count": 794,
+      "neg_count": 0
+    },
+    {
+      "term": "ends soon",
+      "score": 4.1558,
+      "pos_count": 793,
+      "neg_count": 0
+    },
+    {
+      "term": "instructions immediately",
+      "score": 4.0961,
+      "pos_count": 747,
+      "neg_count": 0
+    },
+    {
+      "term": "access expire",
+      "score": 4.0758,
+      "pos_count": 732,
+      "neg_count": 0
+    },
+    {
+      "term": "five hundred",
+      "score": 4.0607,
+      "pos_count": 721,
+      "neg_count": 0
+    },
+    {
+      "term": "security company",
+      "score": 4.0579,
+      "pos_count": 719,
+      "neg_count": 0
+    },
+    {
+      "term": "telephone fax",
+      "score": 4.0538,
+      "pos_count": 716,
+      "neg_count": 0
+    },
+    {
+      "term": "act now",
+      "score": 4.0524,
+      "pos_count": 715,
+      "neg_count": 0
+    },
+    {
+      "term": "verification code",
+      "score": 4.0269,
+      "pos_count": 697,
+      "neg_count": 0
+    },
+    {
+      "term": "his death",
+      "score": 4.024,
+      "pos_count": 695,
+      "neg_count": 0
+    },
+    {
+      "term": "million five",
+      "score": 4.0081,
+      "pos_count": 684,
+      "neg_count": 0
+    },
+    {
+      "term": "soon avoid",
+      "score": 3.9889,
+      "pos_count": 671,
+      "neg_count": 0
+    },
+    {
+      "term": "enter username",
+      "score": 3.983,
+      "pos_count": 667,
+      "neg_count": 0
+    },
+    {
+      "term": "reset password",
+      "score": 3.9709,
+      "pos_count": 659,
+      "neg_count": 0
+    },
+    {
+      "term": "interruption act",
+      "score": 3.9587,
+      "pos_count": 651,
+      "neg_count": 0
+    },
+    {
+      "term": "information account",
+      "score": 3.9402,
+      "pos_count": 639,
+      "neg_count": 0
+    },
+    {
+      "term": "sensitive ends",
+      "score": 3.9148,
+      "pos_count": 623,
+      "neg_count": 0
+    },
+    {
+      "term": "million dollars",
+      "score": 3.9116,
+      "pos_count": 621,
+      "neg_count": 0
+    },
+    {
+      "term": "during business",
+      "score": 3.8954,
+      "pos_count": 611,
+      "neg_count": 0
+    },
+    {
+      "term": "monkey org",
+      "score": 3.8872,
+      "pos_count": 606,
+      "neg_count": 0
+    },
+    {
+      "term": "transfer money",
+      "score": 3.8789,
+      "pos_count": 601,
+      "neg_count": 0
+    },
+    {
+      "term": "expire soon",
+      "score": 3.8773,
+      "pos_count": 600,
+      "neg_count": 0
+    },
+    {
+      "term": "total sum",
+      "score": 3.8689,
+      "pos_count": 595,
+      "neg_count": 0
+    },
+    {
+      "term": "transfer back",
+      "score": 3.8689,
+      "pos_count": 595,
+      "neg_count": 0
+    },
+    {
+      "term": "temporary loan",
+      "score": 3.8469,
+      "pos_count": 582,
+      "neg_count": 0
+    },
+    {
+      "term": "jose monkey",
+      "score": 3.8348,
+      "pos_count": 575,
+      "neg_count": 0
+    },
+    {
+      "term": "unexpected situation",
+      "score": 3.8348,
+      "pos_count": 575,
+      "neg_count": 0
+    },
+    {
+      "term": "recovery key",
+      "score": 3.8331,
+      "pos_count": 574,
+      "neg_count": 0
+    },
+    {
+      "term": "fax number",
+      "score": 3.8137,
+      "pos_count": 563,
+      "neg_count": 0
+    },
+    {
+      "term": "auto generated",
+      "score": 3.8048,
+      "pos_count": 558,
+      "neg_count": 0
+    },
+    {
+      "term": "extend stay",
+      "score": 3.7868,
+      "pos_count": 548,
+      "neg_count": 0
+    },
+    {
+      "term": "replacement cards",
+      "score": 3.7795,
+      "pos_count": 544,
+      "neg_count": 0
+    },
+    {
+      "term": "account may",
+      "score": 3.7758,
+      "pos_count": 542,
+      "neg_count": 0
+    },
+    {
+      "term": "action required",
+      "score": 3.7684,
+      "pos_count": 538,
+      "neg_count": 0
+    },
+    {
+      "term": "thousand united",
+      "score": 3.7609,
+      "pos_count": 534,
+      "neg_count": 0
+    },
+    {
+      "term": "charity gala",
+      "score": 3.7609,
+      "pos_count": 534,
+      "neg_count": 0
+    },
+    {
+      "term": "click view",
+      "score": 3.7534,
+      "pos_count": 530,
+      "neg_count": 0
+    },
+    {
+      "term": "business trip",
+      "score": 3.7534,
+      "pos_count": 530,
+      "neg_count": 0
+    },
+    {
+      "term": "fax numbers",
+      "score": 3.7383,
+      "pos_count": 522,
+      "neg_count": 0
+    },
+    {
+      "term": "million united",
+      "score": 3.7363,
+      "pos_count": 521,
+      "neg_count": 0
+    },
+    {
+      "term": "final warning",
+      "score": 3.7344,
+      "pos_count": 520,
+      "neg_count": 0
+    },
+    {
+      "term": "urgent notice",
+      "score": 3.7325,
+      "pos_count": 519,
+      "neg_count": 0
+    },
+    {
+      "term": "review account",
+      "score": 3.7306,
+      "pos_count": 518,
+      "neg_count": 0
+    },
+    {
+      "term": "secure link",
+      "score": 3.7209,
+      "pos_count": 513,
+      "neg_count": 0
+    },
+    {
+      "term": "may result",
+      "score": 3.7151,
+      "pos_count": 510,
+      "neg_count": 0
+    },
+    {
+      "term": "immediate action",
+      "score": 3.7151,
+      "pos_count": 510,
+      "neg_count": 0
+    },
+    {
+      "term": "risk free",
+      "score": 3.7111,
+      "pos_count": 508,
+      "neg_count": 0
+    },
+    {
+      "term": "loan transfer",
+      "score": 3.7092,
+      "pos_count": 507,
+      "neg_count": 0
+    },
+    {
+      "term": "account requires",
+      "score": 3.7072,
+      "pos_count": 506,
+      "neg_count": 0
+    },
+    {
+      "term": "soon trust",
+      "score": 3.7072,
+      "pos_count": 506,
+      "neg_count": 0
+    },
+    {
+      "term": "generated message",
+      "score": 3.7052,
+      "pos_count": 505,
+      "neg_count": 0
+    },
+    {
+      "term": "password enter",
+      "score": 3.7052,
+      "pos_count": 505,
+      "neg_count": 0
+    },
+    {
+      "term": "account today",
+      "score": 3.7052,
+      "pos_count": 505,
+      "neg_count": 0
+    },
+    {
+      "term": "stolen hotel",
+      "score": 3.7032,
+      "pos_count": 504,
+      "neg_count": 0
+    },
+    {
+      "term": "view update",
+      "score": 3.7013,
+      "pos_count": 503,
+      "neg_count": 0
+    },
+    {
+      "term": "username 2fa",
+      "score": 3.7013,
+      "pos_count": 503,
+      "neg_count": 0
+    },
+    {
+      "term": "access enter",
+      "score": 3.7013,
+      "pos_count": 503,
+      "neg_count": 0
+    },
+    {
+      "term": "code recovery",
+      "score": 3.7013,
+      "pos_count": 503,
+      "neg_count": 0
+    },
+    {
+      "term": "now follow",
+      "score": 3.7013,
+      "pos_count": 503,
+      "neg_count": 0
+    },
+    {
+      "term": "warning failure",
+      "score": 3.6993,
+      "pos_count": 502,
+      "neg_count": 0
+    },
+    {
+      "term": "account immediate",
+      "score": 3.6993,
+      "pos_count": 502,
+      "neg_count": 0
+    },
+    {
+      "term": "new notification",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "good standing",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "stranded traveler",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "2fa verification",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "requires verification",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "fix issue",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "account remain",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "verification failed",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "children hospital",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "install security",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "conference unexpected",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "respond may",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "situation came",
+      "score": 3.6973,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "security patch",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "meeting again",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "use secure",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "asking payment",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "notification click",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "talked meeting",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "provided link",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "update convenience",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "patch provided",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "scan install",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "other stranded",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "verification restore",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "convenience link",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "unresolved keywords",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "hotel asking",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "issue keywords",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "provide replacement",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "loan provide",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "building important",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "again conference",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "failed help",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "came during",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "now hotel",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "verification extend",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "gala ran",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "trust building",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "remain good",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "attachment included",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "immediately time",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "link attachment",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "ran other",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "today failure",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "hospital charity",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "reply auto",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "week keywords",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "message keywords",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "stay assist",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "run antivirus",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "cards soon",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "soon keywords",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "hotel payment",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "emergency loan",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "help temporary",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "key keywords",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "assist emergency",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "included reply",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "important keywords",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "malware infection",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "trip wallet",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "workstation run",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "mentioning children",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "case referred",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "antivirus scan",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "wallet stolen",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "remembered mentioning",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "standing follow",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "required avoid",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "detected malware",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "link fix",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "infection workstation",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "traveler right",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "continue keywords",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "department detected",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "steps review",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "access reset",
+      "score": 3.6953,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "bank account",
+      "score": 3.6853,
+      "pos_count": 991,
+      "neg_count": 1
+    },
+    {
+      "term": "account holder",
+      "score": 3.669,
+      "pos_count": 487,
+      "neg_count": 0
+    },
+    {
+      "term": "foreign partner",
+      "score": 3.6649,
+      "pos_count": 485,
+      "neg_count": 0
+    },
+    {
+      "term": "yours faithfully",
+      "score": 3.6587,
+      "pos_count": 482,
+      "neg_count": 0
+    },
+    {
+      "term": "foreign account",
+      "score": 3.6314,
+      "pos_count": 469,
+      "neg_count": 0
+    },
+    {
+      "term": "got contact",
+      "score": 3.6229,
+      "pos_count": 465,
+      "neg_count": 0
+    },
+    {
+      "term": "plane crash",
+      "score": 3.6186,
+      "pos_count": 463,
+      "neg_count": 0
+    },
+    {
+      "term": "his next",
+      "score": 3.5517,
+      "pos_count": 433,
+      "neg_count": 0
+    },
+    {
+      "term": "set aside",
+      "score": 3.5166,
+      "pos_count": 418,
+      "neg_count": 0
+    },
+    {
+      "term": "south africa",
+      "score": 3.5166,
+      "pos_count": 418,
+      "neg_count": 0
+    },
+    {
+      "term": "thousand dollars",
+      "score": 3.507,
+      "pos_count": 414,
+      "neg_count": 0
+    },
+    {
+      "term": "risk operations",
+      "score": 3.507,
+      "pos_count": 414,
+      "neg_count": 0
+    },
+    {
+      "term": "limited time",
+      "score": 3.4997,
+      "pos_count": 411,
+      "neg_count": 0
+    },
+    {
+      "term": "expires midnight",
+      "score": 3.4676,
+      "pos_count": 398,
+      "neg_count": 0
+    },
+    {
+      "term": "last chance",
+      "score": 3.4576,
+      "pos_count": 394,
+      "neg_count": 0
+    },
+    {
+      "term": "soon receive",
+      "score": 3.4189,
+      "pos_count": 379,
+      "neg_count": 0
+    },
+    {
+      "term": "yahoo com",
+      "score": 3.4003,
+      "pos_count": 372,
+      "neg_count": 0
+    },
+    {
+      "term": "transfer fund",
+      "score": 3.3976,
+      "pos_count": 371,
+      "neg_count": 0
+    },
+    {
+      "term": "kin deceased",
+      "score": 3.3922,
+      "pos_count": 369,
+      "neg_count": 0
+    },
+    {
+      "term": "decided contact",
+      "score": 3.3813,
+      "pos_count": 365,
+      "neg_count": 0
+    },
+    {
+      "term": "private email",
+      "score": 3.362,
+      "pos_count": 358,
+      "neg_count": 0
+    },
+    {
+      "term": "business proposal",
+      "score": 3.3564,
+      "pos_count": 356,
+      "neg_count": 0
+    },
+    {
+      "term": "west africa",
+      "score": 3.3452,
+      "pos_count": 352,
+      "neg_count": 0
+    },
+    {
+      "term": "stand next",
+      "score": 3.3309,
+      "pos_count": 347,
+      "neg_count": 0
+    },
+    {
+      "term": "private telephone",
+      "score": 3.328,
+      "pos_count": 346,
+      "neg_count": 0
+    },
+    {
+      "term": "code continue",
+      "score": 3.2988,
+      "pos_count": 336,
+      "neg_count": 0
+    },
+    {
+      "term": "number process",
+      "score": 3.2988,
+      "pos_count": 336,
+      "neg_count": 0
+    },
+    {
+      "term": "now offer",
+      "score": 3.2868,
+      "pos_count": 332,
+      "neg_count": 0
+    },
+    {
+      "term": "total amount",
+      "score": 3.2686,
+      "pos_count": 326,
+      "neg_count": 0
+    },
+    {
+      "term": "password restore",
+      "score": 3.2594,
+      "pos_count": 323,
+      "neg_count": 0
+    },
+    {
+      "term": "sum million",
+      "score": 3.247,
+      "pos_count": 319,
+      "neg_count": 0
+    },
+    {
+      "term": "sir madam",
+      "score": 3.2249,
+      "pos_count": 312,
+      "neg_count": 0
+    },
+    {
+      "term": "late father",
+      "score": 3.2153,
+      "pos_count": 309,
+      "neg_count": 0
+    },
+    {
+      "term": "money transferred",
+      "score": 3.212,
+      "pos_count": 308,
+      "neg_count": 0
+    },
+    {
+      "term": "contact through",
+      "score": 3.2055,
+      "pos_count": 306,
+      "neg_count": 0
+    },
+    {
+      "term": "urgent reply",
+      "score": 3.2023,
+      "pos_count": 305,
+      "neg_count": 0
+    },
+    {
+      "term": "update password",
+      "score": 3.1891,
+      "pos_count": 301,
+      "neg_count": 0
+    },
+    {
+      "term": "rights reserved",
+      "score": 3.1451,
+      "pos_count": 288,
+      "neg_count": 0
+    },
+    {
+      "term": "five million",
+      "score": 3.1416,
+      "pos_count": 287,
+      "neg_count": 0
+    },
+    {
+      "term": "since nobody",
+      "score": 3.1277,
+      "pos_count": 283,
+      "neg_count": 0
+    },
+    {
+      "term": "urgent response",
+      "score": 3.1277,
+      "pos_count": 283,
+      "neg_count": 0
+    },
+    {
+      "term": "years money",
+      "score": 3.1241,
+      "pos_count": 282,
+      "neg_count": 0
+    },
+    {
+      "term": "transaction risk",
+      "score": 3.117,
+      "pos_count": 280,
+      "neg_count": 0
+    },
+    {
+      "term": "late husband",
+      "score": 3.1027,
+      "pos_count": 276,
+      "neg_count": 0
+    },
+    {
+      "term": "united state",
+      "score": 3.0991,
+      "pos_count": 275,
+      "neg_count": 0
+    },
+    {
+      "term": "access limited",
+      "score": 3.0882,
+      "pos_count": 272,
+      "neg_count": 0
+    },
+    {
+      "term": "money out",
+      "score": 3.0808,
+      "pos_count": 270,
+      "neg_count": 0
+    }
+  ],
+  "trigrams": [
+    {
+      "term": "notice regarding account",
+      "score": 4.1668,
+      "pos_count": 1000,
+      "neg_count": 0
+    },
+    {
+      "term": "regarding account access",
+      "score": 4.1668,
+      "pos_count": 1000,
+      "neg_count": 0
+    },
+    {
+      "term": "united states dollars",
+      "score": 3.9831,
+      "pos_count": 832,
+      "neg_count": 0
+    },
+    {
+      "term": "follow instructions immediately",
+      "score": 3.8755,
+      "pos_count": 747,
+      "neg_count": 0
+    },
+    {
+      "term": "account access expire",
+      "score": 3.8552,
+      "pos_count": 732,
+      "neg_count": 0
+    },
+    {
+      "term": "soon avoid interruption",
+      "score": 3.7683,
+      "pos_count": 671,
+      "neg_count": 0
+    },
+    {
+      "term": "million five hundred",
+      "score": 3.7653,
+      "pos_count": 669,
+      "neg_count": 0
+    },
+    {
+      "term": "five hundred thousand",
+      "score": 3.7427,
+      "pos_count": 654,
+      "neg_count": 0
+    },
+    {
+      "term": "interruption act now",
+      "score": 3.7381,
+      "pos_count": 651,
+      "neg_count": 0
+    },
+    {
+      "term": "avoid interruption act",
+      "score": 3.7381,
+      "pos_count": 651,
+      "neg_count": 0
+    },
+    {
+      "term": "time sensitive ends",
+      "score": 3.6942,
+      "pos_count": 623,
+      "neg_count": 0
+    },
+    {
+      "term": "sensitive ends soon",
+      "score": 3.6942,
+      "pos_count": 623,
+      "neg_count": 0
+    },
+    {
+      "term": "expire soon avoid",
+      "score": 3.628,
+      "pos_count": 583,
+      "neg_count": 0
+    },
+    {
+      "term": "access expire soon",
+      "score": 3.6262,
+      "pos_count": 582,
+      "neg_count": 0
+    },
+    {
+      "term": "jose monkey org",
+      "score": 3.5913,
+      "pos_count": 562,
+      "neg_count": 0
+    },
+    {
+      "term": "urgent notice regarding",
+      "score": 3.508,
+      "pos_count": 517,
+      "neg_count": 0
+    },
+    {
+      "term": "loan transfer back",
+      "score": 3.4885,
+      "pos_count": 507,
+      "neg_count": 0
+    },
+    {
+      "term": "auto generated message",
+      "score": 3.4826,
+      "pos_count": 504,
+      "neg_count": 0
+    },
+    {
+      "term": "code recovery key",
+      "score": 3.4806,
+      "pos_count": 503,
+      "neg_count": 0
+    },
+    {
+      "term": "temporary loan transfer",
+      "score": 3.4806,
+      "pos_count": 503,
+      "neg_count": 0
+    },
+    {
+      "term": "immediate action required",
+      "score": 3.4767,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "during business trip",
+      "score": 3.4767,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "conference unexpected situation",
+      "score": 3.4767,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "2fa verification code",
+      "score": 3.4767,
+      "pos_count": 501,
+      "neg_count": 0
+    },
+    {
+      "term": "remembered mentioning children",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "detected malware infection",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "act now follow",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "restore access reset",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "verification code recovery",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "fix issue keywords",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "action required avoid",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "hospital charity gala",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "install security patch",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "situation came during",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "stranded traveler right",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "failure respond may",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "hotel payment verification",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "ends soon keywords",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "workstation run antivirus",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "transfer back next",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "verification restore access",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "trip wallet stolen",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "account requires verification",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "came during business",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "good standing follow",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "again conference unexpected",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "remain good standing",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "use secure link",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "charity gala ran",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "next week keywords",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "account immediate action",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "replacement cards soon",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "password enter username",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "generated message keywords",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "building important keywords",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "immediately time sensitive",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "business trip wallet",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "help temporary loan",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "other stranded traveler",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "reply auto generated",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "mentioning children hospital",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "restore access enter",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "username 2fa verification",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "trust building important",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "provide replacement cards",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "traveler right now",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "requires verification restore",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "included reply auto",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "final warning failure",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "enter username 2fa",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "account today failure",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "patch provided link",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "infection workstation run",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "attachment included reply",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "convenience link attachment",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "steps review account",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "talked meeting again",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "stay assist emergency",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "provided link fix",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "new notification click",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "account remain good",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "run antivirus scan",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "failed help temporary",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "cards soon trust",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "link attachment included",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "verification failed help",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "warning failure respond",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "link fix issue",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "unexpected situation came",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "hotel asking payment",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "security patch provided",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "extend stay assist",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "access reset password",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "payment verification extend",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "instructions immediately time",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "now hotel asking",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "view update convenience",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "department detected malware",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "gala ran other",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "verification extend stay",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "back next week",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "reset password enter",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "scan install security",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "notification click view",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "stolen hotel payment",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "children hospital charity",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "emergency loan provide",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "malware infection workstation",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "soon trust building",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "asking payment verification",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "assist emergency loan",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "loan provide replacement",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "wallet stolen hotel",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "now follow instructions",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "review account today",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "update convenience link",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "antivirus scan install",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "meeting again conference",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "payment verification failed",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "today failure respond",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "recovery key keywords",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "respond may result",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "click view update",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "information account may",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "right now hotel",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "ran other stranded",
+      "score": 3.4747,
+      "pos_count": 500,
+      "neg_count": 0
+    },
+    {
+      "term": "hundred thousand united",
+      "score": 3.4646,
+      "pos_count": 495,
+      "neg_count": 0
+    },
+    {
+      "term": "his next kin",
+      "score": 3.3148,
+      "pos_count": 426,
+      "neg_count": 0
+    },
+    {
+      "term": "million united states",
+      "score": 3.3007,
+      "pos_count": 420,
+      "neg_count": 0
+    },
+    {
+      "term": "thousand united states",
+      "score": 3.2693,
+      "pos_count": 407,
+      "neg_count": 0
+    },
+    {
+      "term": "next kin deceased",
+      "score": 3.1607,
+      "pos_count": 365,
+      "neg_count": 0
+    },
+    {
+      "term": "hundred thousand dollars",
+      "score": 3.1358,
+      "pos_count": 356,
+      "neg_count": 0
+    },
+    {
+      "term": "stand next kin",
+      "score": 3.1045,
+      "pos_count": 345,
+      "neg_count": 0
+    },
+    {
+      "term": "code continue keywords",
+      "score": 3.0781,
+      "pos_count": 336,
+      "neg_count": 0
+    },
+    {
+      "term": "telephone fax numbers",
+      "score": 3.0632,
+      "pos_count": 331,
+      "neg_count": 0
+    },
+    {
+      "term": "password restore access",
+      "score": 3.0388,
+      "pos_count": 323,
+      "neg_count": 0
+    },
+    {
+      "term": "telephone fax number",
+      "score": 3.0201,
+      "pos_count": 317,
+      "neg_count": 0
+    },
+    {
+      "term": "account access limited",
+      "score": 2.8639,
+      "pos_count": 271,
+      "neg_count": 0
+    },
+    {
+      "term": "offer last chance",
+      "score": 2.8528,
+      "pos_count": 268,
+      "neg_count": 0
+    },
+    {
+      "term": "available today keywords",
+      "score": 2.8416,
+      "pos_count": 265,
+      "neg_count": 0
+    }
+  ]
+}

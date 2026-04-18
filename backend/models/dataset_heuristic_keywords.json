@@ -1,0 +1,3233 @@
+{
+  "summary": {
+    "records": 141386,
+    "positive_records": 70685,
+    "negative_records": 70701
+  },
+  "keywords_unigram": [
+    {
+      "term": "ail",
+      "score": 6.5716,
+      "pos_count": 634,
+      "neg_count": 0,
+      "source_count": 5
+    },
+    {
+      "term": "abidjan",
+      "score": 6.5701,
+      "pos_count": 633,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "paliourg",
+      "score": 6.5526,
+      "pos_count": 622,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "piease",
+      "score": 6.4862,
+      "pos_count": 582,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "shouid",
+      "score": 6.4298,
+      "pos_count": 550,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "cialis",
+      "score": 6.3909,
+      "pos_count": 1059,
+      "neg_count": 1,
+      "source_count": 2
+    },
+    {
+      "term": "andmanyother",
+      "score": 6.3505,
+      "pos_count": 508,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "oniy",
+      "score": 6.3465,
+      "pos_count": 506,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "ooking",
+      "score": 6.3346,
+      "pos_count": 500,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "vacheron",
+      "score": 6.2514,
+      "pos_count": 460,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "couid",
+      "score": 6.2206,
+      "pos_count": 446,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "resuits",
+      "score": 6.2071,
+      "pos_count": 440,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "potentia",
+      "score": 6.1934,
+      "pos_count": 434,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "materia",
+      "score": 6.1841,
+      "pos_count": 430,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "technoiogy",
+      "score": 6.1607,
+      "pos_count": 420,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "inciude",
+      "score": 6.1559,
+      "pos_count": 418,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "piaced",
+      "score": 6.1219,
+      "pos_count": 404,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "newsietter",
+      "score": 6.117,
+      "pos_count": 402,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "pians",
+      "score": 6.0918,
+      "pos_count": 392,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "microcap",
+      "score": 6.0893,
+      "pos_count": 391,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "maiiings",
+      "score": 6.0764,
+      "pos_count": 386,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "inciuding",
+      "score": 6.0608,
+      "pos_count": 380,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "probate",
+      "score": 5.9817,
+      "pos_count": 351,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "computron",
+      "score": 5.9788,
+      "pos_count": 350,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "jebel",
+      "score": 5.9731,
+      "pos_count": 348,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "invoive",
+      "score": 5.944,
+      "pos_count": 338,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "abacha",
+      "score": 5.9292,
+      "pos_count": 333,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "beiieves",
+      "score": 5.9262,
+      "pos_count": 332,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "dakotas",
+      "score": 5.9151,
+      "pos_count": 987,
+      "neg_count": 2,
+      "source_count": 2
+    },
+    {
+      "term": "kareen",
+      "score": 5.9151,
+      "pos_count": 987,
+      "neg_count": 2,
+      "source_count": 2
+    },
+    {
+      "term": "exampies",
+      "score": 5.9141,
+      "pos_count": 328,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "partying",
+      "score": 5.9131,
+      "pos_count": 985,
+      "neg_count": 2,
+      "source_count": 2
+    },
+    {
+      "term": "sanctuaries",
+      "score": 5.9131,
+      "pos_count": 985,
+      "neg_count": 2,
+      "source_count": 2
+    },
+    {
+      "term": "landfall",
+      "score": 5.911,
+      "pos_count": 983,
+      "neg_count": 2,
+      "source_count": 2
+    },
+    {
+      "term": "racy",
+      "score": 5.9008,
+      "pos_count": 973,
+      "neg_count": 2,
+      "source_count": 2
+    },
+    {
+      "term": "ouagadougou",
+      "score": 5.8957,
+      "pos_count": 322,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "additiona",
+      "score": 5.8832,
+      "pos_count": 318,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "ciick",
+      "score": 5.8769,
+      "pos_count": 316,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "reposed",
+      "score": 5.861,
+      "pos_count": 311,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "specuiative",
+      "score": 5.8578,
+      "pos_count": 310,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "zonedubai",
+      "score": 5.8578,
+      "pos_count": 310,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "aeor",
+      "score": 5.8514,
+      "pos_count": 308,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "aiso",
+      "score": 5.8514,
+      "pos_count": 308,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "miilion",
+      "score": 5.8318,
+      "pos_count": 302,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "otcbb",
+      "score": 5.8218,
+      "pos_count": 299,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "biank",
+      "score": 5.8118,
+      "pos_count": 296,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "incured",
+      "score": 5.805,
+      "pos_count": 294,
+      "neg_count": 0,
+      "source_count": 5
+    },
+    {
+      "term": "miliion",
+      "score": 5.7982,
+      "pos_count": 292,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "pubiication",
+      "score": 5.7913,
+      "pos_count": 290,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "actua",
+      "score": 5.7775,
+      "pos_count": 286,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "technoiogies",
+      "score": 5.7775,
+      "pos_count": 286,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "witer",
+      "score": 5.7492,
+      "pos_count": 278,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "professionai",
+      "score": 5.742,
+      "pos_count": 276,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "profiie",
+      "score": 5.742,
+      "pos_count": 276,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "pubiisher",
+      "score": 5.742,
+      "pos_count": 276,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "currentiy",
+      "score": 5.7348,
+      "pos_count": 274,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "onl",
+      "score": 5.7348,
+      "pos_count": 274,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "imited",
+      "score": 5.7275,
+      "pos_count": 272,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "sani",
+      "score": 5.7238,
+      "pos_count": 271,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "unserviceable",
+      "score": 5.7201,
+      "pos_count": 270,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "patek",
+      "score": 5.7164,
+      "pos_count": 539,
+      "neg_count": 1,
+      "source_count": 2
+    },
+    {
+      "term": "valuables",
+      "score": 5.7127,
+      "pos_count": 268,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "aiready",
+      "score": 5.6978,
+      "pos_count": 264,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "phentermine",
+      "score": 5.6787,
+      "pos_count": 259,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "shiip",
+      "score": 5.6671,
+      "pos_count": 256,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "vlagra",
+      "score": 5.6671,
+      "pos_count": 256,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "compieted",
+      "score": 5.6593,
+      "pos_count": 254,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "distributorjebel",
+      "score": 5.6593,
+      "pos_count": 254,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "wiil",
+      "score": 5.6514,
+      "pos_count": 758,
+      "neg_count": 2,
+      "source_count": 3
+    },
+    {
+      "term": "bikini",
+      "score": 5.6494,
+      "pos_count": 1009,
+      "neg_count": 3,
+      "source_count": 2
+    },
+    {
+      "term": "confiict",
+      "score": 5.6355,
+      "pos_count": 248,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "natura",
+      "score": 5.6355,
+      "pos_count": 248,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "reiease",
+      "score": 5.6355,
+      "pos_count": 248,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "shlpplng",
+      "score": 5.6355,
+      "pos_count": 248,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "wili",
+      "score": 5.6355,
+      "pos_count": 248,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "professiona",
+      "score": 5.6274,
+      "pos_count": 246,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "inflatable",
+      "score": 5.6234,
+      "pos_count": 983,
+      "neg_count": 3,
+      "source_count": 2
+    },
+    {
+      "term": "resuiting",
+      "score": 5.6193,
+      "pos_count": 244,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "tadalafil",
+      "score": 5.6193,
+      "pos_count": 244,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "2fa",
+      "score": 5.6179,
+      "pos_count": 733,
+      "neg_count": 2,
+      "source_count": 5
+    },
+    {
+      "term": "soiicitation",
+      "score": 5.6111,
+      "pos_count": 242,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "projecthoneypot",
+      "score": 5.6028,
+      "pos_count": 240,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "propecia",
+      "score": 5.5903,
+      "pos_count": 237,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "sidebacks",
+      "score": 5.5861,
+      "pos_count": 236,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "usaa",
+      "score": 5.5861,
+      "pos_count": 236,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "affiiiated",
+      "score": 5.5776,
+      "pos_count": 234,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "goais",
+      "score": 5.5691,
+      "pos_count": 232,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "orgasms",
+      "score": 5.5648,
+      "pos_count": 231,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "beiieve",
+      "score": 5.5604,
+      "pos_count": 230,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "prlces",
+      "score": 5.5604,
+      "pos_count": 230,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "presentiy",
+      "score": 5.543,
+      "pos_count": 226,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "wrongfu",
+      "score": 5.543,
+      "pos_count": 226,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "lagos",
+      "score": 5.543,
+      "pos_count": 680,
+      "neg_count": 2,
+      "source_count": 5
+    },
+    {
+      "term": "highiy",
+      "score": 5.5252,
+      "pos_count": 222,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "shlpp",
+      "score": 5.5252,
+      "pos_count": 222,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "zyban",
+      "score": 5.5252,
+      "pos_count": 222,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "abiiity",
+      "score": 5.5071,
+      "pos_count": 218,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "doliars",
+      "score": 5.5071,
+      "pos_count": 218,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "peopie",
+      "score": 5.5071,
+      "pos_count": 218,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "incure",
+      "score": 5.4887,
+      "pos_count": 214,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "wrongfuily",
+      "score": 5.4699,
+      "pos_count": 210,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "sharehoider",
+      "score": 5.4604,
+      "pos_count": 208,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "toois",
+      "score": 5.4507,
+      "pos_count": 206,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "iwc",
+      "score": 5.4459,
+      "pos_count": 411,
+      "neg_count": 1,
+      "source_count": 2
+    },
+    {
+      "term": "beiiefs",
+      "score": 5.4312,
+      "pos_count": 202,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "fiiings",
+      "score": 5.4312,
+      "pos_count": 202,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "symbo",
+      "score": 5.4213,
+      "pos_count": 200,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "materialiy",
+      "score": 5.4113,
+      "pos_count": 198,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "orphanages",
+      "score": 5.4113,
+      "pos_count": 198,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "toxin",
+      "score": 5.4012,
+      "pos_count": 984,
+      "neg_count": 4,
+      "source_count": 3
+    },
+    {
+      "term": "libido",
+      "score": 5.3961,
+      "pos_count": 195,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "availabie",
+      "score": 5.391,
+      "pos_count": 194,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "deveiopment",
+      "score": 5.391,
+      "pos_count": 194,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "pubiic",
+      "score": 5.3807,
+      "pos_count": 192,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "wouid",
+      "score": 5.3807,
+      "pos_count": 192,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "assassinated",
+      "score": 5.3755,
+      "pos_count": 191,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "powerquest",
+      "score": 5.3703,
+      "pos_count": 190,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "vaiue",
+      "score": 5.3703,
+      "pos_count": 190,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "unclaimed",
+      "score": 5.3635,
+      "pos_count": 1327,
+      "neg_count": 6,
+      "source_count": 7
+    },
+    {
+      "term": "burkinabe",
+      "score": 5.3598,
+      "pos_count": 188,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "foriegn",
+      "score": 5.3598,
+      "pos_count": 188,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "pecker",
+      "score": 5.3598,
+      "pos_count": 188,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "drvgs",
+      "score": 5.3491,
+      "pos_count": 186,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "perfected",
+      "score": 5.3491,
+      "pos_count": 186,
+      "neg_count": 0,
+      "source_count": 5
+    },
+    {
+      "term": "ine",
+      "score": 5.3473,
+      "pos_count": 559,
+      "neg_count": 2,
+      "source_count": 3
+    },
+    {
+      "term": "cialls",
+      "score": 5.3384,
+      "pos_count": 184,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "diiigence",
+      "score": 5.3384,
+      "pos_count": 184,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "doilars",
+      "score": 5.3384,
+      "pos_count": 184,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "merciful",
+      "score": 5.3384,
+      "pos_count": 184,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "repose",
+      "score": 5.3275,
+      "pos_count": 182,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "wiii",
+      "score": 5.3275,
+      "pos_count": 182,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "famiiiar",
+      "score": 5.3165,
+      "pos_count": 180,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "oversea",
+      "score": 5.3165,
+      "pos_count": 180,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "saave",
+      "score": 5.3165,
+      "pos_count": 180,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "avaiiable",
+      "score": 5.3054,
+      "pos_count": 178,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "compiete",
+      "score": 5.3054,
+      "pos_count": 178,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "riverdeep",
+      "score": 5.3054,
+      "pos_count": 178,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "disqualification",
+      "score": 5.2998,
+      "pos_count": 177,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "nnpc",
+      "score": 5.2998,
+      "pos_count": 177,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "xanax",
+      "score": 5.2942,
+      "pos_count": 530,
+      "neg_count": 2,
+      "source_count": 3
+    },
+    {
+      "term": "aiways",
+      "score": 5.2942,
+      "pos_count": 176,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "expiode",
+      "score": 5.2942,
+      "pos_count": 176,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "noneedl",
+      "score": 5.2942,
+      "pos_count": 176,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "xanaax",
+      "score": 5.2942,
+      "pos_count": 176,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "0nline",
+      "score": 5.2885,
+      "pos_count": 175,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "countrieswe",
+      "score": 5.2828,
+      "pos_count": 174,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "dreamwaver",
+      "score": 5.2828,
+      "pos_count": 174,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "macrmedia",
+      "score": 5.2828,
+      "pos_count": 174,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "kabila",
+      "score": 5.2771,
+      "pos_count": 173,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "lls",
+      "score": 5.2771,
+      "pos_count": 173,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "aopen",
+      "score": 5.2742,
+      "pos_count": 346,
+      "neg_count": 1,
+      "source_count": 2
+    },
+    {
+      "term": "cheaap",
+      "score": 5.2713,
+      "pos_count": 172,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "cialiis",
+      "score": 5.2713,
+      "pos_count": 172,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "horny",
+      "score": 5.2713,
+      "pos_count": 172,
+      "neg_count": 0,
+      "source_count": 5
+    },
+    {
+      "term": "oniine",
+      "score": 5.2636,
+      "pos_count": 514,
+      "neg_count": 2,
+      "source_count": 2
+    },
+    {
+      "term": "repatriating",
+      "score": 5.2597,
+      "pos_count": 170,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "soiutions",
+      "score": 5.2597,
+      "pos_count": 170,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "paxil",
+      "score": 5.2479,
+      "pos_count": 168,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "prlce",
+      "score": 5.2479,
+      "pos_count": 168,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "sampies",
+      "score": 5.2479,
+      "pos_count": 168,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "factua",
+      "score": 5.236,
+      "pos_count": 166,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "gzo",
+      "score": 5.224,
+      "pos_count": 164,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "softtabs",
+      "score": 5.224,
+      "pos_count": 164,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "visuai",
+      "score": 5.224,
+      "pos_count": 164,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "sectionl",
+      "score": 5.2118,
+      "pos_count": 162,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "whiie",
+      "score": 5.2118,
+      "pos_count": 162,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "materiaily",
+      "score": 5.1994,
+      "pos_count": 160,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "stoxo",
+      "score": 5.1994,
+      "pos_count": 160,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "xenical",
+      "score": 5.1932,
+      "pos_count": 159,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "exciusive",
+      "score": 5.1869,
+      "pos_count": 158,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "mailwisconsin",
+      "score": 5.1869,
+      "pos_count": 158,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "reqards",
+      "score": 5.1869,
+      "pos_count": 158,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "compiiance",
+      "score": 5.1743,
+      "pos_count": 156,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "littie",
+      "score": 5.1743,
+      "pos_count": 156,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "miiiion",
+      "score": 5.1743,
+      "pos_count": 156,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "reieases",
+      "score": 5.1743,
+      "pos_count": 156,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "seil",
+      "score": 5.1743,
+      "pos_count": 156,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "undervaiued",
+      "score": 5.1743,
+      "pos_count": 156,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "xara",
+      "score": 5.1743,
+      "pos_count": 156,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "demurrage",
+      "score": 5.1679,
+      "pos_count": 155,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "affiiiate",
+      "score": 5.1614,
+      "pos_count": 154,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "domiciliary",
+      "score": 5.1614,
+      "pos_count": 154,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "reiiance",
+      "score": 5.1485,
+      "pos_count": 152,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "seiected",
+      "score": 5.1485,
+      "pos_count": 152,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "simiiar",
+      "score": 5.1485,
+      "pos_count": 152,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "defiled",
+      "score": 5.1419,
+      "pos_count": 151,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "avaiiabie",
+      "score": 5.1353,
+      "pos_count": 150,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "unsuitabie",
+      "score": 5.1353,
+      "pos_count": 150,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "viaqra",
+      "score": 5.1353,
+      "pos_count": 150,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "discioses",
+      "score": 5.122,
+      "pos_count": 148,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "marketinq",
+      "score": 5.122,
+      "pos_count": 148,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "xom",
+      "score": 5.1152,
+      "pos_count": 147,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "piils",
+      "score": 5.1085,
+      "pos_count": 146,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "riqht",
+      "score": 5.1085,
+      "pos_count": 146,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "wysk",
+      "score": 5.1085,
+      "pos_count": 146,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "antibiotic",
+      "score": 5.1036,
+      "pos_count": 1023,
+      "neg_count": 6,
+      "source_count": 4
+    },
+    {
+      "term": "5million",
+      "score": 5.1016,
+      "pos_count": 145,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "evacuate",
+      "score": 5.0977,
+      "pos_count": 1017,
+      "neg_count": 6,
+      "source_count": 4
+    },
+    {
+      "term": "alium",
+      "score": 5.0948,
+      "pos_count": 144,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "compieteness",
+      "score": 5.0948,
+      "pos_count": 144,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "genera",
+      "score": 5.0948,
+      "pos_count": 144,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "saies",
+      "score": 5.0948,
+      "pos_count": 144,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "wysak",
+      "score": 5.0948,
+      "pos_count": 144,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "aiert",
+      "score": 5.0809,
+      "pos_count": 142,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "carefui",
+      "score": 5.0809,
+      "pos_count": 142,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "cordial",
+      "score": 5.0809,
+      "pos_count": 142,
+      "neg_count": 0,
+      "source_count": 4
+    },
+    {
+      "term": "honourably",
+      "score": 5.0809,
+      "pos_count": 142,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "inciudes",
+      "score": 5.0809,
+      "pos_count": 142,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "misieading",
+      "score": 5.0809,
+      "pos_count": 142,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "petroieum",
+      "score": 5.0809,
+      "pos_count": 142,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "wrongfuliy",
+      "score": 5.0809,
+      "pos_count": 142,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "nightclub",
+      "score": 5.0769,
+      "pos_count": 996,
+      "neg_count": 6,
+      "source_count": 3
+    },
+    {
+      "term": "quaiity",
+      "score": 5.0668,
+      "pos_count": 140,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "sho",
+      "score": 5.0668,
+      "pos_count": 140,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "bvlgari",
+      "score": 5.0597,
+      "pos_count": 419,
+      "neg_count": 2,
+      "source_count": 2
+    },
+    {
+      "term": "barreis",
+      "score": 5.0525,
+      "pos_count": 138,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "overinvoiced",
+      "score": 5.0525,
+      "pos_count": 138,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "errrectlon",
+      "score": 5.038,
+      "pos_count": 136,
+      "neg_count": 0,
+      "source_count": 2
+    },
+    {
+      "term": "matrimonial",
+      "score": 5.038,
+      "pos_count": 136,
+      "neg_count": 0,
+      "source_count": 3
+    },
+    {
+      "term": "prayerful",
+      "score": 5.038,
+      "pos_count": 136,
+      "neg_count": 0,
+      "source_count": 3
+    }
+  ],
+  "keywords_bigram": [
+    {
+      "term": "cnncom top",
+      "score": 8.3215,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "edt top",
+      "score": 8.3215,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "going agreed",
+      "score": 8.3215,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "lllp one",
+      "score": 8.3215,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "lllp time",
+      "score": 8.3215,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "network lllp",
+      "score": 8.3215,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "suggestions going",
+      "score": 8.3215,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "top cnncom",
+      "score": 8.3215,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "aug cnncom",
+      "score": 8.3119,
+      "pos_count": 2902,
+      "neg_count": 0
+    },
+    {
+      "term": "next kin",
+      "score": 8.1846,
+      "pos_count": 2555,
+      "neg_count": 0
+    },
+    {
+      "term": "reserved send",
+      "score": 7.6283,
+      "pos_count": 2930,
+      "neg_count": 1
+    },
+    {
+      "term": "thousand united",
+      "score": 7.5996,
+      "pos_count": 1423,
+      "neg_count": 0
+    },
+    {
+      "term": "alert alert",
+      "score": 7.5876,
+      "pos_count": 1406,
+      "neg_count": 0
+    },
+    {
+      "term": "alerts custom",
+      "score": 7.5876,
+      "pos_count": 1406,
+      "neg_count": 0
+    },
+    {
+      "term": "custom alert",
+      "score": 7.5876,
+      "pos_count": 1406,
+      "neg_count": 0
+    },
+    {
+      "term": "restore access",
+      "score": 7.445,
+      "pos_count": 1219,
+      "neg_count": 0
+    },
+    {
+      "term": "top wed",
+      "score": 7.4234,
+      "pos_count": 1193,
+      "neg_count": 0
+    },
+    {
+      "term": "foreign partner",
+      "score": 7.3594,
+      "pos_count": 1119,
+      "neg_count": 0
+    },
+    {
+      "term": "foreign account",
+      "score": 7.3469,
+      "pos_count": 1105,
+      "neg_count": 0
+    },
+    {
+      "term": "life glad",
+      "score": 7.2659,
+      "pos_count": 1019,
+      "neg_count": 0
+    },
+    {
+      "term": "avoid interruption",
+      "score": 7.2649,
+      "pos_count": 1018,
+      "neg_count": 0
+    },
+    {
+      "term": "payment verification",
+      "score": 7.261,
+      "pos_count": 1014,
+      "neg_count": 0
+    },
+    {
+      "term": "making fortune",
+      "score": 7.2441,
+      "pos_count": 997,
+      "neg_count": 0
+    },
+    {
+      "term": "top thu",
+      "score": 7.2421,
+      "pos_count": 995,
+      "neg_count": 0
+    },
+    {
+      "term": "new antibiotic",
+      "score": 7.2381,
+      "pos_count": 991,
+      "neg_count": 0
+    },
+    {
+      "term": "set float",
+      "score": 7.2361,
+      "pos_count": 989,
+      "neg_count": 0
+    },
+    {
+      "term": "amy ray",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "antibiotic mark",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "back republican",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "barista stand",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "battle sex",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "bedroom kills",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "bikini barista",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "bill clintons",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "boom man",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "called misleading",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "charges maggots",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "clampett midst",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "clintons upset",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "closed tot",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "dakota oil",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "dakotas reallife",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "decades hiding",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "depression making",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "dog reports",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "donate eggs",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "doomed utah",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "draws lawsuit",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "driven donate",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "economic surge",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "eggs anthrax",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "evil another",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "float love",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "fortune striking",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "garrs decades",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "grandma reacts",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "hiding fake",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "hilton swings",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "hilton takes",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "jed clampett",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "kareen wynter",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "kills dog",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "lawsuit need",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "lion bedroom",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "love triangle",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "maggots new",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "mccain kareen",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "midst dakota",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "misleading mountain",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "mistakes doomed",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "mountain lion",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "murder teri",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "need economic",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "obama got",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "obamas uphill",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "oil boom",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "oil property",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "polling battle",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "property obamas",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "pure evil",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "ray commentary",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "reacts charges",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "reallife jed",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "reports bikini",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "reports mistakes",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "sex case",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "sex draws",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "side amy",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "stand closed",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "striking oil",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "surge obama",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "suspect called",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "swings back",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "takes mccain",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "teri garrs",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "tot grandma",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "triangle murder",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "uphill polling",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "upset women",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "utah bin",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "women driven",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "wynter reports",
+      "score": 7.234,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "save gas",
+      "score": 7.232,
+      "pos_count": 985,
+      "neg_count": 0
+    },
+    {
+      "term": "says hopes",
+      "score": 7.232,
+      "pos_count": 985,
+      "neg_count": 0
+    },
+    {
+      "term": "firm helps",
+      "score": 7.23,
+      "pos_count": 983,
+      "neg_count": 0
+    },
+    {
+      "term": "found top",
+      "score": 7.23,
+      "pos_count": 983,
+      "neg_count": 0
+    },
+    {
+      "term": "john junior",
+      "score": 7.23,
+      "pos_count": 983,
+      "neg_count": 0
+    },
+    {
+      "term": "afternoon deal",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "airport official",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "anthony partying",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "arrested passengers",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "arrested toxin",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "attack teen",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "boosted stayathome",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "calls sandwich",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "casey anthony",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "caylee vanished",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "club nancy",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "comedy starbucks",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "commentary immigrant",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "computer spies",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "daughter caylee",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "deal edouard",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "dims hopes",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "edouard makes",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "evacuate american",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "evacuates passengers",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "forces emergency",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "freeman recovering",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "gorilla survival",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "gotti arrested",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "grace new",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "hopes gorilla",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "hopes mars",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "immigrant sanctuaries",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "inflatable slides",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "jet inflatable",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "junior gotti",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "kids commentary",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "landing passengers",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "life lure",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "lure rrated",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "makes landfall",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "man calls",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "mars life",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "mistress testifies",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "mom parties",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "nancy grace",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "nightclub daughter",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "offers afternoon",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "parties club",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "partying nightclub",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "passengers evacuate",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "passengers pipeline",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "passengers slide",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "photos casey",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "plane evacuates",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "rrated comedy",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "sanctuaries freeman",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    },
+    {
+      "term": "sandwich john",
+      "score": 7.2279,
+      "pos_count": 981,
+      "neg_count": 0
+    }
+  ],
+  "keywords_trigram": [
+    {
+      "term": "aug edt top",
+      "score": 8.3906,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "comments suggestions going",
+      "score": 8.3906,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "going agreed receive",
+      "score": 8.3906,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "lllp time warner",
+      "score": 8.3906,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "network lllp one",
+      "score": 8.3906,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "network lllp time",
+      "score": 8.3906,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "reserved send comments",
+      "score": 8.3906,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "suggestions going read",
+      "score": 8.3906,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "top cnncom top",
+      "score": 8.3906,
+      "pos_count": 2930,
+      "neg_count": 0
+    },
+    {
+      "term": "five hundred thousand",
+      "score": 7.8429,
+      "pos_count": 1694,
+      "neg_count": 0
+    },
+    {
+      "term": "million five hundred",
+      "score": 7.8341,
+      "pos_count": 1679,
+      "neg_count": 0
+    },
+    {
+      "term": "rights reserved send",
+      "score": 7.6975,
+      "pos_count": 2930,
+      "neg_count": 1
+    },
+    {
+      "term": "alert alert name",
+      "score": 7.6567,
+      "pos_count": 1406,
+      "neg_count": 0
+    },
+    {
+      "term": "alert name custom",
+      "score": 7.6567,
+      "pos_count": 1406,
+      "neg_count": 0
+    },
+    {
+      "term": "alerts custom alert",
+      "score": 7.6567,
+      "pos_count": 1406,
+      "neg_count": 0
+    },
+    {
+      "term": "custom alert alert",
+      "score": 7.6567,
+      "pos_count": 1406,
+      "neg_count": 0
+    },
+    {
+      "term": "name custom alert",
+      "score": 7.6567,
+      "pos_count": 1406,
+      "neg_count": 0
+    },
+    {
+      "term": "aug full story",
+      "score": 7.6467,
+      "pos_count": 1392,
+      "neg_count": 0
+    },
+    {
+      "term": "fri aug full",
+      "score": 7.6227,
+      "pos_count": 1359,
+      "neg_count": 0
+    },
+    {
+      "term": "hundred thousand united",
+      "score": 7.5906,
+      "pos_count": 1316,
+      "neg_count": 0
+    },
+    {
+      "term": "top wed aug",
+      "score": 7.49,
+      "pos_count": 1190,
+      "neg_count": 0
+    },
+    {
+      "term": "wed aug cnncom",
+      "score": 7.49,
+      "pos_count": 1190,
+      "neg_count": 0
+    },
+    {
+      "term": "million united states",
+      "score": 7.4322,
+      "pos_count": 1123,
+      "neg_count": 0
+    },
+    {
+      "term": "thousand united states",
+      "score": 7.406,
+      "pos_count": 1094,
+      "neg_count": 0
+    },
+    {
+      "term": "personal life glad",
+      "score": 7.3351,
+      "pos_count": 1019,
+      "neg_count": 0
+    },
+    {
+      "term": "phone mobile email",
+      "score": 7.3301,
+      "pos_count": 1014,
+      "neg_count": 0
+    },
+    {
+      "term": "regarding account access",
+      "score": 7.3242,
+      "pos_count": 1008,
+      "neg_count": 0
+    },
+    {
+      "term": "notice regarding account",
+      "score": 7.3163,
+      "pos_count": 1000,
+      "neg_count": 0
+    },
+    {
+      "term": "thu aug cnncom",
+      "score": 7.3062,
+      "pos_count": 990,
+      "neg_count": 0
+    },
+    {
+      "term": "top thu aug",
+      "score": 7.3062,
+      "pos_count": 990,
+      "neg_count": 0
+    },
+    {
+      "term": "amy ray commentary",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "another side amy",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "anthrax suspect called",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "antibiotic mark get",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "back republican presidential",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "barista stand closed",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "battle sex case",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "bedroom kills dog",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "bikini barista stand",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "bill clintons upset",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "boom man born",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "born great depression",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "called misleading mountain",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "case pure evil",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "charges maggots new",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "clampett midst dakota",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "clintons upset women",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "closed tot grandma",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "commentary bill clintons",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "dakota oil boom",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "dakotas reallife jed",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "decades hiding fake",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "depression making fortune",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "dog reports mistakes",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "donate eggs anthrax",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "doomed utah bin",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "draws lawsuit need",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "driven donate eggs",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "economic surge obama",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "eggs anthrax suspect",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "evil another side",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "fake sex draws",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "float love triangle",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "former driver guilty",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "fortune striking oil",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "garrs decades hiding",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "get set float",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "got hit head",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "grandma reacts charges",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "great depression making",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "hiding fake sex",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "hilton swings back",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "hilton takes mccain",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "hit head top",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "jed clampett midst",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "john mccain kareen",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "kareen wynter reports",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "kills dog reports",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "lawsuit need economic",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "lion bedroom kills",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "love triangle murder",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "maggots new antibiotic",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "making fortune striking",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "man born great",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "mark get set",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "mccain kareen wynter",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "midst dakota oil",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "misleading mountain lion",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "mistakes doomed utah",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "mountain lion bedroom",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "murder teri garrs",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "need economic surge",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "new antibiotic mark",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "obama got hit",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "obamas uphill polling",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "oil boom man",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "oil property obamas",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "paris hilton swings",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "paris hilton takes",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "polling battle sex",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "presidential candidate john",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "property obamas uphill",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "pure evil another",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "ray commentary bill",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "reacts charges maggots",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "reallife jed clampett",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "reports bikini barista",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "reports mistakes doomed",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "set float love",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "sex case pure",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "sex draws lawsuit",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "side amy ray",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "stand closed tot",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "striking oil property",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "surge obama got",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "suspect called misleading",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "swings back republican",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "takes mccain paris",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "teri garrs decades",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    },
+    {
+      "term": "tot grandma reacts",
+      "score": 7.3032,
+      "pos_count": 987,
+      "neg_count": 0
+    }
+  ]
+}
