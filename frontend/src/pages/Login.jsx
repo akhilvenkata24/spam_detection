@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Lock, User, Terminal } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import styles from './Auth.module.css';
@@ -10,12 +10,13 @@ export function Login() {
     const [error, setError] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (token) {
-            window.location.replace('/dashboard?auth=1');
+            navigate('/dashboard', { replace: true });
         }
-    }, [token]);
+    }, [token, navigate]);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -27,7 +28,7 @@ export function Login() {
             if (!result.success) {
                 setError(result.message);
             } else {
-                window.location.replace('/dashboard?auth=1');
+                navigate('/dashboard', { replace: true });
             }
         } finally {
             setLoading(false);
