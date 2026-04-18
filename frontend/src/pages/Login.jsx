@@ -14,7 +14,7 @@ export function Login() {
 
     useEffect(() => {
         if (token) {
-            navigate('/dashboard', { replace: true });
+            navigate('/dashboard', { replace: true, state: { authSuccess: true } });
         }
     }, [token, navigate]);
 
@@ -28,7 +28,7 @@ export function Login() {
             if (!result.success) {
                 setError(result.message);
             } else {
-                navigate('/dashboard', { replace: true });
+                navigate('/dashboard', { replace: true, state: { authSuccess: true } });
             }
         } finally {
             setLoading(false);

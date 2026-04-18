@@ -1,5 +1,8 @@
-// Force Hugging Face deployment (bypassing any old cached Render environment variables)
-export const API_BASE_URL = 'https://akhilvenkata24-spam-detect-backend.hf.space';
+const configuredApiBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim();
+
+// Use the Render-provided environment variable when available, with a safe fallback
+// to the deployed Hugging Face backend for local/testing setups.
+export const API_BASE_URL = (configuredApiBaseUrl || 'https://akhilvenkata24-spam-detect-backend.hf.space').replace(/\/$/, '');
 
 export function apiUrl(path) {
     const normalizedPath = path.startsWith('/') ? path : `/${path}`;
