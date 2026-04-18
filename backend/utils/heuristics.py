@@ -26,6 +26,9 @@ CATEGORY_RULES = [
             re.compile(r"\bprevent suspension\b"),
             re.compile(r"\bsecurity alert\b"),
             re.compile(r"\bverify your account\b"),
+            re.compile(r"\b(?:account\s+)?reactivation\b"),
+            re.compile(r"\bpermanent\s+lock(?:out)?\b"),
+            re.compile(r"\b(?:avoid|prevent)\s+(?:a\s+)?(?:permanent\s+)?lock(?:out)?\b"),
         ],
     ),
     (
@@ -38,6 +41,8 @@ CATEGORY_RULES = [
             re.compile(r"\bbank details?\b"),
             re.compile(r"\bkyc\s*(?:update|verification)?\b"),
             re.compile(r"\blogin\s+to\s+verify\b"),
+            re.compile(r"\bconfirm\s+(?:your\s+)?password\b"),
+            re.compile(r"\blog\s*in\s+now\b"),
         ],
     ),
     (
