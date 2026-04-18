@@ -3,8 +3,6 @@
 **Download the Android APK (Release V1):**  
 [![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/akhilvenkata24/spam_detection/releases/download/V1/app-debug.apk)
 
-> If the filename is different in your release assets, replace `spam_detect.apk` in the link above with the exact APK asset name.
-
 A full-stack threat analysis platform, along with android app support that detects spam/phishing risk from message **content** using a hybrid engine:
 - Rule-based heuristics
 - URL forensics
