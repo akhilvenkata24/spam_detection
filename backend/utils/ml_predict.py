@@ -53,7 +53,10 @@ def predict_spam_probability(raw_text: str) -> float:
     using BERT Embeddings and Metadata Arrays.
     """
     if model is None or embedder is None or sentiment_analyzer is None:
-        return 0.1 # Fallback
+        load_models()
+        if model is None or embedder is None or sentiment_analyzer is None:
+            print("Fallback used as models failed to load (likely OOM).")
+            return 0.1 # Fallback
         
     cleaned = clean_text(raw_text)
     if len(cleaned) == 0:

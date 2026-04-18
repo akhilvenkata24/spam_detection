@@ -50,8 +50,8 @@ limiter = Limiter(
 # Optional: Simple API Key for basic protection (mobile clients, external services)
 API_KEY = os.getenv("API_KEY", "your_secret_api_key_here")
 
-# Initialize models
-load_models()
+# Models will be lazy-loaded in the analyze route
+# to prevent memory-induced startup crashes on small instances.
 
 def seed_local_demo_user():
     if os.getenv("SEED_DEMO_USER", "true").lower() not in {"1", "true", "yes"}:
