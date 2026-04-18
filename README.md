@@ -5,7 +5,7 @@ colorFrom: blue
 colorTo: red
 sdk: docker
 sdk_version: "latest"
-app_file: backend/app.py
+app_file: app.py
 app_port: 7860
 pinned: false
 ---
