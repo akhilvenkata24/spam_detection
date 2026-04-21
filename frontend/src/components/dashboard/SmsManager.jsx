@@ -227,27 +227,27 @@ export function SmsManager() {
                                         style={{ cursor: 'pointer' }}
                                         title="Click to view full analysis"
                                     >
-                                        <td className={styles.td} onClick={e => e.stopPropagation()}>
+                                        <td className={styles.td} data-label="Select" onClick={e => e.stopPropagation()}>
                                             <input 
                                                 type="checkbox" 
                                                 checked={selectedIds.has(m._id)}
                                                 onChange={(e) => handleSelect(e, m._id)} 
                                             />
                                         </td>
-                                        <td className={styles.td}>{m.sender}</td>
-                                        <td className={styles.td}>
+                                        <td className={styles.td} data-label="Sender">{m.sender}</td>
+                                        <td className={styles.td} data-label="Message Snippet">
                                             <div className={styles.snippet}>{m.body}</div>
                                         </td>
-                                        <td className={styles.td}>
+                                        <td className={styles.td} data-label="Date">
                                             <span className={styles.date}>{new Date(m.date).toLocaleString()}</span>
                                             <div className={styles.retentionNote}>{getRetentionCountdownLabel(m, clockTick)}</div>
                                         </td>
-                                        <td className={styles.td}>
+                                        <td className={styles.td} data-label="Verdict">
                                             <span className={`${styles.badge} ${styles[verdictMeta.className]}`}>
                                                 {verdictMeta.label}
                                             </span>
                                         </td>
-                                        <td className={styles.td}>
+                                        <td className={styles.td} data-label="Actions">
                                             <button 
                                                 onClick={(e) => handleDelete(e, m._id)} 
                                                 style={{ background: 'none', border: 'none', color: 'var(--destructive)', cursor: 'pointer' }}

@@ -463,6 +463,15 @@
 }
 
 @media (max-width: 900px) {
+    .mainGrid {
+        gap: 1.25rem;
+    }
+
+    .historySection,
+    .sidebar {
+        gap: 1.25rem;
+    }
+
     .pageTitle {
         font-size: 1.5rem;
     }
@@ -485,8 +494,104 @@
 }
 
 @media (max-width: 640px) {
-    .table {
-        min-width: 640px;
+    .dashboardFn {
+        width: 100%;
+    }
+
+    .mainGrid,
+    .historySection,
+    .sidebar,
+    .statsGrid {
+        gap: 1rem;
+    }
+
+    .statsGrid {
+        margin-bottom: 1.25rem;
+    }
+
+    .historyHeader,
+    .apiCard,
+    .settingsCard,
+    .statsCard,
+    .qrWidget {
+        padding: 0.9rem;
+    }
+
+    .tableContainer {
+        overflow: visible;
+        max-height: none !important;
+    }
+
+    .table,
+    .thead,
+    .tbody,
+    .tr,
+    .td {
+        display: block;
+        width: 100%;
+    }
+
+    .thead {
+        display: none;
+    }
+
+    .tr {
+        margin-bottom: 0.9rem;
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.18);
+    }
+
+    .td {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.75rem 0.9rem;
+        border-bottom: 1px solid rgba(38, 38, 38, 0.45);
+    }
+
+    .td:last-child {
+        border-bottom: none;
+    }
+
+    .td::before {
+        content: attr(data-label);
+        flex: 0 0 38%;
+        max-width: 38%;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted-foreground);
+        padding-top: 0.15rem;
+    }
+
+    .td > * {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .snippet,
+    .apiKey,
+    .endpointText {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .sourceBadge {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .retentionNote {
+        text-align: right;
+    }
+
+    .tableContainer {
+        padding-bottom: 0.25rem;
     }
 
     .historyTitle,
@@ -501,5 +606,19 @@
     .apiKeyContainer {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .qrWidgetCaution {
+        font-size: 0.75rem;
+    }
+
+    .settingsGroup {
+        gap: 1rem;
+    }
+
+    .sliderHeader,
+    .toggleRow {
+        gap: 0.75rem;
+        flex-wrap: wrap;
     }
 }

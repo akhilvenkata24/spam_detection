@@ -222,15 +222,15 @@ export function ScanHistory() {
                                 style={{ cursor: 'pointer' }}
                                 title="Click to view full analysis"
                             >
-                                <td className={styles.td} onClick={e => e.stopPropagation()}>
+                                <td className={styles.td} data-label="Select" onClick={e => e.stopPropagation()}>
                                     <input 
                                         type="checkbox" 
                                         checked={selectedIds.has(scan._id)}
                                         onChange={(e) => handleSelect(e, scan._id)} 
                                     />
                                 </td>
-                                <td className={`${styles.td} ${styles.snippet}`}>{scan.text_snippet}</td>
-                                <td className={styles.td}>
+                                <td className={`${styles.td} ${styles.snippet}`} data-label="Message Snippet">{scan.text_snippet}</td>
+                                <td className={styles.td} data-label="Risk Score">
                                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', alignItems: 'flex-start' }}>
                                         <span className={`${styles.badge} ${scan.risk_score > 60 ? styles.badgeDanger :
                                             scan.risk_score > 20 ? styles.badgeWarn :
@@ -243,7 +243,7 @@ export function ScanHistory() {
                                         </span>
                                     </div>
                                 </td>
-                                <td className={styles.td}>
+                                <td className={styles.td} data-label="Source">
                                     <span className={styles.sourceBadge}>
                                         {sourceMeta.isMobile ? (
                                             <>
@@ -258,11 +258,11 @@ export function ScanHistory() {
                                         )}
                                     </span>
                                 </td>
-                                <td className={`${styles.td} ${styles.date}`}>
+                                <td className={`${styles.td} ${styles.date}`} data-label="Time">
                                     <div>{new Date(scan.timestamp).toLocaleString()}</div>
                                     <div className={styles.retentionNote}>{getRetentionCountdownLabel(scan, clockTick)}</div>
                                 </td>
-                                <td className={styles.td}>
+                                <td className={styles.td} data-label="Actions">
                                     <button 
                                         onClick={(e) => handleDelete(e, scan._id)} 
                                         style={{ background: 'none', border: 'none', color: 'var(--destructive)', cursor: 'pointer' }}

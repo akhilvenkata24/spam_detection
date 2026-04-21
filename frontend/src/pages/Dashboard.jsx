@@ -27,7 +27,7 @@ export function Dashboard() {
                             Scan to install the companion mobile app and sync messages.
                         </p>
                         <div className={styles.qrWidgetFrame}>
-                            <img src="/mobile-app-qr-placeholder.svg" alt="Mobile app QR placeholder" className={styles.qrWidgetImage} />
+                            <img src="/Spam.Detect Android Application.svg" alt="Mobile app QR placeholder" className={styles.qrWidgetImage} />
                         </div>
                         <div className={styles.qrWidgetCaution}>
                             <ShieldAlert size={14} />
