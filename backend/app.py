@@ -288,18 +288,30 @@ def get_history():
     sms_messages = get_user_sms(user_id)
     
     # Merge and standardize format
+    SCORE_THRESHOLDS = load_score_thresholds()
     combined = []
     for h in history:
         combined.append(h)
         
     for s in sms_messages:
+        # Calculate verdict from risk_score if not present
+        risk_score = s.get("risk_score", 0)
+        if risk_score < SCORE_THRESHOLDS["safe_max"]:
+            calculated_verdict = "safe"
+        elif risk_score < SCORE_THRESHOLDS["suspicious_max"]:
+            calculated_verdict = "suspicious"
+        elif risk_score < SCORE_THRESHOLDS["high_risk_max"]:
+            calculated_verdict = "high_risk"
+        else:
+            calculated_verdict = "fraud"
+            
         combined.append({
             "_id": s["_id"],
             "user_id": s["user_id"],
             "text_snippet": s["body"][:100] + "..." if len(s["body"]) > 100 else s["body"],
             "full_text": s["body"],
-            "risk_score": s["risk_score"],
-            "verdict": s.get("verdict", "suspicious"),
+            "risk_score": risk_score,
+            "verdict": s.get("verdict", calculated_verdict),
             "source": s.get("source", "Mobile SMS Sync"),
             "timestamp": s["imported_at"],
             "retention_expires_at": s.get("retention_expires_at"),
