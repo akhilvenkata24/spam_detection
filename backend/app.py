@@ -136,17 +136,37 @@ def get_storage_threshold(user_settings):
 
 
 def normalize_requested_source(value):
+    if not isinstance(value, str):
+        return None
+
+    normalized = value.strip()
+    if not normalized:
+        return None
+
+    # Accept common mobile/client variants and map them to canonical labels.
+    compact = "".join(ch for ch in normalized.lower() if ch.isalnum())
+    alias_map = {
+        "web": "Web",
+        "browser": "Web",
+        "apimobile": "API (Mobile)",
+        "api": "API (Mobile)",
+        "mobile": "API (Mobile)",
+        "mobilemanualscan": "Mobile Manual Scan",
+        "manualscan": "Mobile Manual Scan",
+        "manual": "Mobile Manual Scan",
+        "mobilesmssync": "Mobile SMS Sync",
+        "smssync": "Mobile SMS Sync",
+        "sync": "Mobile SMS Sync",
+    }
+    if compact in alias_map:
+        return alias_map[compact]
+
     allowed_sources = {
         "Web": "Web",
         "API (Mobile)": "API (Mobile)",
         "Mobile Manual Scan": "Mobile Manual Scan",
         "Mobile SMS Sync": "Mobile SMS Sync",
     }
-
-    if not isinstance(value, str):
-        return None
-
-    normalized = value.strip()
     return allowed_sources.get(normalized)
 
 @app.route('/health', methods=['GET'])
