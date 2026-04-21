@@ -5,6 +5,8 @@ import { apiUrl } from '../../lib/api';
 import { getRetentionCountdownLabel } from '../../lib/retention';
 import styles from './Dashboard.module.css';
 
+const MOBILE_SOURCES = new Set(['API (Mobile)', 'Mobile Manual Scan', 'Mobile SMS Sync']);
+
 const VERDICT_META = {
     safe: { label: 'Verified Safe', className: 'badgeSafe', scoreColor: 'var(--primary)' },
     suspicious: { label: 'Suspicious', className: 'badgeWarn', scoreColor: 'var(--cyber-amber)' },
@@ -15,6 +17,21 @@ const VERDICT_META = {
 const getVerdictMeta = (verdict) => {
     const normalizedVerdict = String(verdict || '').toLowerCase();
     return VERDICT_META[normalizedVerdict] || VERDICT_META.suspicious;
+};
+
+const getSourceBadge = (source) => {
+    const normalizedSource = String(source || '').trim();
+    if (MOBILE_SOURCES.has(normalizedSource)) {
+        return {
+            isMobile: true,
+            label: 'MOBILE'
+        };
+    }
+
+    return {
+        isMobile: false,
+        label: 'WEB'
+    };
 };
 
 export function SmsManager() {
@@ -211,6 +228,7 @@ export function SmsManager() {
                                     <th className={styles.th}>Message Snippet</th>
                                     <th className={styles.th}>Date</th>
                                     <th className={styles.th}>Verdict</th>
+                                    <th className={styles.th}>Source</th>
                                     <th className={styles.th}></th>
                                 </tr>
                             </thead>
@@ -218,6 +236,7 @@ export function SmsManager() {
                                 {filteredMessages.map((m, idx) => (
                                     (() => {
                                         const verdictMeta = getVerdictMeta(m.verdict);
+                                        const sourceMeta = getSourceBadge(m.source);
 
                                         return (
                                     <tr 
@@ -245,6 +264,15 @@ export function SmsManager() {
                                         <td className={styles.td} data-label="Verdict">
                                             <span className={`${styles.badge} ${styles[verdictMeta.className]}`}>
                                                 {verdictMeta.label}
+                                            </span>
+                                        </td>
+                                        <td className={styles.td} data-label="Source">
+                                            <span className={styles.sourceBadge}>
+                                                {sourceMeta.isMobile ? (
+                                                    <span className={`${styles.pill} ${styles.pillMobile}`}>{sourceMeta.label}</span>
+                                                ) : (
+                                                    <span className={`${styles.pill} ${styles.pillWeb}`}>{sourceMeta.label}</span>
+                                                )}
                                             </span>
                                         </td>
                                         <td className={styles.td} data-label="Actions">

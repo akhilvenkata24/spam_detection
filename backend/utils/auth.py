@@ -94,7 +94,7 @@ def get_user_by_api_key(api_key):
         user['_id'] = str(user['_id'])
     return user
 
-def save_scan_history(user_id, text, score, verdict, source, details, storage_threshold=60):
+def save_scan_history(user_id, text, score, verdict, source, details, storage_threshold=60, auth_channel="JWT"):
     try:
         threshold_value = max(0, min(100, int(storage_threshold)))
     except (TypeError, ValueError):
@@ -111,6 +111,7 @@ def save_scan_history(user_id, text, score, verdict, source, details, storage_th
         "analysis_details": details,
         "timestamp": created_at,
         "storage_threshold": threshold_value,
+        "auth_channel": auth_channel,
     }
 
     if score < threshold_value:

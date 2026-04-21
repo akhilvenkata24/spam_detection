@@ -134,6 +134,21 @@ def get_storage_threshold(user_settings):
         threshold = 60
     return max(0, min(100, threshold))
 
+
+def normalize_requested_source(value):
+    allowed_sources = {
+        "Web": "Web",
+        "API (Mobile)": "API (Mobile)",
+        "Mobile Manual Scan": "Mobile Manual Scan",
+        "Mobile SMS Sync": "Mobile SMS Sync",
+    }
+
+    if not isinstance(value, str):
+        return None
+
+    normalized = value.strip()
+    return allowed_sources.get(normalized)
+
 @app.route('/health', methods=['GET'])
 @limiter.exempt
 def health_check():
@@ -331,7 +346,7 @@ def get_stats():
     
     total_scans = len(history) + len(sms_messages)
     threats_blocked = sum(1 for h in history if h['risk_score'] >= 60) + sum(1 for s in sms_messages if s['is_spam'])
-    api_calls = sum(1 for h in history if h['source'] == "API (Mobile)")
+    api_calls = sum(1 for h in history if h.get('source') in {"API (Mobile)", "Mobile Manual Scan"})
     
     return jsonify({
         "status": "success", 
@@ -369,12 +384,15 @@ def analyze():
         # Extract text into temporary memory
         raw_text = str(data.get('text', ''))
         sender = data.get('sender', 'unknown')
+        requested_source_raw = data.get('requested_source', data.get('source'))
+        requested_source = normalize_requested_source(requested_source_raw)
         source = data.get('source', 'unknown')
         
         # Check authentication optionally to attribute to user
         user_id = None
         user_settings = {"storage_threshold": 60, "auto_flag": False}
-        req_source = source
+        auth_channel = "ANON"
+        resolved_source = requested_source
 
         # Check API Key first (Mobile/External API)
         api_key = request.headers.get("X-API-Key")
@@ -383,7 +401,9 @@ def analyze():
             if user:
                 user_id = user['_id']
                 user_settings = user['settings']
-                req_source = "API (Mobile)"
+                auth_channel = "API_KEY"
+                if not resolved_source:
+                    resolved_source = "API (Mobile)"
                 
         # If no API Key, try JWT (Web frontend)
         if not user_id:
@@ -395,12 +415,23 @@ def analyze():
                     user = get_user_by_id(user_id)
                     if user:
                         user_settings = user['settings']
-                    req_source = "Web"
+                    auth_channel = "JWT"
+                    if not resolved_source:
+                        resolved_source = "Web"
             except Exception:
                 pass
+
+        if not resolved_source:
+            resolved_source = "Web" if auth_channel == "JWT" else "API (Mobile)" if auth_channel == "API_KEY" else "Web"
         
         # Log request (without raw text)
-        logger.info(f"Incoming /analyze request from source: {source}, sender: {sender}")
+        logger.info(
+            "Incoming /analyze request attribution requested_source=%s resolved_source=%s auth_channel=%s sender=%s",
+            requested_source_raw,
+            resolved_source,
+            auth_channel,
+            sender,
+        )
         
         # --- Stage 1: Heuristic Analysis ---
         heuristic_results = parse_heuristics(raw_text)
@@ -516,9 +547,10 @@ def analyze():
                 raw_text,
                 final_score_clamped,
                 verdict,
-                req_source,
+                resolved_source,
                 response["details"],
                 storage_threshold=get_storage_threshold(user_settings),
+                auth_channel=auth_channel,
             )
         
         return jsonify(response), 200

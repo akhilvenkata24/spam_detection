@@ -12,7 +12,7 @@ const VERDICT_META = {
     fraud: { label: 'Severe Threat', className: 'badgeDanger' }
 };
 
-const MOBILE_SOURCES = new Set(['API (Mobile)', 'Mobile SMS Sync']);
+const MOBILE_SOURCES = new Set(['API (Mobile)', 'Mobile Manual Scan', 'Mobile SMS Sync']);
 
 const getVerdictMeta = (verdict) => {
     const normalizedVerdict = String(verdict || '').toLowerCase();
