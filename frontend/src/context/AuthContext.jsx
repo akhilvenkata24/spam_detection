@@ -140,7 +140,48 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    const updateProfile = async (profile) => {
+        try {
+            const res = await fetchWithRetry(apiUrl('/api/auth/profile'), {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(profile)
+            });
+            const data = await parseResponseBody(res);
 
+            if (res.ok && data.status === 'success' && data.user) {
+                updateAuthUser(data.user);
+                return { success: true, message: data.message || 'Profile updated' };
+            }
+            return { success: false, message: data.message || `Profile update failed (${res.status})` };
+        } catch (err) {
+            return { success: false, message: err.message || 'Profile update failed' };
+        }
+    };
+
+    const changePassword = async (current_password, new_password) => {
+        try {
+            const res = await fetchWithRetry(apiUrl('/api/auth/change-password'), {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ current_password, new_password })
+            });
+            const data = await parseResponseBody(res);
+
+            if (res.ok && data.status === 'success') {
+                return { success: true, message: data.message || 'Password changed' };
+            }
+            return { success: false, message: data.message || `Password change failed (${res.status})` };
+        } catch (err) {
+            return { success: false, message: err.message || 'Password change failed' };
+        }
+    };
 
     const updateAuthUser = (details) => {
         const newUser = { ...user, ...details };
@@ -150,7 +191,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, token, loading, login, register, logout, updateAuthUser }}>
+        <AuthContext.Provider value={{ user, token, loading, login, register, logout, updateAuthUser, updateProfile, changePassword }}>
             {!loading && children}
         </AuthContext.Provider>
     );

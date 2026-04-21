@@ -1,17 +1,33 @@
 const configuredApiBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim();
 
-const localDevApiBaseUrl = 'http://127.0.0.1:5000';
 const hostedApiBaseUrl = 'https://akhilvenkata24-spam-detect-backend.hf.space';
 
-// Priority:
-// 1) Explicit VITE_API_BASE_URL
-// 2) Local backend when running on localhost
-// 3) Hosted backend fallback
-const defaultApiBaseUrl = window.location.hostname === 'localhost'
-    ? localDevApiBaseUrl
-    : hostedApiBaseUrl;
+function isPlaceholderApiBaseUrl(url) {
+    if (!url) return true;
 
-export const API_BASE_URL = (configuredApiBaseUrl || defaultApiBaseUrl).replace(/\/$/, '');
+    const normalized = url.toLowerCase();
+    return (
+        normalized.includes('your-backend-domain.com') ||
+        normalized.includes('<backend') ||
+        normalized.includes('<your-backend-domain>') ||
+        normalized.includes('replace-with')
+    );
+}
+
+const isLocalDevUrl = (url) => {
+    if (!url) return false;
+    return /^(https?:\/\/)?(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(url);
+};
+
+// Priority:
+// 1) Explicit non-local VITE_API_BASE_URL
+// 2) Same-origin proxy path during local development
+// 3) Hosted backend fallback
+const resolvedApiBaseUrl = isPlaceholderApiBaseUrl(configuredApiBaseUrl) || isLocalDevUrl(configuredApiBaseUrl)
+    ? (window.location.hostname === 'localhost' ? '' : hostedApiBaseUrl)
+    : configuredApiBaseUrl;
+
+export const API_BASE_URL = resolvedApiBaseUrl.replace(/\/$/, '');
 
 export function apiUrl(path) {
     const normalizedPath = path.startsWith('/') ? path : `/${path}`;

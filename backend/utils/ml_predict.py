@@ -3,8 +3,6 @@ import joblib
 import re
 import numpy as np
 from pathlib import Path
-from sentence_transformers import SentenceTransformer
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 from utils.heuristics import parse_heuristics
 from utils.url_utils import analyze_urls
@@ -35,6 +33,7 @@ def fallback_ml_probability(raw_text: str, heur_res: dict | None = None, url_res
         try:
             if sentiment_analyzer is None:
                 # Light fallback without loading the heavy embedder path.
+                from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
                 local_sentiment = SentimentIntensityAnalyzer()
                 neg_score = local_sentiment.polarity_scores(raw_text)['neg']
             else:
@@ -51,8 +50,10 @@ def load_models():
     """Load the BERT embedder, Sentiment Analyzer, and Classification model."""
     global model, embedder, sentiment_analyzer
     
-    # Load SentenceTransformer and VADER
+    # Load SentenceTransformer and VADER lazily to keep import-time overhead low.
     try:
+        from sentence_transformers import SentenceTransformer
+        from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
         print("Loading SentenceTransformer (BERT) array...")
         embedder = SentenceTransformer('all-MiniLM-L6-v2')
         sentiment_analyzer = SentimentIntensityAnalyzer()

@@ -20,6 +20,11 @@ This project is easiest to deploy with:
    - `JWT_SECRET` (required)
    - `MONGO_URI` (required)
    - `CORS_ORIGINS` (required, set to `*` or your frontend URL)
+   - `API_KEY` (optional, for mobile API ingestion)
+6. Docker build/run in Space:
+   - App file: `backend/app.py`
+   - Exposed port: `7860` at the Space proxy level (Flask still runs internal `PORT` env)
+7. Use the Space "Restart this Space" / "Factory Rebuild" buttons after each push.
 6. Once built, the backend will run at your Hugging Face Space URL.
 
 ## 3) Deploy Frontend on Render
@@ -28,8 +33,9 @@ This project is easiest to deploy with:
 3. Build Command: `npm install && npm run build`
 4. Publish Directory: `dist`
 5. Add env var:
-   - `VITE_API_BASE_URL=https://<your-backend-domain>`
+   - `VITE_API_BASE_URL=https://<your-huggingface-space-domain>`
 6. Deploy.
+7. For updates, use Render "Manual Deploy" -> "Deploy latest commit" (rebuild).
 
 ## 4) Set CORS correctly
 After frontend deploy, set backend `CORS_ORIGINS` exactly to your frontend origin.
@@ -42,6 +48,8 @@ If you use multiple frontend domains, separate with commas.
 - Register a new user in production.
 - Login and open dashboard.
 - Submit scanner input and verify history/stat updates.
+- Verify Forgot Password flow from login screen.
+- Verify account update + change password from dashboard settings.
 - Confirm backend logs show requests from frontend origin.
 
 ## 6) Notes

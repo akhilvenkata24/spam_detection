@@ -2,6 +2,13 @@ import os
 import logging
 import json
 from pathlib import Path
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    pass
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_limiter import Limiter
@@ -11,7 +18,18 @@ from utils.heuristics import parse_heuristics
 from utils.url_utils import analyze_urls
 from utils.ml_predict import load_models, predict_spam_probability
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity, verify_jwt_in_request
-from utils.auth import create_user, verify_user, get_user_by_id, get_user_by_api_key, save_scan_history, get_user_history, update_user_settings
+from utils.auth import (
+    create_user,
+    verify_user,
+    get_user_by_id,
+    get_user_by_api_key,
+    save_scan_history,
+    get_user_history,
+    update_user_settings,
+    update_user_profile,
+    change_user_password,
+    verify_user_password,
+)
 from utils.sms import save_user_sms, get_user_sms, get_spam_sms
 from utils.db import users_collection
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -108,6 +126,14 @@ def load_score_thresholds() -> dict:
 
 SCORE_THRESHOLDS = load_score_thresholds()
 
+
+def get_storage_threshold(user_settings):
+    try:
+        threshold = int((user_settings or {}).get("storage_threshold", 60))
+    except (TypeError, ValueError):
+        threshold = 60
+    return max(0, min(100, threshold))
+
 @app.route('/health', methods=['GET'])
 @limiter.exempt
 def health_check():
@@ -142,11 +168,67 @@ def login():
         "status": "success", 
         "access_token": access_token, 
         "user": {
-            "username": user['username'], 
+            "username": user['username'],
+            "email": user.get('email', ''),
             "api_key": user['api_key'], 
             "settings": user['settings']
         }
     }), 200
+
+
+@app.route('/api/auth/profile', methods=['PUT'])
+@jwt_required()
+@limiter.exempt
+def update_profile():
+    user_id = get_jwt_identity()
+    data = request.json or {}
+
+    current_password = data.get('current_password')
+    ok, error = verify_user_password(user_id, current_password)
+    if not ok:
+        return jsonify({"status": "error", "message": error}), 400
+
+    username = data.get('username')
+    email = data.get('email')
+    user, error = update_user_profile(user_id, username=username, email=email)
+    if error:
+        return jsonify({"status": "error", "message": error}), 400
+
+    return jsonify({
+        "status": "success",
+        "message": "Profile updated",
+        "user": {
+            "username": user['username'],
+            "email": user.get('email', ''),
+            "api_key": user['api_key'],
+            "settings": user.get('settings', {})
+        }
+    }), 200
+
+
+@app.route('/api/auth/change-password', methods=['POST'])
+@jwt_required()
+@limiter.limit("10 per minute")
+def change_password():
+    user_id = get_jwt_identity()
+    data = request.json or {}
+    ok, error = change_user_password(
+        user_id,
+        data.get('current_password'),
+        data.get('new_password'),
+    )
+    if not ok:
+        return jsonify({"status": "error", "message": error}), 400
+    return jsonify({"status": "success", "message": "Password changed successfully"}), 200
+
+
+@app.route('/api/auth/forgot-password', methods=['POST'])
+@limiter.limit("5 per minute")
+def forgot_password():
+    return jsonify({
+        "status": "coming_soon",
+        "message": "Password recovery is not available yet."
+    }), 501
 
 @app.errorhandler(429)
 def ratelimit_handler(e):
@@ -182,9 +264,10 @@ def get_history():
             "text_snippet": s["body"][:100] + "..." if len(s["body"]) > 100 else s["body"],
             "full_text": s["body"],
             "risk_score": s["risk_score"],
-            "verdict": "high_risk" if s["is_spam"] else "safe",
-            "source": "Mobile SMS Sync",
+            "verdict": s.get("verdict", "suspicious"),
+            "source": s.get("source", "Mobile SMS Sync"),
             "timestamp": s["imported_at"],
+            "retention_expires_at": s.get("retention_expires_at"),
             "sender": s.get("sender", "unknown")
         })
         
@@ -426,9 +509,17 @@ def analyze():
             }
         }
         
-        # Save to history if an authenticated user
+        # Save authenticated scans; threshold determines whether they expire.
         if user_id:
-            save_scan_history(user_id, raw_text, final_score_clamped, verdict, req_source, response["details"])
+            save_scan_history(
+                user_id,
+                raw_text,
+                final_score_clamped,
+                verdict,
+                req_source,
+                response["details"],
+                storage_threshold=get_storage_threshold(user_settings),
+            )
         
         return jsonify(response), 200
 
@@ -455,12 +546,26 @@ def upload_sms():
         
     messages_payload = data['messages']
     processed_messages = []
+    storage_threshold = 60
+
+    user = get_user_by_id(user_id)
+    if user and user.get('settings'):
+        storage_threshold = get_storage_threshold(user['settings'])
     
     for msg in messages_payload:
         body = msg.get("body", "")
         # Run ML model on each message
         ml_probability = predict_spam_probability(body)
         risk_score = int(round(ml_probability * 100))
+
+        if risk_score <= 20:
+            verdict = "safe"
+        elif risk_score <= 50:
+            verdict = "suspicious"
+        elif risk_score <= 80:
+            verdict = "high_risk"
+        else:
+            verdict = "fraud"
         
         # Determine is_spam boolean
         is_spam = True if ml_probability > 0.50 else False
@@ -470,16 +575,18 @@ def upload_sms():
             "body": body,
             "date": msg.get("date", ""),
             "is_spam": is_spam,
-            "risk_score": risk_score
+            "risk_score": risk_score,
+            "verdict": verdict,
+            "source": "Mobile SMS Sync"
         }
         processed_messages.append(processed_message)
         
-    # Store to DB linked to user
-    save_user_sms(user_id, processed_messages)
+    # Store all imported SMS; threshold determines permanence vs 3-day retention.
+    save_user_sms(user_id, processed_messages, storage_threshold=storage_threshold)
     
     return jsonify({
         "status": "success", 
-        "message": f"Successfully processed and stored {len(processed_messages)} messages."
+        "message": f"Successfully processed {len(processed_messages)} messages. Messages at or above the threshold are permanent; lower-risk messages expire in 3 days."
     }), 201
 
 @app.route('/api/messages/bulk', methods=['DELETE'])

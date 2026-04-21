@@ -2,7 +2,20 @@ import { useState, useEffect } from 'react';
 import { Trash2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { apiUrl } from '../../lib/api';
+import { getRetentionCountdownLabel } from '../../lib/retention';
 import styles from './Dashboard.module.css';
+
+const VERDICT_META = {
+    safe: { label: 'Verified Safe', className: 'badgeSafe', scoreColor: 'var(--primary)' },
+    suspicious: { label: 'Suspicious', className: 'badgeWarn', scoreColor: 'var(--cyber-amber)' },
+    high_risk: { label: 'High Risk', className: 'badgeDanger', scoreColor: 'var(--destructive)' },
+    fraud: { label: 'Severe Threat', className: 'badgeDanger', scoreColor: 'var(--destructive)' }
+};
+
+const getVerdictMeta = (verdict) => {
+    const normalizedVerdict = String(verdict || '').toLowerCase();
+    return VERDICT_META[normalizedVerdict] || VERDICT_META.suspicious;
+};
 
 export function SmsManager() {
     const { token } = useAuth();
@@ -11,6 +24,7 @@ export function SmsManager() {
     const [isSyncing, setIsSyncing] = useState(false);
     const [selectedIds, setSelectedIds] = useState(new Set());
     const [searchQuery, setSearchQuery] = useState("");
+    const [clockTick, setClockTick] = useState(Date.now());
 
     // Removed loose fetchMessages
 
@@ -109,6 +123,11 @@ export function SmsManager() {
         };
     }, [token]);
 
+    useEffect(() => {
+        const timer = setInterval(() => setClockTick(Date.now()), 60000);
+        return () => clearInterval(timer);
+    }, []);
+
     const handleMsgClick = (msg) => {
         setSelectedMsg(msg);
     };
@@ -130,7 +149,7 @@ export function SmsManager() {
 
     return (
         <div className={styles.apiCard} style={{ marginTop: '2rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
                 <div>
                     <h3 className={styles.sectionTitle}>Synced Mobile Messages</h3>
                     <p className={styles.sectionDesc}>
@@ -158,7 +177,7 @@ export function SmsManager() {
                             border: '1px solid var(--border)',
                             background: 'rgba(0,0,0,0.5)',
                             color: 'var(--foreground)',
-                            width: '300px'
+                            width: 'min(300px, 100%)'
                         }}
                     />
                 </div>
@@ -197,6 +216,10 @@ export function SmsManager() {
                             </thead>
                             <tbody>
                                 {filteredMessages.map((m, idx) => (
+                                    (() => {
+                                        const verdictMeta = getVerdictMeta(m.verdict);
+
+                                        return (
                                     <tr 
                                         key={idx} 
                                         className={styles.tr} 
@@ -215,12 +238,14 @@ export function SmsManager() {
                                         <td className={styles.td}>
                                             <div className={styles.snippet}>{m.body}</div>
                                         </td>
-                                        <td className={styles.td}><span className={styles.date}>{new Date(m.date).toLocaleString()}</span></td>
                                         <td className={styles.td}>
-                                            {m.is_spam 
-                                                ? <span className={`${styles.badge} ${styles.badgeDanger}`}>Spam</span> 
-                                                : <span className={`${styles.badge} ${styles.badgeSafe}`}>Safe</span>
-                                            }
+                                            <span className={styles.date}>{new Date(m.date).toLocaleString()}</span>
+                                            <div className={styles.retentionNote}>{getRetentionCountdownLabel(m, clockTick)}</div>
+                                        </td>
+                                        <td className={styles.td}>
+                                            <span className={`${styles.badge} ${styles[verdictMeta.className]}`}>
+                                                {verdictMeta.label}
+                                            </span>
                                         </td>
                                         <td className={styles.td}>
                                             <button 
@@ -232,6 +257,8 @@ export function SmsManager() {
                                             </button>
                                         </td>
                                     </tr>
+                                        );
+                                    })()
                                 ))}
                             </tbody>
                         </table>
@@ -241,6 +268,10 @@ export function SmsManager() {
 
             {/* Analysis Modal */}
             {selectedMsg && (
+                (() => {
+                    const selectedVerdict = getVerdictMeta(selectedMsg.verdict);
+
+                    return (
                 <div style={{
                     position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', 
                     background: 'rgba(0,0,0,0.8)', display: 'flex', justifyContent: 'center', 
@@ -272,17 +303,20 @@ export function SmsManager() {
                         <div style={{ display: 'flex', gap: '2rem', marginBottom: '1.5rem' }}>
                             <div>
                                 <h4 style={{ color: 'var(--muted-foreground)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Threat Verdict</h4>
-                                {selectedMsg.is_spam 
-                                    ? <span className={`${styles.badge} ${styles.badgeDanger}`} style={{ fontSize: '1rem', padding: '0.5rem 1rem' }}>Identified as Spam</span> 
-                                    : <span className={`${styles.badge} ${styles.badgeSafe}`} style={{ fontSize: '1rem', padding: '0.5rem 1rem' }}>Verified Safe</span>
-                                }
+                                <span className={`${styles.badge} ${styles[selectedVerdict.className]}`} style={{ fontSize: '1rem', padding: '0.5rem 1rem' }}>
+                                    {selectedVerdict.label}
+                                </span>
                             </div>
                             <div>
                                 <h4 style={{ color: 'var(--muted-foreground)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Risk Score</h4>
-                                <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: selectedMsg.is_spam ? 'var(--destructive)' : 'var(--primary)' }}>
+                                <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: selectedVerdict.scoreColor }}>
                                     {selectedMsg.risk_score}%
                                 </span>
                             </div>
+                        </div>
+
+                        <div className={styles.retentionNote} style={{ marginBottom: '1rem' }}>
+                            {getRetentionCountdownLabel(selectedMsg, clockTick)}
                         </div>
 
                         <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>
@@ -290,6 +324,8 @@ export function SmsManager() {
                         </div>
                     </div>
                 </div>
+                    );
+                })()
             )}
         </div>
     );

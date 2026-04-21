@@ -3,6 +3,7 @@ import { ScanHistory } from '../components/dashboard/ScanHistory';
 import { SystemHealth } from '../components/dashboard/SystemHealth';
 import { Settings } from '../components/dashboard/Settings';
 import { SmsManager } from '../components/dashboard/SmsManager';
+import { ShieldAlert } from 'lucide-react';
 import styles from '../components/dashboard/Dashboard.module.css';
 
 export function Dashboard() {
@@ -20,6 +21,21 @@ export function Dashboard() {
                 </div>
                 <div className={styles.sidebar}>
                     <Settings />
+                    <div className={styles.qrWidget}>
+                        <h3 className={styles.sectionTitle} style={{ marginBottom: '0.5rem' }}>Mobile Sync App</h3>
+                        <p className={styles.sectionDesc} style={{ marginBottom: '0.85rem' }}>
+                            Scan to install the companion mobile app and sync messages.
+                        </p>
+                        <div className={styles.qrWidgetFrame}>
+                            <img src="/mobile-app-qr-placeholder.svg" alt="Mobile app QR placeholder" className={styles.qrWidgetImage} />
+                        </div>
+                        <div className={styles.qrWidgetCaution}>
+                            <ShieldAlert size={14} />
+                            <span>
+                                Pause Play Protect during install, then turn it back on. Sensitive-info checks can block setup.
+                            </span>
+                        </div>
+                    </div>
                     <SystemHealth />
                 </div>
             </div>

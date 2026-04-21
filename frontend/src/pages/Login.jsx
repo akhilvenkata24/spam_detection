@@ -89,6 +89,12 @@ export function Login() {
                 </form>
 
                 <div className={styles.footerLink}>
+                    <Link to="/forgot-password">
+                        Forgot password?
+                    </Link>
+                </div>
+
+                <div className={styles.footerLink}>
                     <Link to="/register">
                         Request Access Level (Register)
                     </Link>

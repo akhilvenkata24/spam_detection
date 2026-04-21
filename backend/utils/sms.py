@@ -1,19 +1,45 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from bson import ObjectId
 from utils.db import sms_collection
 
-def save_user_sms(user_id, messages_list):
+RETENTION_DAYS = 3
+RETENTION_DELTA = timedelta(days=RETENTION_DAYS)
+
+
+def cleanup_expired_sms(user_id):
+    sms_collection.delete_many({
+        "user_id": ObjectId(user_id),
+        "retention_expires_at": {"$lte": datetime.utcnow()},
+    })
+
+
+def _parse_datetime(value):
+    if isinstance(value, datetime):
+        return value
+    if isinstance(value, str):
+        try:
+            return datetime.fromisoformat(value.replace("Z", "+00:00")).replace(tzinfo=None)
+        except Exception:
+            return None
+    return None
+
+def save_user_sms(user_id, messages_list, storage_threshold=60):
     if not messages_list:
         return []
 
     docs = []
     user_obj_id = ObjectId(user_id) if user_id else None
     or_conditions = []
+    try:
+        threshold_value = max(0, min(100, int(storage_threshold)))
+    except (TypeError, ValueError):
+        threshold_value = 60
     
     for msg in messages_list:
         sender = msg.get("sender", "unknown")
         body = msg.get("body", "")
-        msg_date = msg.get("date", datetime.utcnow().isoformat() + "Z")
+        msg_date = msg.get("date", datetime.utcnow())
+        msg_date = _parse_datetime(msg_date) or datetime.utcnow()
 
         # Condition to find previous occurrence
         or_conditions.append({
@@ -29,8 +55,15 @@ def save_user_sms(user_id, messages_list):
             "date": msg_date,
             "is_spam": msg.get("is_spam", False),
             "risk_score": msg.get("risk_score", 0),
-            "imported_at": datetime.utcnow().isoformat() + "Z"
+            "verdict": msg.get("verdict", "high_risk" if msg.get("is_spam", False) else "safe"),
+            "source": msg.get("source", "Mobile SMS Sync"),
+            "imported_at": datetime.utcnow(),
+            "storage_threshold": threshold_value,
         }
+
+        if doc["risk_score"] < threshold_value:
+            doc["retention_expires_at"] = doc["imported_at"] + RETENTION_DELTA
+
         docs.append(doc)
     
     if docs:
@@ -52,16 +85,15 @@ def format_doc(doc):
     if doc.get("user_id"):
         doc["user_id"] = str(doc["user_id"])
     
-    # Ensure imported_at is string and has Z timezone
-    imp = doc.get("imported_at")
-    if isinstance(imp, datetime):
-        doc["imported_at"] = imp.isoformat() + "Z"
-    elif isinstance(imp, str) and not imp.endswith("Z"):
-        doc["imported_at"] = imp + "Z"
+    for key in ("imported_at", "date"):
+        value = doc.get(key)
+        if isinstance(value, datetime):
+            doc[key] = value.isoformat() + "Z"
         
     return doc
 
 def get_user_sms(user_id):
+    cleanup_expired_sms(user_id)
     cursor = sms_collection.find({"user_id": ObjectId(user_id)}).sort("imported_at", -1)
     messages = []
     for doc in cursor:

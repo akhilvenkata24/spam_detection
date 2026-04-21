@@ -65,7 +65,7 @@ export function Settings() {
                         className={styles.rangeInput}
                     />
                     <p className={styles.settingDesc}>
-                        Only save messages to the database if the risk score is above <span style={{ fontWeight: 'bold', color: 'var(--foreground)' }}>{threshold}%</span>.
+                        Only save messages to the database if the risk score is at or above <span style={{ fontWeight: 'bold', color: 'var(--foreground)' }}>{threshold}%</span>.
                         Low-risk messages will be discarded after analysis to save space.
                     </p>
                 </div>
@@ -83,6 +83,7 @@ export function Settings() {
                     </label>
                 </div>
             </div>
+
         </div>
     )
 }

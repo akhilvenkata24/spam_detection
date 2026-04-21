@@ -202,3 +202,18 @@
     85% { opacity: 0.8; }
     100% { top: 103%; opacity: 0; }
 }
+
+@media (max-width: 640px) {
+    .container {
+        min-height: auto;
+        padding: 1rem 0;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+
+    .title {
+        font-size: 1.45rem;
+    }
+}

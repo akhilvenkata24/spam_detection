@@ -216,6 +216,13 @@
     color: var(--muted-foreground);
 }
 
+.retentionNote {
+    font-size: 0.72rem;
+    color: var(--cyber-amber);
+    margin-top: 0.2rem;
+    line-height: 1.3;
+}
+
 /* ApiManager */
 .apiCard {
     background-color: var(--background);
@@ -289,6 +296,37 @@
     border: 1px solid var(--border);
     border-radius: 0.5rem;
     padding: 1.5rem;
+}
+
+.qrWidget {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+}
+
+.qrWidgetFrame {
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: rgba(26, 26, 26, 0.5);
+}
+
+.qrWidgetImage {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.qrWidgetCaution {
+    margin-top: 0.75rem;
+    color: var(--cyber-amber);
+    font-size: 0.78rem;
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
 }
 
 .settingsGroup {
@@ -421,5 +459,47 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .pageTitle {
+        font-size: 1.5rem;
+    }
+
+    .historyHeader,
+    .apiCard,
+    .settingsCard,
+    .statsCard {
+        padding: 1rem;
+    }
+
+    .th,
+    .td {
+        padding: 0.75rem 0.75rem;
+    }
+
+    .snippet {
+        max-width: 12rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .table {
+        min-width: 640px;
+    }
+
+    .historyTitle,
+    .sectionTitle {
+        font-size: 1rem;
+    }
+
+    .sectionDesc {
+        font-size: 0.8rem;
+    }
+
+    .apiKeyContainer {
+        flex-direction: column;
+        align-items: stretch;
     }
 }

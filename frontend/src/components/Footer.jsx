@@ -41,7 +41,7 @@ export function Footer() {
                         {activeModal === 'privacy' && (
                             <div>
                                 <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--foreground)' }}>Privacy Policy</h2>
-                                <p style={{ color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: '1rem' }}>Your data is strictly localized. Messages sent for analysis are aggressively sanitized. We explicitly do not sell or archive your metadata. All localized data instances expire according to your backend threshold settings.</p>
+                                <p style={{ color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: '1rem' }}>Your data is strictly localized. Messages sent for analysis are aggressively sanitized. We explicitly do not sell or archive your metadata. Scan history and synced mobile messages that meet or exceed your storage threshold are saved permanently, while lower-risk items may be removed after 3 days.</p>
                                 <p style={{ color: 'var(--muted-foreground)', lineHeight: '1.6' }}>We adhere to high-grade AES compliance for cloud transit telemetry.</p>
                             </div>
                         )}

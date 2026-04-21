@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Loader2 } from 'lucide-react';
+import { Loader2, ShieldAlert } from 'lucide-react';
 import { AnalysisResult } from '../components/AnalysisResult';
 import { useAuth } from '../context/AuthContext';
 import { apiUrl, fetchWithRetry } from '../lib/api';
@@ -118,6 +118,27 @@ export function Home() {
                                         "ANALYZE THREAT"
                                     )}
                                 </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.mobileSyncCard}>
+                        <div className={styles.mobileSyncHeader}>
+                            <h2 className={styles.mobileSyncTitle}>Mobile Sync App</h2>
+                            <p className={styles.mobileSyncDesc}>
+                                Scan this QR placeholder to download the mobile app and sync your SMS inbox with this dashboard.
+                            </p>
+                        </div>
+                        <div className={styles.mobileSyncBody}>
+                            <div className={styles.qrPlaceholder} aria-label="QR placeholder for mobile app download">
+                                <img src="/mobile-app-qr-placeholder.svg" alt="Mobile app download QR placeholder" className={styles.qrImage} />
+                            </div>
+                            <div className={styles.mobileSyncCaution}>
+                                <ShieldAlert size={18} />
+                                <p>
+                                    Caution: pause Play Protect before installation. You can turn it back on after setup is complete.
+                                    Installation may be blocked due to sensitive-info access checks.
+                                </p>
                             </div>
                         </div>
                     </div>

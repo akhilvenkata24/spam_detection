@@ -68,6 +68,173 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    position: relative;
+}
+
+.accountMenuWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.accountTrigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--amber);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid rgba(255, 204, 0, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 204, 0, 0.06);
+    transition: all 0.2s ease;
+}
+
+.accountTrigger:hover {
+    background: rgba(255, 204, 0, 0.11);
+    border-color: rgba(255, 204, 0, 0.28);
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+}
+
+.accountMenu {
+    position: absolute;
+    top: calc(100% + 0.85rem);
+    right: 0;
+    width: min(24rem, calc(100vw - 1.25rem));
+    background: rgba(10, 10, 10, 0.98);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(16px);
+    z-index: 90;
+}
+
+.accountMenuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.iconBtn {
+    padding: 0.55rem;
+    background-color: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+    transition: background-color 0.2s;
+    color: var(--muted-foreground);
+}
+
+.iconBtn:hover {
+    background-color: rgba(26, 26, 26, 0.8);
+    color: var(--foreground);
+}
+
+.accountMenuTitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.accountMenuMeta {
+    font-size: 0.78rem;
+    color: var(--muted-foreground);
+    margin-top: 0.25rem;
+}
+
+.accountGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 0.9rem;
+}
+
+.accountLabel {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-foreground);
+}
+
+.accountInputRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 0.45rem;
+    background: rgba(26, 26, 26, 0.45);
+    color: var(--muted-foreground);
+}
+
+.accountInput {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.accountPrimaryBtn,
+.accountSecondaryBtn {
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.65rem 0.8rem;
+    border-radius: 0.45rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.accountPrimaryBtn {
+    background: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.accountSecondaryBtn {
+    background: transparent;
+    color: var(--cyber-amber);
+    border: 1px solid rgba(255, 204, 0, 0.25);
+}
+
+.accountPrimaryBtn:hover:not(:disabled),
+.accountSecondaryBtn:hover:not(:disabled) {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.accountPrimaryBtn:disabled,
+.accountSecondaryBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.accountDivider {
+    height: 1px;
+    background: var(--border);
+    margin: 0.9rem 0;
+}
+
+.accountError,
+.accountSuccess {
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+
+.accountError {
+    color: var(--destructive);
+}
+
+.accountSuccess {
+    color: var(--primary);
 }
 
 .loginBtn {
@@ -96,4 +263,63 @@
 
 .registerBtn:hover {
     opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        height: auto;
+        min-height: 64px;
+        padding: 0.5rem 0;
+    }
+
+    .container {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+    }
+
+    .brand {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navLinks {
+        gap: 0.75rem;
+    }
+
+    .authButtons {
+        gap: 0.5rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .accountMenu {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 640px) {
+    .logoText {
+        font-size: 1.05rem;
+    }
+
+    .navLink {
+        font-size: 0.8rem;
+    }
+
+    .loginBtn,
+    .registerBtn {
+        padding: 0.45rem 0.75rem;
+    }
+
+    .accountTrigger {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .accountMenu {
+        width: calc(100vw - 1rem);
+    }
 }
