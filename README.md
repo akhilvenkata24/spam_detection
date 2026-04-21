@@ -1,6 +1,6 @@
 ---
 title: Spam Detect Backend
-emoji: shield
+emoji: 🛡️
 colorFrom: blue
 colorTo: red
 sdk: docker
