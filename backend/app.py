@@ -307,11 +307,11 @@ def get_history():
         })
         
     # Sort combined history by timestamp descending (newest first)
+    from datetime import datetime
     def get_sort_key(item):
         ts = item.get('timestamp')
         if isinstance(ts, str):
             try:
-                from datetime import datetime
                 # Parse ISO string
                 return datetime.fromisoformat(ts.replace('Z', '+00:00')).timestamp()
             except:
