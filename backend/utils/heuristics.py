@@ -24,6 +24,8 @@ CATEGORY_RULES = [
             re.compile(r"\baccount\s+(?:has\s+been\s+)?(?:locked|blocked|restricted|suspended)\b"),
             re.compile(r"\bunauthorized activity\b"),
             re.compile(r"\bprevent suspension\b"),
+            re.compile(r"\bpermanent\s+suspension\b"),
+            re.compile(r"\b(?:avoid|prevent)\s+(?:a\s+)?(?:permanent\s+)?suspension\b"),
             re.compile(r"\bsecurity alert\b"),
             re.compile(r"\bverify your account\b"),
             re.compile(r"\b(?:account\s+)?reactivation\b"),

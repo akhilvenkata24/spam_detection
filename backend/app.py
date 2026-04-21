@@ -561,6 +561,10 @@ def analyze():
                 final_score = max(final_score, 60)
             elif has_short_link and (has_urgency or has_financial_lure):
                 final_score = max(final_score, 50)
+            elif has_account_threat and has_credential_request and has_urgency:
+                final_score = max(final_score, 85)
+            elif has_account_threat and has_credential_request and url_risk >= 40:
+                final_score = max(final_score, 80)
             elif strong_trigger_count >= 3:
                 final_score = max(final_score, 55)
             elif heuristic_score >= 50 and strong_trigger_count >= 2:
