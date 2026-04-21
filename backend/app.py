@@ -537,9 +537,25 @@ def analyze():
         has_account_threat = any("account lock" in t or "account takeover" in t for t in trigger_set)
         has_urgency = any("urgency" in t for t in trigger_set)
         has_short_link = any("shortened or obfuscated link" in t or "short-link" in t for t in trigger_set)
+        has_tech_support = any("tech support / virus alert scam" in t or "tech support impersonation pattern" in t for t in trigger_set)
+        has_delivery = any("delivery scam" in t for t in trigger_set)
+        has_billing = any("billing scam" in t for t in trigger_set)
+        has_reward_claim = any("reward claim" in t for t in trigger_set)
+        has_dating = any("dating/adult invite" in t for t in trigger_set)
         strong_trigger_count = sum(
             1
-            for flag in (has_urgency, has_financial_lure, has_credential_request, has_account_threat, has_short_link)
+            for flag in (
+                has_urgency,
+                has_financial_lure,
+                has_credential_request,
+                has_account_threat,
+                has_short_link,
+                has_tech_support,
+                has_delivery,
+                has_billing,
+                has_reward_claim,
+                has_dating,
+            )
             if flag
         )
 
@@ -565,6 +581,14 @@ def analyze():
                 final_score = max(final_score, 85)
             elif has_account_threat and has_credential_request and url_risk >= 40:
                 final_score = max(final_score, 80)
+            elif has_tech_support and (has_urgency or has_account_threat) and url_risk >= 40:
+                final_score = max(final_score, 85)
+            elif (has_delivery or has_billing or has_reward_claim) and url_risk >= 40 and (has_urgency or has_short_link):
+                final_score = max(final_score, 75)
+            elif has_dating and url_risk >= 40 and has_short_link:
+                final_score = max(final_score, 65)
+            elif heuristic_score >= 55 and url_risk >= 40:
+                final_score = max(final_score, 75)
             elif strong_trigger_count >= 3:
                 final_score = max(final_score, 55)
             elif heuristic_score >= 50 and strong_trigger_count >= 2:

@@ -27,6 +27,8 @@ CATEGORY_RULES = [
             re.compile(r"\bpermanent\s+suspension\b"),
             re.compile(r"\b(?:avoid|prevent)\s+(?:a\s+)?(?:permanent\s+)?suspension\b"),
             re.compile(r"\bsecurity alert\b"),
+            re.compile(r"\bsecurity\s+is\s+at\s+risk\b"),
+            re.compile(r"\bcritical\s+system\s+issue\b"),
             re.compile(r"\bverify your account\b"),
             re.compile(r"\b(?:account\s+)?reactivation\b"),
             re.compile(r"\bpermanent\s+lock(?:out)?\b"),
@@ -68,6 +70,73 @@ CATEGORY_RULES = [
             re.compile(r"\b(?:bit\.ly|tinyurl\.com|t\.ly|is\.gd|goo\.gl|ow\.ly|buff\.ly)\b"),
         ],
     ),
+    (
+        "tech_support",
+        30,
+        "tech support / virus alert scam",
+        [
+            re.compile(r"\btech support\b"),
+            re.compile(r"\bvirus alert\b"),
+            re.compile(r"\bremote session\b"),
+            re.compile(r"\bcall (?:our )?(?:support|technicians|helpline)\b"),
+            re.compile(r"\b(?:microsoft|apple|windows|mac) support\b"),
+            re.compile(r"\bsecurity issue detected\b"),
+            re.compile(r"\btechnicians?\b"),
+        ],
+    ),
+    (
+        "billing",
+        25,
+        "billing / invoice / toll / subscription scam",
+        [
+            re.compile(r"\bunpaid invoice\b"),
+            re.compile(r"\bbilling error\b"),
+            re.compile(r"\bpayment failed\b"),
+            re.compile(r"\bsubscription (?:expired|expiring|will expire)\b"),
+            re.compile(r"\bunpaid toll(?:s)?\b"),
+            re.compile(r"\btraffic fine(?:s)?\b"),
+            re.compile(r"\brefund\b"),
+            re.compile(r"\birs notification\b"),
+            re.compile(r"\btax refund\b"),
+        ],
+    ),
+    (
+        "delivery",
+        25,
+        "package delivery / shipment scam",
+        [
+            re.compile(r"\bpackage delivery\b"),
+            re.compile(r"\bdelivery issue(?:s)?\b"),
+            re.compile(r"\bshipment (?:delayed|held|failed)\b"),
+            re.compile(r"\bparc(?:el|els)\b"),
+            re.compile(r"\bcourier\b"),
+        ],
+    ),
+    (
+        "reward_claim",
+        25,
+        "gift card / prize / lottery claim scam",
+        [
+            re.compile(r"\bgift card\b"),
+            re.compile(r"\bvoucher\b"),
+            re.compile(r"\bclaim your prize\b"),
+            re.compile(r"\blottery\b"),
+            re.compile(r"\bselected for\b"),
+            re.compile(r"\bfree \$?\d+[\d,]*\b"),
+        ],
+    ),
+    (
+        "dating",
+        20,
+        "dating / adult invite scam",
+        [
+            re.compile(r"\bdating\b"),
+            re.compile(r"\badult site\b"),
+            re.compile(r"\binvite(?:s)?\b"),
+            re.compile(r"\bmatch\b"),
+            re.compile(r"\bprofile views?\b"),
+        ],
+    ),
 ]
 
 def parse_heuristics(text: str) -> dict:
@@ -88,6 +157,11 @@ def parse_heuristics(text: str) -> dict:
         "credential_harvest": False,
         "financial_lure": False,
         "short_link": False,
+        "tech_support": False,
+        "billing": False,
+        "delivery": False,
+        "reward_claim": False,
+        "dating": False,
     }
 
     # Match at most once per category to avoid over-penalizing duplicates.
@@ -109,6 +183,26 @@ def parse_heuristics(text: str) -> dict:
     if category_matches["short_link"] and category_matches["credential_harvest"]:
         score += 10
         triggers.append("short-link credential phishing pattern")
+
+    if category_matches["tech_support"] and (category_matches["account_threat"] or category_matches["credential_harvest"]):
+        score += 15
+        triggers.append("tech support impersonation pattern")
+
+    if category_matches["billing"] and category_matches["credential_harvest"]:
+        score += 15
+        triggers.append("billing scam with credential request")
+
+    if category_matches["delivery"] and category_matches["short_link"]:
+        score += 15
+        triggers.append("delivery scam with short link")
+
+    if category_matches["reward_claim"] and category_matches["short_link"]:
+        score += 15
+        triggers.append("reward claim with short link")
+
+    if category_matches["dating"] and category_matches["short_link"]:
+        score += 10
+        triggers.append("dating/adult invite with link")
 
     # Style-based signals
     if re.search(r'!!!!!+', text):
