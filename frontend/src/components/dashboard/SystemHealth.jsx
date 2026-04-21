@@ -20,7 +20,7 @@ export function SystemHealth() {
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                             <Cpu size={18} style={{ color: 'var(--success)' }} />
                             <div>
-                                <h4 style={{ fontSize: '0.875rem', margin: 0, fontWeight: 'bold' }}>ML Forensics Engine</h4>
+                                <h4 style={{ fontSize: '0.875rem', margin: 0, fontWeight: 'bold' }}>ML Analysis Engine</h4>
                                 <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>v2.4.1 (Aggressive)</span>
                             </div>
                         </div>

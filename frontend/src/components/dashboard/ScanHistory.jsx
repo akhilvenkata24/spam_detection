@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Smartphone, Globe, Trash2 } from 'lucide-react';
+import { Smartphone, Globe, Trash2, RefreshCw } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { apiUrl } from '../../lib/api';
 import { getRetentionCountdownLabel } from '../../lib/retention';
@@ -48,6 +48,22 @@ export function ScanHistory() {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedScan, setSelectedScan] = useState(null);
     const [clockTick, setClockTick] = useState(Date.now());
+    const [isRefreshing, setIsRefreshing] = useState(false);
+
+    const fetchHistory = async () => {
+        if (!token) return;
+        try {
+            const res = await fetch(`${apiUrl('/api/dashboard/history')}?_t=${Date.now()}`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            const data = await res.json();
+            if (data.status === 'success') {
+                setScans(data.history);
+            }
+        } catch (err) {
+            console.error("Failed history pull", err);
+        }
+    };
 
     const handleScanClick = (scan) => {
         setSelectedScan(scan);
@@ -62,17 +78,8 @@ export function ScanHistory() {
         let isMounted = true;
 
         const pollHistory = async () => {
-            try {
-                const res = await fetch(`${apiUrl('/api/dashboard/history')}?_t=${Date.now()}`, {
-                    headers: { 'Authorization': `Bearer ${token}` }
-                });
-                const data = await res.json();
-                if (data.status === 'success' && isMounted) {
-                    setScans(data.history);
-                }
-            } catch (err) {
-                console.error("Failed history pull", err);
-            }
+            if (!isMounted) return;
+            await fetchHistory();
         };
 
         pollHistory();
@@ -147,6 +154,15 @@ export function ScanHistory() {
         }
     };
 
+    const handleRefresh = async () => {
+        setIsRefreshing(true);
+        try {
+            await fetchHistory();
+        } finally {
+            setIsRefreshing(false);
+        }
+    };
+
     const filteredScans = scans.filter(s => {
         if (!searchQuery) return true;
         const q = searchQuery.toLowerCase();
@@ -186,6 +202,15 @@ export function ScanHistory() {
                         Delete Selected ({selectedIds.size})
                     </button>
                 )}
+                <button
+                    onClick={handleRefresh}
+                    disabled={isRefreshing}
+                    style={{ background: 'var(--primary)', color: '#fff', padding: '0.25rem 0.75rem', borderRadius: '4px', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.4rem', opacity: isRefreshing ? 0.7 : 1 }}
+                    title="Refresh scan history"
+                >
+                    <RefreshCw size={14} />
+                    {isRefreshing ? 'Refreshing' : 'Refresh'}
+                </button>
             </div>
             <div className={styles.tableContainer} style={{ maxHeight: '400px', overflowY: 'auto' }}>
                 <table className={styles.table}>

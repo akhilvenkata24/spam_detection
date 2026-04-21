@@ -435,7 +435,7 @@ def analyze():
         
         # Check authentication optionally to attribute to user
         user_id = None
-        user_settings = {"storage_threshold": 60, "auto_flag": False}
+        user_settings = {"storage_threshold": 60}
         auth_channel = "ANON"
         resolved_source = requested_source
 
@@ -530,11 +530,6 @@ def analyze():
         if ml_probability > 0.85:
             final_score = max(final_score, 90)
             
-        # 4. ENFORCE AUTO-FLAG: If user set Auto-Flag to ON and ANY malicious URL risk is detected
-        if user_settings.get("auto_flag", False) and url_risk > 0:
-            final_score = 100
-            triggers.append("SYSTEM OVERRIDE: Auto-Flagged Malicious Link")
-
         # 5. Trigger-aware floor rules (especially for no-link social-engineering spam)
         trigger_set = {str(t).lower() for t in triggers}
         has_financial_lure = any("financial lure" in t for t in trigger_set)

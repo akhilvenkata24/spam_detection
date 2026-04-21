@@ -18,7 +18,7 @@ export function AnalysisResult({ result, onReset }) {
                     <div className={styles.infoCard}>
                         <h3 className={styles.cardTitle}>
                             <AlertTriangle className={styles.warningIcon} size={20} />
-                            FORENSIC DETAILS
+                            ANALYSIS DETAILS
                         </h3>
                         <ul className={styles.list}>
                             {details.map((item, idx) => (

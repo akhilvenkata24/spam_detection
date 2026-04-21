@@ -6,19 +6,17 @@ import styles from './Dashboard.module.css';
 export function Settings() {
     const { user, token, updateAuthUser } = useAuth();
     const [threshold, setThreshold] = useState(60);
-    const [autoFlag, setAutoFlag] = useState(false);
     const [saving, setSaving] = useState(false);
 
     useEffect(() => {
         if (user && user.settings) {
             setThreshold(user.settings.storage_threshold);
-            setAutoFlag(user.settings.auto_flag);
         }
     }, [user]);
 
     const handleSave = async () => {
         setSaving(true);
-        const newSettings = { storage_threshold: parseInt(threshold), auto_flag: autoFlag };
+        const newSettings = { storage_threshold: parseInt(threshold) };
         
         try {
                 const res = await fetch(apiUrl('/api/dashboard/settings'), {
@@ -70,18 +68,6 @@ export function Settings() {
                     </p>
                 </div>
 
-                <div className={styles.toggleRow}>
-                    <span className={styles.sliderLabel}>Auto-Flag Malicious Links</span>
-                    <label className={styles.toggleSwitch}>
-                        <input 
-                            type="checkbox" 
-                            className={styles.toggleInput} 
-                            checked={autoFlag}
-                            onChange={(e) => setAutoFlag(e.target.checked)}
-                        />
-                        <span className={styles.toggleSlider}></span>
-                    </label>
-                </div>
             </div>
 
         </div>

@@ -43,7 +43,7 @@ export function Login() {
 
                 <div className={styles.header}>
                     <h2 className={styles.title}>ACCESS TERMINAL</h2>
-                    <p className={styles.subtitle}>Enter credentials to access the forensics system.</p>
+                    <p className={styles.subtitle}>Enter credentials to access the analysis system.</p>
                 </div>
 
                 <form onSubmit={handleLogin} className={styles.form}>

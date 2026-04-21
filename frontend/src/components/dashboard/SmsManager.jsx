@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Trash2 } from 'lucide-react';
+import { Trash2, RefreshCw } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { apiUrl } from '../../lib/api';
 import { getRetentionCountdownLabel } from '../../lib/retention';
@@ -42,6 +42,30 @@ export function SmsManager() {
     const [selectedIds, setSelectedIds] = useState(new Set());
     const [searchQuery, setSearchQuery] = useState("");
     const [clockTick, setClockTick] = useState(Date.now());
+    const [isRefreshing, setIsRefreshing] = useState(false);
+
+    const fetchMessages = async () => {
+        if (!token) return;
+        try {
+            const res = await fetch(`${apiUrl('/api/messages')}?_t=${Date.now()}`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            const data = await res.json();
+            if (data.status === "success") {
+                setMessages(data.messages);
+
+                if (data.messages.length > 0) {
+                    const topMsg = data.messages[0];
+                    const lastSyncTime = new Date(topMsg.imported_at || topMsg.date).getTime();
+                    setIsSyncing((Date.now() - lastSyncTime) < 60000);
+                } else {
+                    setIsSyncing(false);
+                }
+            }
+        } catch (err) {
+            console.error("Failed to fetch messages", err);
+        }
+    };
 
     // Removed loose fetchMessages
 
@@ -104,31 +128,23 @@ export function SmsManager() {
         }
     };
 
+    const handleRefresh = async () => {
+        setIsRefreshing(true);
+        try {
+            await fetchMessages();
+        } finally {
+            setIsRefreshing(false);
+        }
+    };
+
     // Auto-fetch messages every 3 seconds to simulate real-time mobile sync
     useEffect(() => {
         if (!token) return;
         let isMounted = true;
         
         const pollMessages = async () => {
-            try {
-                const res = await fetch(`${apiUrl('/api/messages')}?_t=${Date.now()}`, {
-                    headers: { 'Authorization': `Bearer ${token}` }
-                });
-                const data = await res.json();
-                if (data.status === "success" && isMounted) {
-                    setMessages(data.messages);
-                    
-                    if (data.messages.length > 0) {
-                        const topMsg = data.messages[0];
-                        const lastSyncTime = new Date(topMsg.imported_at || topMsg.date).getTime();
-                        setIsSyncing((Date.now() - lastSyncTime) < 60000);
-                    } else {
-                        setIsSyncing(false);
-                    }
-                }
-            } catch (err) {
-                console.error("Failed to fetch messages", err);
-            }
+            if (!isMounted) return;
+            await fetchMessages();
         };
 
         pollMessages(); // initial fetch
@@ -206,6 +222,15 @@ export function SmsManager() {
                         Delete Selected ({selectedIds.size})
                     </button>
                 )}
+                <button
+                    onClick={handleRefresh}
+                    disabled={isRefreshing}
+                    style={{ background: 'var(--primary)', color: '#fff', padding: '0.5rem 1rem', borderRadius: '4px', fontSize: '0.875rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.4rem', opacity: isRefreshing ? 0.7 : 1 }}
+                    title="Refresh synced messages"
+                >
+                    <RefreshCw size={14} />
+                    {isRefreshing ? 'Refreshing' : 'Refresh'}
+                </button>
             </div>
             <div>
                 {messages.length === 0 ? (

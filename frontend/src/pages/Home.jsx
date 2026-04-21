@@ -87,10 +87,10 @@ export function Home() {
                 <>
                     <div className={styles.hero}>
                         <h1 className={styles.title}>
-                            ADVANCED THREAT FORENSICS
+                            ADVANCED THREAT ANALYSIS
                         </h1>
                         <p className={styles.subtitle}>
-                            A Content-Centric Threat Intelligence System. Analyze suspicious messages with zero-trust AI forensics.
+                            A Content-Centric Threat Intelligence System. Analyze suspicious messages with zero-trust AI analysis.
                         </p>
                     </div>
 

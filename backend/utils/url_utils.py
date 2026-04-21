@@ -59,8 +59,8 @@ def check_domain_age(url: str) -> tuple[int, list]:
             creation_date = creation_date[0]
             
         if creation_date is None:
-            # Often, a failed WHOIS means the domain is very suspicious or unreachable via whois.
-            return 85, [f"Could not verify age or suspicious TLD for {domain}"]
+            # WHOIS is sometimes incomplete for legitimate domains, so treat this as a mild signal.
+            return 25, [f"Could not verify age for {domain}"]
             
         age_days = (datetime.datetime.now() - creation_date).days
         
@@ -90,7 +90,7 @@ def check_domain_heuristics(url: str, domain: str) -> tuple[int, list]:
         triggers.append(f"IP address used instead of domain name: {domain}")
         
     # 2. Suspicious cheap/free TLDs heavily abused by scammers
-    suspicious_tlds = ['.xyz', '.top', '.click', '.loan', '.buzz', '.info', '.club', '.stream', '.gq', '.ml', '.cf', '.tk', '.in']
+    suspicious_tlds = ['.xyz', '.top', '.click', '.loan', '.buzz', '.info', '.club', '.stream', '.gq', '.ml', '.cf', '.tk']
     if any(domain.endswith(tld) for tld in suspicious_tlds):
         score += 40
         triggers.append(f"Suspicious TLD used: {domain}")

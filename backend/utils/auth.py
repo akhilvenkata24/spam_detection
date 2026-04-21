@@ -41,8 +41,7 @@ def create_user(username, email, password):
         "password_hash": pw_hash,
         "api_key": api_key,
         "settings": {
-            "storage_threshold": 60,
-            "auto_flag": False
+            "storage_threshold": 60
         },
         "created_at": datetime.utcnow()
     }
