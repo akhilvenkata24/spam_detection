@@ -131,7 +131,7 @@ export function Home() {
                         </div>
                         <div className={styles.mobileSyncBody}>
                             <div className={styles.qrPlaceholder} aria-label="QR placeholder for mobile app download">
-                                <img src="/Spam.Detect Android Application.svg" alt="Mobile app download QR placeholder" className={styles.qrImage} />
+                                <img src="/SPAM_DETECT_V2.svg" alt="Mobile app download QR placeholder" className={styles.qrImage} />
                             </div>
                             <div className={styles.mobileSyncCaution}>
                                 <ShieldAlert size={18} />
