@@ -535,11 +535,18 @@ def analyze():
         has_financial_lure = any("financial lure" in t for t in trigger_set)
         has_credential_request = any("credential" in t or "banking detail" in t for t in trigger_set)
         has_account_threat = any("account lock" in t or "account takeover" in t for t in trigger_set)
+        has_urgency = any("urgency" in t for t in trigger_set)
+        has_short_link = any("shortened or obfuscated link" in t or "short-link" in t for t in trigger_set)
+        strong_trigger_count = sum(
+            1
+            for flag in (has_urgency, has_financial_lure, has_credential_request, has_account_threat, has_short_link)
+            if flag
+        )
 
         # A message that triggers core scam indicators should not remain in SAFE only
         # because the ML probability is low.
         if not extracted_urls:
-            if any("urgency" in t for t in trigger_set):
+            if has_urgency:
                 final_score = max(final_score, 30)
             if has_financial_lure:
                 final_score = max(final_score, 40)
@@ -549,6 +556,15 @@ def analyze():
                 final_score = max(final_score, 80)
             if len(trigger_set) >= 2:
                 final_score = max(final_score, 55)
+        else:
+            if has_urgency and has_financial_lure and has_short_link:
+                final_score = max(final_score, 60)
+            elif has_short_link and (has_urgency or has_financial_lure):
+                final_score = max(final_score, 50)
+            elif strong_trigger_count >= 3:
+                final_score = max(final_score, 55)
+            elif heuristic_score >= 50 and strong_trigger_count >= 2:
+                final_score = max(final_score, 45)
             
         final_score_clamped = max(0, min(100, int(round(final_score))))
         
