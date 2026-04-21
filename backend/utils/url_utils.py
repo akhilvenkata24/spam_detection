@@ -73,8 +73,8 @@ def check_domain_age(url: str) -> tuple[int, list]:
         else:
             return 0, []
     except Exception:
-        # If WHOIS fails (e.g., rate limit, unsupported TLD), treat it with suspicion
-        return 85, [f"Failed to check domain age for {domain}"]
+        # WHOIS can fail for legitimate domains too, so do not escalate this to a severe risk.
+        return 20, [f"Could not verify age for {domain}"]
 
 def check_domain_heuristics(url: str, domain: str) -> tuple[int, list]:
     """
