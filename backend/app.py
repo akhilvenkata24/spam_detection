@@ -306,8 +306,21 @@ def get_history():
             "sender": s.get("sender", "unknown")
         })
         
-    # Sort combined history by timestamp descending
-    combined.sort(key=lambda x: str(x.get('timestamp', '')), reverse=True)
+    # Sort combined history by timestamp descending (newest first)
+    def get_sort_key(item):
+        ts = item.get('timestamp')
+        if isinstance(ts, str):
+            try:
+                from datetime import datetime
+                # Parse ISO string
+                return datetime.fromisoformat(ts.replace('Z', '+00:00')).timestamp()
+            except:
+                return 0
+        elif isinstance(ts, datetime):
+            return ts.timestamp()
+        return 0
+    
+    combined.sort(key=get_sort_key, reverse=True)
     # Limit to top 50 in dashboard
     combined = combined[:50]
     

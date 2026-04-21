@@ -261,8 +261,8 @@ export function SmsManager() {
                                             <span className={styles.date}>{new Date(m.date).toLocaleString()}</span>
                                             <div className={styles.retentionNote}>{getRetentionCountdownLabel(m, clockTick)}</div>
                                         </td>
-                                        <td className={styles.td} data-label="Verdict">
-                                            <span className={`${styles.badge} ${styles[verdictMeta.className]}`}>
+                                        <td className={styles.td} data-label="Verdict" style={{ textAlign: 'center' }}>
+                                            <span className={`${styles.badge} ${styles[verdictMeta.className]}`} style={{ display: 'inline-block' }}>
                                                 {verdictMeta.label}
                                             </span>
                                         </td>
