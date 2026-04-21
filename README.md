@@ -1,3 +1,13 @@
+---
+title: Spam Detect Backend
+emoji: shield
+colorFrom: blue
+colorTo: red
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 ## SPAM.DETECT — Advanced Threat & Spam Analysis
 
 **Download the Android APK (Release V2):**  
