@@ -21,10 +21,6 @@ export function ForgotPassword() {
                         RETURN TO LOGIN
                     </button>
                 </div>
-
-                <div className={styles.footerLink}>
-                    <Link to="/login">Return to Login</Link>
-                </div>
             </div>
         </div>
     );
